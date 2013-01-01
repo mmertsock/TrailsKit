@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 Esker Apps. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#ifndef TrailsKit_TrailsKit_h
+#define TrailsKit_TrailsKit_h
 
-@interface TrailsKit : NSObject
+#import "TrailsKitUI.h"
 
-@end
+#endif

@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		2713CA55169360C900BB236F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA54169360C900BB236F /* Foundation.framework */; };
 		2713CA5A169360C900BB236F /* TrailsKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2713CA59169360C900BB236F /* TrailsKit.h */; };
-		2713CA5C169360C900BB236F /* TrailsKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CA5B169360C900BB236F /* TrailsKit.m */; };
 		2713CA64169360C900BB236F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA63169360C900BB236F /* SenTestingKit.framework */; };
 		2713CA66169360C900BB236F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA65169360C900BB236F /* UIKit.framework */; };
 		2713CA67169360C900BB236F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA54169360C900BB236F /* Foundation.framework */; };
 		2713CA6A169360C900BB236F /* libTrailsKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA51169360C900BB236F /* libTrailsKit.a */; };
 		2713CA70169360C900BB236F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2713CA6E169360C900BB236F /* InfoPlist.strings */; };
+		2713CA941693823700BB236F /* NSArray+MapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CA8F1693823700BB236F /* NSArray+MapKitGeometry.m */; };
+		2713CA951693823700BB236F /* TKMapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CA911693823700BB236F /* TKMapKitGeometry.m */; };
+		2713CA961693823700BB236F /* TKPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CA931693823700BB236F /* TKPinAnnotation.m */; };
+		2713CA9A1693841200BB236F /* TKMapKitGeometrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CA991693841200BB236F /* TKMapKitGeometrySpec.m */; };
+		2713CA9C1693844900BB236F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA9B1693844900BB236F /* CoreLocation.framework */; };
+		2713CA9E1693845000BB236F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA9D1693845000BB236F /* MapKit.framework */; };
 		FE8BC6B1247B4EDB93B8F468 /* libPods-TrailsKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */; };
 /* End PBXBuildFile section */
 
@@ -47,12 +52,21 @@
 		2713CA54169360C900BB236F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2713CA58169360C900BB236F /* TrailsKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrailsKit-Prefix.pch"; sourceTree = "<group>"; };
 		2713CA59169360C900BB236F /* TrailsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailsKit.h; sourceTree = "<group>"; };
-		2713CA5B169360C900BB236F /* TrailsKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailsKit.m; sourceTree = "<group>"; };
 		2713CA62169360C900BB236F /* TrailsKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrailsKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2713CA63169360C900BB236F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		2713CA65169360C900BB236F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2713CA6D169360C900BB236F /* TrailsKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrailsKitTests-Info.plist"; sourceTree = "<group>"; };
 		2713CA6F169360C900BB236F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2713CA8E1693823700BB236F /* NSArray+MapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MapKitGeometry.h"; sourceTree = "<group>"; };
+		2713CA8F1693823700BB236F /* NSArray+MapKitGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MapKitGeometry.m"; sourceTree = "<group>"; };
+		2713CA901693823700BB236F /* TKMapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMapKitGeometry.h; sourceTree = "<group>"; };
+		2713CA911693823700BB236F /* TKMapKitGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapKitGeometry.m; sourceTree = "<group>"; };
+		2713CA921693823700BB236F /* TKPinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPinAnnotation.h; sourceTree = "<group>"; };
+		2713CA931693823700BB236F /* TKPinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPinAnnotation.m; sourceTree = "<group>"; };
+		2713CA971693832900BB236F /* TrailsKitUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailsKitUI.h; sourceTree = "<group>"; };
+		2713CA991693841200BB236F /* TKMapKitGeometrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapKitGeometrySpec.m; sourceTree = "<group>"; };
+		2713CA9B1693844900BB236F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2713CA9D1693845000BB236F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrailsKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -69,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2713CA9E1693845000BB236F /* MapKit.framework in Frameworks */,
+				2713CA9C1693844900BB236F /* CoreLocation.framework in Frameworks */,
 				2713CA64169360C900BB236F /* SenTestingKit.framework in Frameworks */,
 				2713CA66169360C900BB236F /* UIKit.framework in Frameworks */,
 				2713CA67169360C900BB236F /* Foundation.framework in Frameworks */,
@@ -103,6 +119,8 @@
 		2713CA53169360C900BB236F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2713CA9D1693845000BB236F /* MapKit.framework */,
+				2713CA9B1693844900BB236F /* CoreLocation.framework */,
 				2713CA54169360C900BB236F /* Foundation.framework */,
 				2713CA63169360C900BB236F /* SenTestingKit.framework */,
 				2713CA65169360C900BB236F /* UIKit.framework */,
@@ -114,8 +132,9 @@
 		2713CA56169360C900BB236F /* TrailsKit */ = {
 			isa = PBXGroup;
 			children = (
+				2713CA8D169381EB00BB236F /* UI */,
 				2713CA59169360C900BB236F /* TrailsKit.h */,
-				2713CA5B169360C900BB236F /* TrailsKit.m */,
+				2713CA971693832900BB236F /* TrailsKitUI.h */,
 				2713CA57169360C900BB236F /* Supporting Files */,
 			);
 			path = TrailsKit;
@@ -132,6 +151,7 @@
 		2713CA6B169360C900BB236F /* TrailsKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				2713CA98169383F100BB236F /* UI */,
 				2713CA6C169360C900BB236F /* Supporting Files */,
 			);
 			path = TrailsKitTests;
@@ -144,6 +164,27 @@
 				2713CA6E169360C900BB236F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2713CA8D169381EB00BB236F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2713CA8E1693823700BB236F /* NSArray+MapKitGeometry.h */,
+				2713CA8F1693823700BB236F /* NSArray+MapKitGeometry.m */,
+				2713CA901693823700BB236F /* TKMapKitGeometry.h */,
+				2713CA911693823700BB236F /* TKMapKitGeometry.m */,
+				2713CA921693823700BB236F /* TKPinAnnotation.h */,
+				2713CA931693823700BB236F /* TKPinAnnotation.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2713CA98169383F100BB236F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2713CA991693841200BB236F /* TKMapKitGeometrySpec.m */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2713CA5C169360C900BB236F /* TrailsKit.m in Sources */,
+				2713CA941693823700BB236F /* NSArray+MapKitGeometry.m in Sources */,
+				2713CA951693823700BB236F /* TKMapKitGeometry.m in Sources */,
+				2713CA961693823700BB236F /* TKPinAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2713CA9A1693841200BB236F /* TKMapKitGeometrySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
