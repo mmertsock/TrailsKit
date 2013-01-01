@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2713CA55169360C900BB236F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA54169360C900BB236F /* Foundation.framework */; };
+		2713CA5A169360C900BB236F /* TrailsKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2713CA59169360C900BB236F /* TrailsKit.h */; };
+		2713CA5C169360C900BB236F /* TrailsKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CA5B169360C900BB236F /* TrailsKit.m */; };
+		2713CA64169360C900BB236F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA63169360C900BB236F /* SenTestingKit.framework */; };
+		2713CA66169360C900BB236F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA65169360C900BB236F /* UIKit.framework */; };
+		2713CA67169360C900BB236F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA54169360C900BB236F /* Foundation.framework */; };
+		2713CA6A169360C900BB236F /* libTrailsKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA51169360C900BB236F /* libTrailsKit.a */; };
+		2713CA70169360C900BB236F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2713CA6E169360C900BB236F /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2713CA68169360C900BB236F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2713CA48169360C900BB236F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2713CA50169360C900BB236F;
+			remoteInfo = TrailsKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2713CA4F169360C900BB236F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				2713CA5A169360C900BB236F /* TrailsKit.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2713CA51169360C900BB236F /* libTrailsKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTrailsKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2713CA54169360C900BB236F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2713CA58169360C900BB236F /* TrailsKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrailsKit-Prefix.pch"; sourceTree = "<group>"; };
+		2713CA59169360C900BB236F /* TrailsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailsKit.h; sourceTree = "<group>"; };
+		2713CA5B169360C900BB236F /* TrailsKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailsKit.m; sourceTree = "<group>"; };
+		2713CA62169360C900BB236F /* TrailsKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrailsKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2713CA63169360C900BB236F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2713CA65169360C900BB236F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2713CA6D169360C900BB236F /* TrailsKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrailsKitTests-Info.plist"; sourceTree = "<group>"; };
+		2713CA6F169360C900BB236F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2713CA4E169360C900BB236F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2713CA55169360C900BB236F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2713CA5E169360C900BB236F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2713CA64169360C900BB236F /* SenTestingKit.framework in Frameworks */,
+				2713CA66169360C900BB236F /* UIKit.framework in Frameworks */,
+				2713CA67169360C900BB236F /* Foundation.framework in Frameworks */,
+				2713CA6A169360C900BB236F /* libTrailsKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2713CA46169360C900BB236F = {
+			isa = PBXGroup;
+			children = (
+				2713CA56169360C900BB236F /* TrailsKit */,
+				2713CA6B169360C900BB236F /* TrailsKitTests */,
+				2713CA53169360C900BB236F /* Frameworks */,
+				2713CA52169360C900BB236F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2713CA52169360C900BB236F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2713CA51169360C900BB236F /* libTrailsKit.a */,
+				2713CA62169360C900BB236F /* TrailsKitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2713CA53169360C900BB236F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2713CA54169360C900BB236F /* Foundation.framework */,
+				2713CA63169360C900BB236F /* SenTestingKit.framework */,
+				2713CA65169360C900BB236F /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2713CA56169360C900BB236F /* TrailsKit */ = {
+			isa = PBXGroup;
+			children = (
+				2713CA59169360C900BB236F /* TrailsKit.h */,
+				2713CA5B169360C900BB236F /* TrailsKit.m */,
+				2713CA57169360C900BB236F /* Supporting Files */,
+			);
+			path = TrailsKit;
+			sourceTree = "<group>";
+		};
+		2713CA57169360C900BB236F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2713CA58169360C900BB236F /* TrailsKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2713CA6B169360C900BB236F /* TrailsKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				2713CA6C169360C900BB236F /* Supporting Files */,
+			);
+			path = TrailsKitTests;
+			sourceTree = "<group>";
+		};
+		2713CA6C169360C900BB236F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2713CA6D169360C900BB236F /* TrailsKitTests-Info.plist */,
+				2713CA6E169360C900BB236F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2713CA50169360C900BB236F /* TrailsKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2713CA76169360C900BB236F /* Build configuration list for PBXNativeTarget "TrailsKit" */;
+			buildPhases = (
+				2713CA4D169360C900BB236F /* Sources */,
+				2713CA4E169360C900BB236F /* Frameworks */,
+				2713CA4F169360C900BB236F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrailsKit;
+			productName = TrailsKit;
+			productReference = 2713CA51169360C900BB236F /* libTrailsKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		2713CA61169360C900BB236F /* TrailsKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2713CA79169360C900BB236F /* Build configuration list for PBXNativeTarget "TrailsKitTests" */;
+			buildPhases = (
+				2713CA5D169360C900BB236F /* Sources */,
+				2713CA5E169360C900BB236F /* Frameworks */,
+				2713CA5F169360C900BB236F /* Resources */,
+				2713CA60169360C900BB236F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2713CA69169360C900BB236F /* PBXTargetDependency */,
+			);
+			name = TrailsKitTests;
+			productName = TrailsKitTests;
+			productReference = 2713CA62169360C900BB236F /* TrailsKitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2713CA48169360C900BB236F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Esker Apps";
+			};
+			buildConfigurationList = 2713CA4B169360C900BB236F /* Build configuration list for PBXProject "TrailsKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2713CA46169360C900BB236F;
+			productRefGroup = 2713CA52169360C900BB236F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2713CA50169360C900BB236F /* TrailsKit */,
+				2713CA61169360C900BB236F /* TrailsKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2713CA5F169360C900BB236F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2713CA70169360C900BB236F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2713CA60169360C900BB236F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2713CA4D169360C900BB236F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2713CA5C169360C900BB236F /* TrailsKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2713CA5D169360C900BB236F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2713CA69169360C900BB236F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2713CA50169360C900BB236F /* TrailsKit */;
+			targetProxy = 2713CA68169360C900BB236F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2713CA6E169360C900BB236F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2713CA6F169360C900BB236F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2713CA74169360C900BB236F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2713CA75169360C900BB236F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2713CA77169360C900BB236F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/TrailsKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TrailsKit/TrailsKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2713CA78169360C900BB236F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/TrailsKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TrailsKit/TrailsKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2713CA7A169360C900BB236F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TrailsKit/TrailsKit-Prefix.pch";
+				INFOPLIST_FILE = "TrailsKitTests/TrailsKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2713CA7B169360C900BB236F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TrailsKit/TrailsKit-Prefix.pch";
+				INFOPLIST_FILE = "TrailsKitTests/TrailsKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2713CA4B169360C900BB236F /* Build configuration list for PBXProject "TrailsKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2713CA74169360C900BB236F /* Debug */,
+				2713CA75169360C900BB236F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2713CA76169360C900BB236F /* Build configuration list for PBXNativeTarget "TrailsKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2713CA77169360C900BB236F /* Debug */,
+				2713CA78169360C900BB236F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2713CA79169360C900BB236F /* Build configuration list for PBXNativeTarget "TrailsKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2713CA7A169360C900BB236F /* Debug */,
+				2713CA7B169360C900BB236F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2713CA48169360C900BB236F /* Project object */;
+}
