@@ -4,11 +4,11 @@ Pod::Spec.new do |s|
   s.summary = 'Tools for representing and displaying geographical data for parks and trails.'
   
   s.requires_arc = true
-  s.ios.deployment_target = '6.0'
+  s.ios.deployment_target = '5.0'
   
-  s.source_files = 'TrailsKit/**/*.{h,m}', 'TrailsKit/*.h'
+  s.source_files = 'TrailsKit/UI', 'TrailsKit/*.h'
   #'Classes', 'External/**/*.{h,m}'
 
-  s.frameworks = 'MapKit', 'CoreLocation'
+  s.ios.frameworks = 'MapKit', 'CoreLocation'
   
 end
