@@ -15,6 +15,7 @@
 		2713CA67169360C900BB236F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA54169360C900BB236F /* Foundation.framework */; };
 		2713CA6A169360C900BB236F /* libTrailsKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA51169360C900BB236F /* libTrailsKit.a */; };
 		2713CA70169360C900BB236F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2713CA6E169360C900BB236F /* InfoPlist.strings */; };
+		FE8BC6B1247B4EDB93B8F468 /* libPods-TrailsKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C51F82EAE2E45CF8F89B6F7 /* Pods-TrailsKitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailsKitTests.xcconfig"; path = "Pods/Pods-TrailsKitTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		2713CA51169360C900BB236F /* libTrailsKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTrailsKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2713CA54169360C900BB236F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2713CA58169360C900BB236F /* TrailsKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrailsKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		2713CA65169360C900BB236F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2713CA6D169360C900BB236F /* TrailsKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrailsKitTests-Info.plist"; sourceTree = "<group>"; };
 		2713CA6F169360C900BB236F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrailsKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 				2713CA66169360C900BB236F /* UIKit.framework in Frameworks */,
 				2713CA67169360C900BB236F /* Foundation.framework in Frameworks */,
 				2713CA6A169360C900BB236F /* libTrailsKit.a in Frameworks */,
+				FE8BC6B1247B4EDB93B8F468 /* libPods-TrailsKitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 				2713CA6B169360C900BB236F /* TrailsKitTests */,
 				2713CA53169360C900BB236F /* Frameworks */,
 				2713CA52169360C900BB236F /* Products */,
+				1C51F82EAE2E45CF8F89B6F7 /* Pods-TrailsKitTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +106,7 @@
 				2713CA54169360C900BB236F /* Foundation.framework */,
 				2713CA63169360C900BB236F /* SenTestingKit.framework */,
 				2713CA65169360C900BB236F /* UIKit.framework */,
+				A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +174,7 @@
 				2713CA5E169360C900BB236F /* Frameworks */,
 				2713CA5F169360C900BB236F /* Resources */,
 				2713CA60169360C900BB236F /* ShellScript */,
+				8E865E3B6CD8433C965C5CF1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +238,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		8E865E3B6CD8433C965C5CF1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-TrailsKitTests-resources.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -281,6 +302,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SDKROOT)/Developer/Library/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -308,6 +330,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SDKROOT)/Developer/Library/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -344,6 +367,7 @@
 		};
 		2713CA7A169360C900BB236F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C51F82EAE2E45CF8F89B6F7 /* Pods-TrailsKitTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -359,6 +383,7 @@
 		};
 		2713CA7B169360C900BB236F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C51F82EAE2E45CF8F89B6F7 /* Pods-TrailsKitTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
