@@ -17,13 +17,13 @@
     }
     return self;
 }
-+ (instancetype)majorFeatureWithCoordinate:(CLLocationCoordinate2D)coords title:(NSString *)aTitle
++ (instancetype)pinAnnotationWithCoordinate:(CLLocationCoordinate2D)coords title:(NSString *)aTitle
 {
     return [[TKPinAnnotation alloc] initWithCoords:coords title:aTitle];
 }
 + (instancetype)pinAnnotationWithLatitude:(CLLocationDegrees)lat longitude:(CLLocationDegrees)lon title:(NSString *)aTitle
 {
-    return [self majorFeatureWithCoordinate:CLLocationCoordinate2DMake(lat, lon) title:aTitle];
+    return [self pinAnnotationWithCoordinate:CLLocationCoordinate2DMake(lat, lon) title:aTitle];
 }
 - (NSString *)description
 {

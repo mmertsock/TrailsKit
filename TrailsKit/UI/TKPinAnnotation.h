@@ -15,6 +15,6 @@
 @property (nonatomic, copy) NSString* title;
 
 + (instancetype)pinAnnotationWithLatitude:(CLLocationDegrees)lat longitude:(CLLocationDegrees)lon title:(NSString*)aTitle;
-+ (instancetype)majorFeatureWithCoordinate:(CLLocationCoordinate2D)coords title:(NSString*)aTitle;
++ (instancetype)pinAnnotationWithCoordinate:(CLLocationCoordinate2D)coords title:(NSString*)aTitle;
 
 @end
