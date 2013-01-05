@@ -1,5 +1,6 @@
 #import <Kiwi/Kiwi.h>
 #import "TrailsKit.h"
+#import "TKKiwiExtensions.h"
 
 SPEC_BEGIN(TKMapKitGeometrySpec)
 
@@ -24,8 +25,7 @@ describe(@"TKMapKitGeometry", ^{
             NSArray* coords = @[[NSValue valueWithMKCoordinate:coord1], [NSValue valueWithMKCoordinate:coord2], [NSValue valueWithMKCoordinate:coord3]];
             MKCoordinateRegion region = MKCoordinateRegionFromCoordinates(coords);
             // Based on latitude range -10 to 30, and longitude range -6 to 45
-            [[@(region.center.latitude) should] equal:10 withDelta:0.01];
-            [[@(region.center.longitude) should] equal:19.5 withDelta:0.01];
+            TKExpectLatitudeLongitude(region.center, 10, 19.5);
             [[@(region.span.latitudeDelta) should] equal:40 withDelta:0.01];
             [[@(region.span.longitudeDelta) should] equal:51 withDelta:0.01];
         });

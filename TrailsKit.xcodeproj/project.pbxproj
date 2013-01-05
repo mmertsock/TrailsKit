@@ -67,6 +67,7 @@
 		2713CA991693841200BB236F /* TKMapKitGeometrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapKitGeometrySpec.m; sourceTree = "<group>"; };
 		2713CA9B1693844900BB236F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2713CA9D1693845000BB236F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2713CB7B1697F48300BB236F /* TKKiwiExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKKiwiExtensions.h; sourceTree = "<group>"; };
 		A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrailsKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +154,7 @@
 			children = (
 				2713CA98169383F100BB236F /* UI */,
 				2713CA6C169360C900BB236F /* Supporting Files */,
+				2713CB7B1697F48300BB236F /* TKKiwiExtensions.h */,
 			);
 			path = TrailsKitTests;
 			sourceTree = "<group>";
