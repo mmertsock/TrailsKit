@@ -7,17 +7,28 @@
 //
 
 #import "NSArray+MapKitGeometry.h"
-#import "TKPinAnnotation.h"
+#import <MapKit/MapKit.h>
+#import <NSArray+Functional/NSArray+Functional.h>
 
 @implementation NSArray (MapKitGeometry)
 
 - (NSArray *)coordinatesOfAnnotations
 {
-     NSMutableArray* coords = [[NSMutableArray alloc] initWithCapacity:self.count];
-     for (TKPinAnnotation* annotation in self) {
-         [coords addObject:[NSValue valueWithMKCoordinate:annotation.coordinate]];
-     }
-    return coords;
+    return [self mapUsingBlock:^(id<MKAnnotation> annotation){
+        return [NSValue valueWithMKCoordinate:annotation.coordinate];
+    }];
+}
+
+- (CLLocationCoordinate2D*)cArrayOfLocationCoordinates
+{
+    if (self.count == 0) return NULL;
+    CLLocationCoordinate2D* clcoords = (CLLocationCoordinate2D*)
+    malloc(sizeof(CLLocationCoordinate2D)*self.count);
+    int ci = 0;
+    for (CLLocation* coord in self) {
+        clcoords[ci++] = coord.coordinate;
+    }
+    return clcoords;
 }
 
 @end

@@ -20,6 +20,10 @@
 		2713CA9A1693841200BB236F /* TKMapKitGeometrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CA991693841200BB236F /* TKMapKitGeometrySpec.m */; };
 		2713CA9C1693844900BB236F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA9B1693844900BB236F /* CoreLocation.framework */; };
 		2713CA9E1693845000BB236F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA9D1693845000BB236F /* MapKit.framework */; };
+		2713CB831698051F00BB236F /* TKPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CB821698051E00BB236F /* TKPolyline.m */; };
+		2713CB851698094200BB236F /* NSArrayMapKitGeometrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CB841698094200BB236F /* NSArrayMapKitGeometrySpec.m */; };
+		2713CB9A1698156C00BB236F /* TKPolylineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CB991698156C00BB236F /* TKPolylineSpec.m */; };
+		7D11DEF120104A489DE37F11 /* libPods-TrailsKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C374D34094493DA171442C /* libPods-TrailsKit.a */; };
 		FE8BC6B1247B4EDB93B8F468 /* libPods-TrailsKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */; };
 /* End PBXBuildFile section */
 
@@ -68,7 +72,13 @@
 		2713CA9B1693844900BB236F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2713CA9D1693845000BB236F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2713CB7B1697F48300BB236F /* TKKiwiExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKKiwiExtensions.h; sourceTree = "<group>"; };
+		2713CB811698051E00BB236F /* TKPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPolyline.h; sourceTree = "<group>"; };
+		2713CB821698051E00BB236F /* TKPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPolyline.m; sourceTree = "<group>"; };
+		2713CB841698094200BB236F /* NSArrayMapKitGeometrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayMapKitGeometrySpec.m; sourceTree = "<group>"; };
+		2713CB991698156C00BB236F /* TKPolylineSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPolylineSpec.m; sourceTree = "<group>"; };
+		A3AC9CBB05F9448CA82BB67D /* Pods-TrailsKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailsKit.xcconfig"; path = "Pods/Pods-TrailsKit.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrailsKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2C374D34094493DA171442C /* libPods-TrailsKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrailsKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2713CA55169360C900BB236F /* Foundation.framework in Frameworks */,
+				7D11DEF120104A489DE37F11 /* libPods-TrailsKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +116,7 @@
 				2713CA53169360C900BB236F /* Frameworks */,
 				2713CA52169360C900BB236F /* Products */,
 				1C51F82EAE2E45CF8F89B6F7 /* Pods-TrailsKitTests.xcconfig */,
+				A3AC9CBB05F9448CA82BB67D /* Pods-TrailsKit.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +138,7 @@
 				2713CA63169360C900BB236F /* SenTestingKit.framework */,
 				2713CA65169360C900BB236F /* UIKit.framework */,
 				A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */,
+				B2C374D34094493DA171442C /* libPods-TrailsKit.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,6 +190,8 @@
 				2713CA911693823700BB236F /* TKMapKitGeometry.m */,
 				2713CA921693823700BB236F /* TKPinAnnotation.h */,
 				2713CA931693823700BB236F /* TKPinAnnotation.m */,
+				2713CB811698051E00BB236F /* TKPolyline.h */,
+				2713CB821698051E00BB236F /* TKPolyline.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -185,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				2713CA991693841200BB236F /* TKMapKitGeometrySpec.m */,
+				2713CB841698094200BB236F /* NSArrayMapKitGeometrySpec.m */,
+				2713CB991698156C00BB236F /* TKPolylineSpec.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -199,6 +216,7 @@
 				2713CA4D169360C900BB236F /* Sources */,
 				2713CA4E169360C900BB236F /* Frameworks */,
 				2713CA4F169360C900BB236F /* CopyFiles */,
+				5EDA4F8134994C36974BE57C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,6 +299,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		5EDA4F8134994C36974BE57C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-TrailsKit-resources.sh\"\n";
+		};
 		8E865E3B6CD8433C965C5CF1 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,6 +337,7 @@
 				2713CA941693823700BB236F /* NSArray+MapKitGeometry.m in Sources */,
 				2713CA951693823700BB236F /* TKMapKitGeometry.m in Sources */,
 				2713CA961693823700BB236F /* TKPinAnnotation.m in Sources */,
+				2713CB831698051F00BB236F /* TKPolyline.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +346,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2713CA9A1693841200BB236F /* TKMapKitGeometrySpec.m in Sources */,
+				2713CB851698094200BB236F /* NSArrayMapKitGeometrySpec.m in Sources */,
+				2713CB9A1698156C00BB236F /* TKPolylineSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,11 +424,11 @@
 		};
 		2713CA77169360C900BB236F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3AC9CBB05F9448CA82BB67D /* Pods-TrailsKit.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/TrailsKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrailsKit/TrailsKit-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -401,11 +436,11 @@
 		};
 		2713CA78169360C900BB236F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3AC9CBB05F9448CA82BB67D /* Pods-TrailsKit.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/TrailsKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TrailsKit/TrailsKit-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

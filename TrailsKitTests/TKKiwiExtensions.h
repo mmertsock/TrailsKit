@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Esker Apps. All rights reserved.
 //
 
-#import <Kiwi/Kiwi.h>
-#import <CoreLocation/CoreLocation.h>
-
 #ifndef TrailsKit_TKKiwiExtensions_h
 #define TrailsKit_TKKiwiExtensions_h
+
+#import <Kiwi/Kiwi.h>
+#import <CoreLocation/CoreLocation.h>
 
 #define TKExpectCoordinate(subject, expectation) \
 [[@(subject.latitude) should] equal:expectation.latitude withDelta:0.01]; \

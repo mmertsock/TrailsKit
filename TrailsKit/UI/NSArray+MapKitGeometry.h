@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface NSArray (MapKitGeometry)
 
@@ -15,5 +16,13 @@
  * representing CLLocationCoordinate2Ds.
  */
 - (NSArray*)coordinatesOfAnnotations;
+
+/**
+ * Given an array of CLLocations, returns a C array representation
+ * of the coordinates in this NSArray. Returns NULL if this array is
+ * empty/nil. Otherwise returns a malloc'ed C array that must be free'd
+ * after use.
+ */
+- (CLLocationCoordinate2D*)cArrayOfLocationCoordinates;
 
 @end
