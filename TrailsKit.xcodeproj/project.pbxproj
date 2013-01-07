@@ -14,15 +14,15 @@
 		2713CA67169360C900BB236F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA54169360C900BB236F /* Foundation.framework */; };
 		2713CA6A169360C900BB236F /* libTrailsKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA51169360C900BB236F /* libTrailsKit.a */; };
 		2713CA70169360C900BB236F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2713CA6E169360C900BB236F /* InfoPlist.strings */; };
-		2713CA941693823700BB236F /* NSArray+MapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CA8F1693823700BB236F /* NSArray+MapKitGeometry.m */; };
-		2713CA951693823700BB236F /* TKMapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CA911693823700BB236F /* TKMapKitGeometry.m */; };
-		2713CA961693823700BB236F /* TKPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CA931693823700BB236F /* TKPinAnnotation.m */; };
-		2713CA9A1693841200BB236F /* TKMapKitGeometrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CA991693841200BB236F /* TKMapKitGeometrySpec.m */; };
 		2713CA9C1693844900BB236F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA9B1693844900BB236F /* CoreLocation.framework */; };
 		2713CA9E1693845000BB236F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA9D1693845000BB236F /* MapKit.framework */; };
-		2713CB831698051F00BB236F /* TKPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CB821698051E00BB236F /* TKPolyline.m */; };
-		2713CB851698094200BB236F /* NSArrayMapKitGeometrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CB841698094200BB236F /* NSArrayMapKitGeometrySpec.m */; };
-		2713CB9A1698156C00BB236F /* TKPolylineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2713CB991698156C00BB236F /* TKPolylineSpec.m */; };
+		27F46A30169B433C00255169 /* NSArray+MapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */; };
+		27F46A31169B433C00255169 /* TKMapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A2B169B433C00255169 /* TKMapKitGeometry.m */; };
+		27F46A32169B433C00255169 /* TKPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A2D169B433C00255169 /* TKPinAnnotation.m */; };
+		27F46A33169B433C00255169 /* TKPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A2F169B433C00255169 /* TKPolyline.m */; };
+		27F46A39169B439100255169 /* NSArrayMapKitGeometrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A36169B439100255169 /* NSArrayMapKitGeometrySpec.m */; };
+		27F46A3A169B439100255169 /* TKMapKitGeometrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A37169B439100255169 /* TKMapKitGeometrySpec.m */; };
+		27F46A3B169B439100255169 /* TKPolylineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A38169B439100255169 /* TKPolylineSpec.m */; };
 		7D11DEF120104A489DE37F11 /* libPods-TrailsKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C374D34094493DA171442C /* libPods-TrailsKit.a */; };
 		FE8BC6B1247B4EDB93B8F468 /* libPods-TrailsKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */; };
 /* End PBXBuildFile section */
@@ -61,21 +61,21 @@
 		2713CA65169360C900BB236F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2713CA6D169360C900BB236F /* TrailsKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TrailsKitTests-Info.plist"; sourceTree = "<group>"; };
 		2713CA6F169360C900BB236F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2713CA8E1693823700BB236F /* NSArray+MapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MapKitGeometry.h"; sourceTree = "<group>"; };
-		2713CA8F1693823700BB236F /* NSArray+MapKitGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MapKitGeometry.m"; sourceTree = "<group>"; };
-		2713CA901693823700BB236F /* TKMapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMapKitGeometry.h; sourceTree = "<group>"; };
-		2713CA911693823700BB236F /* TKMapKitGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapKitGeometry.m; sourceTree = "<group>"; };
-		2713CA921693823700BB236F /* TKPinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPinAnnotation.h; sourceTree = "<group>"; };
-		2713CA931693823700BB236F /* TKPinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPinAnnotation.m; sourceTree = "<group>"; };
 		2713CA971693832900BB236F /* TrailsKitUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailsKitUI.h; sourceTree = "<group>"; };
-		2713CA991693841200BB236F /* TKMapKitGeometrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapKitGeometrySpec.m; sourceTree = "<group>"; };
 		2713CA9B1693844900BB236F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2713CA9D1693845000BB236F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2713CB7B1697F48300BB236F /* TKKiwiExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKKiwiExtensions.h; sourceTree = "<group>"; };
-		2713CB811698051E00BB236F /* TKPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPolyline.h; sourceTree = "<group>"; };
-		2713CB821698051E00BB236F /* TKPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPolyline.m; sourceTree = "<group>"; };
-		2713CB841698094200BB236F /* NSArrayMapKitGeometrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayMapKitGeometrySpec.m; sourceTree = "<group>"; };
-		2713CB991698156C00BB236F /* TKPolylineSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPolylineSpec.m; sourceTree = "<group>"; };
+		27F46A28169B433C00255169 /* NSArray+MapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MapKitGeometry.h"; sourceTree = "<group>"; };
+		27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MapKitGeometry.m"; sourceTree = "<group>"; };
+		27F46A2A169B433C00255169 /* TKMapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMapKitGeometry.h; sourceTree = "<group>"; };
+		27F46A2B169B433C00255169 /* TKMapKitGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapKitGeometry.m; sourceTree = "<group>"; };
+		27F46A2C169B433C00255169 /* TKPinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPinAnnotation.h; sourceTree = "<group>"; };
+		27F46A2D169B433C00255169 /* TKPinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPinAnnotation.m; sourceTree = "<group>"; };
+		27F46A2E169B433C00255169 /* TKPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPolyline.h; sourceTree = "<group>"; };
+		27F46A2F169B433C00255169 /* TKPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPolyline.m; sourceTree = "<group>"; };
+		27F46A36169B439100255169 /* NSArrayMapKitGeometrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayMapKitGeometrySpec.m; sourceTree = "<group>"; };
+		27F46A37169B439100255169 /* TKMapKitGeometrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapKitGeometrySpec.m; sourceTree = "<group>"; };
+		27F46A38169B439100255169 /* TKPolylineSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPolylineSpec.m; sourceTree = "<group>"; };
 		A3AC9CBB05F9448CA82BB67D /* Pods-TrailsKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailsKit.xcconfig"; path = "Pods/Pods-TrailsKit.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrailsKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C374D34094493DA171442C /* libPods-TrailsKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrailsKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +146,7 @@
 		2713CA56169360C900BB236F /* TrailsKit */ = {
 			isa = PBXGroup;
 			children = (
+				27F46A26169B428800255169 /* Geometry */,
 				2713CA8D169381EB00BB236F /* UI */,
 				2713CA59169360C900BB236F /* TrailsKit.h */,
 				2713CA971693832900BB236F /* TrailsKitUI.h */,
@@ -165,6 +166,7 @@
 		2713CA6B169360C900BB236F /* TrailsKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				27F46A35169B439100255169 /* Geometry */,
 				2713CA98169383F100BB236F /* UI */,
 				2713CA6C169360C900BB236F /* Supporting Files */,
 				2713CB7B1697F48300BB236F /* TKKiwiExtensions.h */,
@@ -184,14 +186,6 @@
 		2713CA8D169381EB00BB236F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2713CA8E1693823700BB236F /* NSArray+MapKitGeometry.h */,
-				2713CA8F1693823700BB236F /* NSArray+MapKitGeometry.m */,
-				2713CA901693823700BB236F /* TKMapKitGeometry.h */,
-				2713CA911693823700BB236F /* TKMapKitGeometry.m */,
-				2713CA921693823700BB236F /* TKPinAnnotation.h */,
-				2713CA931693823700BB236F /* TKPinAnnotation.m */,
-				2713CB811698051E00BB236F /* TKPolyline.h */,
-				2713CB821698051E00BB236F /* TKPolyline.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -199,11 +193,33 @@
 		2713CA98169383F100BB236F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2713CA991693841200BB236F /* TKMapKitGeometrySpec.m */,
-				2713CB841698094200BB236F /* NSArrayMapKitGeometrySpec.m */,
-				2713CB991698156C00BB236F /* TKPolylineSpec.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		27F46A26169B428800255169 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				27F46A28169B433C00255169 /* NSArray+MapKitGeometry.h */,
+				27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */,
+				27F46A2A169B433C00255169 /* TKMapKitGeometry.h */,
+				27F46A2B169B433C00255169 /* TKMapKitGeometry.m */,
+				27F46A2C169B433C00255169 /* TKPinAnnotation.h */,
+				27F46A2D169B433C00255169 /* TKPinAnnotation.m */,
+				27F46A2E169B433C00255169 /* TKPolyline.h */,
+				27F46A2F169B433C00255169 /* TKPolyline.m */,
+			);
+			path = Geometry;
+			sourceTree = "<group>";
+		};
+		27F46A35169B439100255169 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				27F46A36169B439100255169 /* NSArrayMapKitGeometrySpec.m */,
+				27F46A37169B439100255169 /* TKMapKitGeometrySpec.m */,
+				27F46A38169B439100255169 /* TKPolylineSpec.m */,
+			);
+			path = Geometry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,10 +350,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2713CA941693823700BB236F /* NSArray+MapKitGeometry.m in Sources */,
-				2713CA951693823700BB236F /* TKMapKitGeometry.m in Sources */,
-				2713CA961693823700BB236F /* TKPinAnnotation.m in Sources */,
-				2713CB831698051F00BB236F /* TKPolyline.m in Sources */,
+				27F46A30169B433C00255169 /* NSArray+MapKitGeometry.m in Sources */,
+				27F46A31169B433C00255169 /* TKMapKitGeometry.m in Sources */,
+				27F46A32169B433C00255169 /* TKPinAnnotation.m in Sources */,
+				27F46A33169B433C00255169 /* TKPolyline.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,9 +361,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2713CA9A1693841200BB236F /* TKMapKitGeometrySpec.m in Sources */,
-				2713CB851698094200BB236F /* NSArrayMapKitGeometrySpec.m in Sources */,
-				2713CB9A1698156C00BB236F /* TKPolylineSpec.m in Sources */,
+				27F46A39169B439100255169 /* NSArrayMapKitGeometrySpec.m in Sources */,
+				27F46A3A169B439100255169 /* TKMapKitGeometrySpec.m in Sources */,
+				27F46A3B169B439100255169 /* TKPolylineSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
