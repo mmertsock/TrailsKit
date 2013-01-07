@@ -19,10 +19,10 @@
 		27F46A30169B433C00255169 /* NSArray+MapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */; };
 		27F46A31169B433C00255169 /* TKMapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A2B169B433C00255169 /* TKMapKitGeometry.m */; };
 		27F46A32169B433C00255169 /* TKPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A2D169B433C00255169 /* TKPinAnnotation.m */; };
-		27F46A33169B433C00255169 /* TKPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A2F169B433C00255169 /* TKPolyline.m */; };
 		27F46A39169B439100255169 /* NSArrayMapKitGeometrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A36169B439100255169 /* NSArrayMapKitGeometrySpec.m */; };
 		27F46A3A169B439100255169 /* TKMapKitGeometrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A37169B439100255169 /* TKMapKitGeometrySpec.m */; };
-		27F46A3B169B439100255169 /* TKPolylineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A38169B439100255169 /* TKPolylineSpec.m */; };
+		27F46A40169B8BC100255169 /* TKShapeStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A3D169B8BC100255169 /* TKShapeStyle.m */; };
+		27F46A41169B8BC100255169 /* TKStyledPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A3F169B8BC100255169 /* TKStyledPolyline.m */; };
 		7D11DEF120104A489DE37F11 /* libPods-TrailsKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C374D34094493DA171442C /* libPods-TrailsKit.a */; };
 		FE8BC6B1247B4EDB93B8F468 /* libPods-TrailsKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */; };
 /* End PBXBuildFile section */
@@ -71,11 +71,12 @@
 		27F46A2B169B433C00255169 /* TKMapKitGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapKitGeometry.m; sourceTree = "<group>"; };
 		27F46A2C169B433C00255169 /* TKPinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPinAnnotation.h; sourceTree = "<group>"; };
 		27F46A2D169B433C00255169 /* TKPinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPinAnnotation.m; sourceTree = "<group>"; };
-		27F46A2E169B433C00255169 /* TKPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPolyline.h; sourceTree = "<group>"; };
-		27F46A2F169B433C00255169 /* TKPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPolyline.m; sourceTree = "<group>"; };
 		27F46A36169B439100255169 /* NSArrayMapKitGeometrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayMapKitGeometrySpec.m; sourceTree = "<group>"; };
 		27F46A37169B439100255169 /* TKMapKitGeometrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapKitGeometrySpec.m; sourceTree = "<group>"; };
-		27F46A38169B439100255169 /* TKPolylineSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPolylineSpec.m; sourceTree = "<group>"; };
+		27F46A3C169B8BC100255169 /* TKShapeStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKShapeStyle.h; sourceTree = "<group>"; };
+		27F46A3D169B8BC100255169 /* TKShapeStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKShapeStyle.m; sourceTree = "<group>"; };
+		27F46A3E169B8BC100255169 /* TKStyledPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStyledPolyline.h; sourceTree = "<group>"; };
+		27F46A3F169B8BC100255169 /* TKStyledPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStyledPolyline.m; sourceTree = "<group>"; };
 		A3AC9CBB05F9448CA82BB67D /* Pods-TrailsKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailsKit.xcconfig"; path = "Pods/Pods-TrailsKit.xcconfig"; sourceTree = SOURCE_ROOT; };
 		A42848C9E4C346AB926D673C /* libPods-TrailsKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrailsKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C374D34094493DA171442C /* libPods-TrailsKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TrailsKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,14 +201,16 @@
 		27F46A26169B428800255169 /* Geometry */ = {
 			isa = PBXGroup;
 			children = (
+				27F46A3C169B8BC100255169 /* TKShapeStyle.h */,
+				27F46A3D169B8BC100255169 /* TKShapeStyle.m */,
+				27F46A3E169B8BC100255169 /* TKStyledPolyline.h */,
+				27F46A3F169B8BC100255169 /* TKStyledPolyline.m */,
 				27F46A28169B433C00255169 /* NSArray+MapKitGeometry.h */,
 				27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */,
 				27F46A2A169B433C00255169 /* TKMapKitGeometry.h */,
 				27F46A2B169B433C00255169 /* TKMapKitGeometry.m */,
 				27F46A2C169B433C00255169 /* TKPinAnnotation.h */,
 				27F46A2D169B433C00255169 /* TKPinAnnotation.m */,
-				27F46A2E169B433C00255169 /* TKPolyline.h */,
-				27F46A2F169B433C00255169 /* TKPolyline.m */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -217,7 +220,6 @@
 			children = (
 				27F46A36169B439100255169 /* NSArrayMapKitGeometrySpec.m */,
 				27F46A37169B439100255169 /* TKMapKitGeometrySpec.m */,
-				27F46A38169B439100255169 /* TKPolylineSpec.m */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -353,7 +355,8 @@
 				27F46A30169B433C00255169 /* NSArray+MapKitGeometry.m in Sources */,
 				27F46A31169B433C00255169 /* TKMapKitGeometry.m in Sources */,
 				27F46A32169B433C00255169 /* TKPinAnnotation.m in Sources */,
-				27F46A33169B433C00255169 /* TKPolyline.m in Sources */,
+				27F46A40169B8BC100255169 /* TKShapeStyle.m in Sources */,
+				27F46A41169B8BC100255169 /* TKStyledPolyline.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +366,6 @@
 			files = (
 				27F46A39169B439100255169 /* NSArrayMapKitGeometrySpec.m in Sources */,
 				27F46A3A169B439100255169 /* TKMapKitGeometrySpec.m in Sources */,
-				27F46A3B169B439100255169 /* TKPolylineSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
