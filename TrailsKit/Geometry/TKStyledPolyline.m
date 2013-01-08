@@ -11,12 +11,12 @@
 @implementation TKStyledPolyline
 
 - (id)initWithPolyline:(id<MKOverlay>)polyline
-                 style:(TKShapeStyle*)shapeStyle
+                 style:(TKShapeStyle*)aStyle
 {
     if (self = [super init])
     {
         _overlay = polyline;
-        self.style = shapeStyle;
+        self.shapeStyle = aStyle;
     }
     return self;
 }

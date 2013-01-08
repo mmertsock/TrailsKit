@@ -14,9 +14,9 @@
 @interface TKStyledPolyline : NSObject <MKOverlay>
 
 @property (nonatomic, readonly) id<MKOverlay> overlay;
-@property (nonatomic, strong) TKShapeStyle* style;
+@property (nonatomic, strong) TKShapeStyle* shapeStyle;
 
 - (id)initWithPolyline:(id<MKOverlay>)polyline
-                 style:(TKShapeStyle*)shapeStyle;
+                 style:(TKShapeStyle*)aStyle;
 
 @end

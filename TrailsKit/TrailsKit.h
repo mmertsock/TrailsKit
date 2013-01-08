@@ -9,6 +9,8 @@
 #ifndef TrailsKit_TrailsKit_h
 #define TrailsKit_TrailsKit_h
 
+#import "TrailsKitGeometry.h"
+#import "TKGPXPolylineParser.h"
 #import "TrailsKitUI.h"
 
 #endif
