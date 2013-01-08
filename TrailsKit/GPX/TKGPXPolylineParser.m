@@ -10,6 +10,7 @@
 #import "TKShapeStyle.h"
 #import "TKStyledPolyline.h"
 #import <GPXParser/GPXParser.h>
+#import <NSArray+Functional/NSArray+Functional.h>
 
 @implementation TKGPXPolylineParser
 
@@ -21,13 +22,14 @@
             completionHandler(NO, nil);
             return;
         }
-        NSMutableArray* polylines = [NSMutableArray arrayWithCapacity:gpx.tracks.count];
-        for (Track* track in gpx.tracks) {
+        
+        NSArray* polylines = [gpx.tracks mapUsingBlock:^(Track* track) {
             TKStyledPolyline* polyline = [[TKStyledPolyline alloc]
                                           initWithPolyline:track.path
                                           style:self.shapeStyle];
-            [polylines addObject:polyline];
-        }
+            return polyline;
+        }];
+        
         completionHandler(YES, polylines);
     }];
 }
