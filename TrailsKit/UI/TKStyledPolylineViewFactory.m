@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Esker Apps. All rights reserved.
 //
 
-#import "TKStyledPolylineView.h"
+#import "TKStyledPolylineViewFactory.h"
 #import <MapKit/MapKit.h>
 #import "TKStyledPolyline.h"
 #import "TKShapeStyle.h"
 
-@implementation TKStyledPolylineView
+@implementation TKStyledPolylineViewFactory
 
 - (MKOverlayView*)viewForPolyline:(TKStyledPolyline *)polyline
 {

@@ -10,7 +10,7 @@
 
 @class TKStyledPolyline, MKOverlayView;
 
-@interface TKStyledPolylineView : NSObject
+@interface TKStyledPolylineViewFactory : NSObject
 
 - (MKOverlayView*)viewForPolyline:(TKStyledPolyline*)polyline;
 
