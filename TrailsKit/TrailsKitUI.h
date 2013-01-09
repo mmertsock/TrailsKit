@@ -9,6 +9,6 @@
 #ifndef TrailsKit_TrailsKitUI_h
 #define TrailsKit_TrailsKitUI_h
 
-
+#import "TKStyledPolylineView.h"
 
 #endif

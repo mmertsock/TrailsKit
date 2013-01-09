@@ -16,6 +16,7 @@
 		2713CA70169360C900BB236F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2713CA6E169360C900BB236F /* InfoPlist.strings */; };
 		2713CA9C1693844900BB236F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA9B1693844900BB236F /* CoreLocation.framework */; };
 		2713CA9E1693845000BB236F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA9D1693845000BB236F /* MapKit.framework */; };
+		277ED490169DE50C005022E5 /* TKStyledPolylineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 277ED48F169DE50C005022E5 /* TKStyledPolylineView.m */; };
 		27F46A30169B433C00255169 /* NSArray+MapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */; };
 		27F46A31169B433C00255169 /* TKMapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A2B169B433C00255169 /* TKMapKitGeometry.m */; };
 		27F46A32169B433C00255169 /* TKPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A2D169B433C00255169 /* TKPinAnnotation.m */; };
@@ -69,6 +70,8 @@
 		2713CA9B1693844900BB236F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2713CA9D1693845000BB236F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2713CB7B1697F48300BB236F /* TKKiwiExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKKiwiExtensions.h; sourceTree = "<group>"; };
+		277ED48E169DE50C005022E5 /* TKStyledPolylineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStyledPolylineView.h; sourceTree = "<group>"; };
+		277ED48F169DE50C005022E5 /* TKStyledPolylineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStyledPolylineView.m; sourceTree = "<group>"; };
 		27F46A28169B433C00255169 /* NSArray+MapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MapKitGeometry.h"; sourceTree = "<group>"; };
 		27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MapKitGeometry.m"; sourceTree = "<group>"; };
 		27F46A2A169B433C00255169 /* TKMapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMapKitGeometry.h; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 		2713CA8D169381EB00BB236F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				277ED48E169DE50C005022E5 /* TKStyledPolylineView.h */,
+				277ED48F169DE50C005022E5 /* TKStyledPolylineView.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 		2713CA48169360C900BB236F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = TK;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Esker Apps";
 			};
@@ -392,6 +398,7 @@
 				27F46A40169B8BC100255169 /* TKShapeStyle.m in Sources */,
 				27F46A41169B8BC100255169 /* TKStyledPolyline.m in Sources */,
 				27F46A4C169B8E0300255169 /* TKGPXPolylineParser.m in Sources */,
+				277ED490169DE50C005022E5 /* TKStyledPolylineView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

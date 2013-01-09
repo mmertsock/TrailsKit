@@ -12,5 +12,7 @@ Pod::Spec.new do |s|
   #'Classes', 'External/**/*.{h,m}'
 
   s.ios.frameworks = 'MapKit', 'CoreLocation'
+
+  s.dependency 'GPXParser'
   
 end
