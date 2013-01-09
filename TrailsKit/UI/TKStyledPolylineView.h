@@ -12,6 +12,6 @@
 
 @interface TKStyledPolylineView : NSObject
 
-+ (MKOverlayView*)viewForPolyline:(TKStyledPolyline*)polyline;
+- (MKOverlayView*)viewForPolyline:(TKStyledPolyline*)polyline;
 
 @end

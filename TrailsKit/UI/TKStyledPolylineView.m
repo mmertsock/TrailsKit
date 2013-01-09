@@ -13,7 +13,7 @@
 
 @implementation TKStyledPolylineView
 
-+ (MKOverlayView*)viewForPolyline:(TKStyledPolyline *)polyline
+- (MKOverlayView*)viewForPolyline:(TKStyledPolyline *)polyline
 {
     MKPolylineView* view = [[MKPolylineView alloc] initWithPolyline:polyline.overlay];
     view.strokeColor = polyline.shapeStyle.strokeColor;
