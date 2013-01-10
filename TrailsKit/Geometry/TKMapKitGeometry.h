@@ -17,3 +17,5 @@
 MKCoordinateRegion MKCoordinateRegionFromCoordinates(NSArray* coordinates);
 
 BOOL MKCoordinateRegionIsZero(MKCoordinateRegion region);
+
+NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region);

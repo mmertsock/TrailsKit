@@ -39,3 +39,12 @@ BOOL MKCoordinateRegionIsZero(MKCoordinateRegion region)
         && region.span.latitudeDelta == 0
         && region.span.longitudeDelta == 0;
 }
+
+NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region)
+{
+    return [NSString stringWithFormat:@"<region (%2.5f,%2.5f), (%2.5fx%2.5f)>",
+            region.center.latitude,
+            region.center.longitude,
+            region.span.latitudeDelta,
+            region.span.longitudeDelta];
+}
