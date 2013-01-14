@@ -12,8 +12,8 @@
 - (id)initWithCoords:(CLLocationCoordinate2D)coords title:(NSString *)aTitle
 {
     if (self = [super init]) {
-        self.coordinate = coords;
-        self.title = aTitle;
+        _coordinate = coords;
+        _title = aTitle;
     }
     return self;
 }

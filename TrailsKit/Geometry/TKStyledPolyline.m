@@ -16,7 +16,7 @@
     if (self = [super init])
     {
         _overlay = polyline;
-        self.shapeStyle = aStyle;
+        _shapeStyle = aStyle;
     }
     return self;
 }
