@@ -17,9 +17,4 @@
 - (void)parseData:(NSData*)gpxData
        completion:(void(^)(BOOL, NSArray*))completionHandler;
 
-// TODO move into the caller. This class should not be in the business of URL loading.
-// array of TKStyledPolyline (which satisfy MKOverlay)
-- (void)loadPolylinesFromURL:(NSString*)url
-                  completion:(void(^)(BOOL, NSArray*))completionHandler;
-
 @end

@@ -34,20 +34,4 @@
     }];
 }
 
-- (void)loadURLAndParse:(NSURL*)url
-             completion:(void (^)(BOOL, NSArray *))completionHandler
-{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData* data = [NSData dataWithContentsOfURL:url];
-        [self parseData:data completion:completionHandler];
-    });
-}
-
-- (void)loadPolylinesFromURL:(NSString *)url
-                  completion:(void (^)(BOOL, NSArray *))completionHandler
-{
-    [self loadURLAndParse:[NSURL URLWithString:url]
-               completion:completionHandler];
-}
-
 @end
