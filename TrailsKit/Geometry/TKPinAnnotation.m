@@ -13,7 +13,7 @@
 {
     if (self = [super init]) {
         _coordinate = coords;
-        _title = aTitle;
+        _title = [aTitle copy];
     }
     return self;
 }
