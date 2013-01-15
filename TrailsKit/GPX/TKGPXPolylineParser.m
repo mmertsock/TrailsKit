@@ -23,10 +23,11 @@
             return;
         }
         
+        __weak TKGPXPolylineParser* weakSelf = self;
         NSArray* polylines = [gpx.tracks mapUsingBlock:^(Track* track) {
             TKStyledPolyline* polyline = [[TKStyledPolyline alloc]
                                           initWithPolyline:track.path
-                                          style:self.shapeStyle];
+                                          style:weakSelf.shapeStyle];
             return polyline;
         }];
         
