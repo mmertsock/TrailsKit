@@ -12,7 +12,7 @@
 
 @interface TKGPXPolylineParser : NSObject
 
-@property (nonatomic, strong) TKShapeStyle* shapeStyle;
+@property (nonatomic) TKShapeStyle* shapeStyle;
 
 - (void)parseData:(NSData*)gpxData
        completion:(void(^)(BOOL, NSArray*))completionHandler;

@@ -13,7 +13,7 @@
 
 @interface TKShapeStyle : NSObject
 
-@property (nonatomic, strong) UIColor* strokeColor;
+@property (nonatomic) UIColor* strokeColor;
 @property (nonatomic) CGFloat lineWidth;
 
 @end
