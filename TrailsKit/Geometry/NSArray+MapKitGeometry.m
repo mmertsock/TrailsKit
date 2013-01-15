@@ -24,7 +24,7 @@
     if (self.count == 0) return NULL;
     CLLocationCoordinate2D* clcoords = (CLLocationCoordinate2D*)
     malloc(sizeof(CLLocationCoordinate2D)*self.count);
-    int ci = 0;
+    NSUInteger ci = 0;
     for (CLLocation* coord in self) {
         clcoords[ci++] = coord.coordinate;
     }
