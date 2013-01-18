@@ -15,7 +15,7 @@
 @implementation TKGPXPolylineParser
 
 - (void)parseData:(NSData*)gpxData
-       completion:(void(^)(BOOL, NSArray*))completionHandler
+       completion:(TKOverlayCompletionHandler)completionHandler
 {
     [GPXParser parse:gpxData completion:^(BOOL success, GPX *gpx) {
         if (!success) {

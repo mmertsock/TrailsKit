@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TrailsKitTypes.h"
 
 @class TKShapeStyle;
 
@@ -15,6 +16,6 @@
 @property (nonatomic) TKShapeStyle* shapeStyle;
 
 - (void)parseData:(NSData*)gpxData
-       completion:(void(^)(BOOL, NSArray*))completionHandler;
+       completion:(TKOverlayCompletionHandler)completionHandler;
 
 @end

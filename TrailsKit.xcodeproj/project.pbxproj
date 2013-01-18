@@ -70,6 +70,7 @@
 		2713CA9B1693844900BB236F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2713CA9D1693845000BB236F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2713CB7B1697F48300BB236F /* TKKiwiExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKKiwiExtensions.h; sourceTree = "<group>"; };
+		2736C07016A9899700431070 /* TrailsKitTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailsKitTypes.h; sourceTree = "<group>"; };
 		277ED48E169DE50C005022E5 /* TKStyledPolylineViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStyledPolylineViewFactory.h; sourceTree = "<group>"; };
 		277ED48F169DE50C005022E5 /* TKStyledPolylineViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStyledPolylineViewFactory.m; sourceTree = "<group>"; };
 		27F46A28169B433C00255169 /* NSArray+MapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MapKitGeometry.h"; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 				2713CA971693832900BB236F /* TrailsKitUI.h */,
 				2713CA57169360C900BB236F /* Supporting Files */,
 				27F46A4D169B8E4C00255169 /* TrailsKitGeometry.h */,
+				2736C07016A9899700431070 /* TrailsKitTypes.h */,
 			);
 			path = TrailsKit;
 			sourceTree = "<group>";

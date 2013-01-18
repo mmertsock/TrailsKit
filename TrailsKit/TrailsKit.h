@@ -12,5 +12,6 @@
 #import "TrailsKitGeometry.h"
 #import "TKGPXPolylineParser.h"
 #import "TrailsKitUI.h"
+#import "TrailsKitTypes.h"
 
 #endif
