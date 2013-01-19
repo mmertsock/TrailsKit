@@ -14,24 +14,24 @@
 
 @implementation TKGPXPolylineParser
 
+- (NSArray*)overlaysFromGPX:(GPX*)gpx
+{
+    NSArray* polylines = [gpx.tracks mapUsingBlock:^(Track* track) {
+        TKStyledPolyline* polyline = [[TKStyledPolyline alloc]
+                                      initWithPolyline:track.path
+                                      style:self.shapeStyle];
+        return polyline;
+    }];
+    return polylines;
+}
+
 - (void)parseData:(NSData*)gpxData
        completion:(TKOverlayCompletionHandler)completionHandler
 {
+    __weak __typeof(&*self)weakSelf = self;
     [GPXParser parse:gpxData completion:^(BOOL success, GPX *gpx) {
-        if (!success) {
-            completionHandler(NO, nil);
-            return;
-        }
-        
-        __weak TKGPXPolylineParser* weakSelf = self;
-        NSArray* polylines = [gpx.tracks mapUsingBlock:^(Track* track) {
-            TKStyledPolyline* polyline = [[TKStyledPolyline alloc]
-                                          initWithPolyline:track.path
-                                          style:weakSelf.shapeStyle];
-            return polyline;
-        }];
-        
-        completionHandler(YES, polylines);
+        NSArray* polylines = success ? [weakSelf overlaysFromGPX:gpx] : nil;
+        completionHandler(polylines != nil, polylines);
     }];
 }
 

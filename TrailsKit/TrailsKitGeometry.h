@@ -13,6 +13,7 @@
 #import "TKMapKitGeometry.h"
 #import "TKPinAnnotation.h"
 #import "TKShapeStyle.h"
+#import "TKStyledPolygonArea.h"
 #import "TKStyledPolyline.h"
 
 #endif
