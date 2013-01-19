@@ -8,11 +8,12 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.ios.deployment_target = '5.0'
   
-  s.source_files = 'TrailsKit/UI', 'TrailsKit/*.h', 'TrailsKit/GPX', 'TrailsKit/Geometry'
+  s.source_files = 'TrailsKit/UI', 'TrailsKit/*.h', 'TrailsKit/Parsers', 'TrailsKit/Geometry'
   #'Classes', 'External/**/*.{h,m}'
 
   s.ios.frameworks = 'MapKit', 'CoreLocation'
 
   s.dependency 'GPXParser'
+  s.dependency 'NSArray+Functional'
   
 end
