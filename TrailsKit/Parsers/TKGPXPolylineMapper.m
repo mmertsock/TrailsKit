@@ -24,9 +24,9 @@
 - (NSArray *)mapOverlaysFromGPX:(GPX *)gpx
 {
     NSArray* polylines = [gpx.tracks mapUsingBlock:^(Track* track) {
-        TKStyledPolyline* polyline = [[TKStyledPolyline alloc]
-                                      initWithPolyline:track.path
-                                      style:self.shapeStyle];
+        id polyline = [[TKStyledPolyline alloc]
+                       initWithPolyline:track.path
+                       style:self.shapeStyle];
         return polyline;
     }];
     return polylines;

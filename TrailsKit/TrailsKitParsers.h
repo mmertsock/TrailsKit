@@ -10,6 +10,7 @@
 #define TrailsKit_TrailsKitParsers_h
 
 #import "TKGPXOverlayMapper.h"
+#import "TKGPXPolygonMapper.h"
 #import "TKGPXPolylineMapper.h"
 #import "TKGPXParser.h"
 

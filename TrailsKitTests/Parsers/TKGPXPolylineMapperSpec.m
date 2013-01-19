@@ -42,6 +42,7 @@ describe(@"TKGPXPolylineMapper", ^{
         specify(^{ [[result should] haveCountOf:1]; });
         it(@"should return a correct Polyline overlay in the array", ^{
             if (result.count < 1) return;
+            [[result[0] should] beKindOfClass:[TKStyledPolyline class]];
             TKStyledPolyline* polyline = result[0];
             [[polyline.shapeStyle should] beIdenticalTo:shapeStyle];
             [[(id)polyline.overlay should] beIdenticalTo:[gpx.tracks[0] path]];
