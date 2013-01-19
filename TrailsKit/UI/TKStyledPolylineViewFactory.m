@@ -8,19 +8,36 @@
 
 #import "TKStyledPolylineViewFactory.h"
 #import <MapKit/MapKit.h>
-#import "TKStyledPolyline.h"
-#import "TKShapeStyle.h"
+#import "TrailsKitGeometry.h"
+
+@interface TKStyledPolylineViewFactory ()
+- (void)setStyle:(TKShapeStyle*)shapeStyle
+     forPathView:(MKOverlayPathView*)view;
+@end
 
 @implementation TKStyledPolylineViewFactory
 
 - (MKOverlayView*)viewForPolyline:(TKStyledPolyline *)polyline
 {
     MKPolylineView* view = [[MKPolylineView alloc] initWithPolyline:polyline.overlay];
-    view.strokeColor = polyline.shapeStyle.strokeColor;
-    view.lineWidth = polyline.shapeStyle.lineWidth;
+    [self setStyle:polyline.shapeStyle forPathView:view];
+    return view;
+}
+
+- (MKOverlayView *)viewForPolygon:(TKStyledPolygonArea *)polygon
+{
+    MKPolygonView* view = [[MKPolygonView alloc] initWithPolygon:polygon.overlay];
+    [self setStyle:polygon.shapeStyle forPathView:view];
+    return view;
+}
+
+- (void)setStyle:(TKShapeStyle *)shapeStyle
+     forPathView:(MKOverlayPathView *)view
+{
+    view.strokeColor = shapeStyle.strokeColor;
+    view.lineWidth = shapeStyle.lineWidth;
     view.lineJoin = kCGLineJoinRound;
     view.lineCap = kCGLineCapRound;
-    return view;
 }
 
 @end

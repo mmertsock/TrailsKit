@@ -23,9 +23,9 @@
 - (void)parseData:(NSData*)gpxData
        completion:(TKOverlayCompletionHandler)completionHandler
 {
-    __weak __typeof(&*self)weakSelf = self;
+    //__weak __typeof(&*self)weakSelf = self;
     [GPXParser parse:gpxData completion:^(BOOL success, GPX *gpx) {
-        NSArray* polylines = success ? [weakSelf.mapper mapOverlaysFromGPX:gpx] : nil;
+        NSArray* polylines = success ? [self.mapper mapOverlaysFromGPX:gpx] : nil;
         completionHandler(polylines != nil, polylines);
     }];
 }

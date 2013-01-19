@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class TKStyledPolyline, MKOverlayView;
+@class TKStyledPolyline, TKStyledPolygonArea, MKOverlayView;
 
 @interface TKStyledPolylineViewFactory : NSObject
 
 - (MKOverlayView*)viewForPolyline:(TKStyledPolyline*)polyline;
+
+- (MKOverlayView*)viewForPolygon:(TKStyledPolygonArea*)polygon;
 
 @end
