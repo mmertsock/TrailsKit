@@ -27,7 +27,7 @@
 		27F46A40169B8BC100255169 /* TKShapeStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A3D169B8BC100255169 /* TKShapeStyle.m */; };
 		27F46A41169B8BC100255169 /* TKStyledPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A3F169B8BC100255169 /* TKStyledPolyline.m */; };
 		27F46A4C169B8E0300255169 /* TKGPXPolylineMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A4B169B8E0300255169 /* TKGPXPolylineMapper.m */; };
-		27F46A50169B90AD00255169 /* TKGPXPolylineParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A4F169B90AD00255169 /* TKGPXPolylineParserSpec.m */; };
+		27F46A50169B90AD00255169 /* TKGPXParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A4F169B90AD00255169 /* TKGPXParserSpec.m */; };
 		27F46A54169BC07300255169 /* test_one_track.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 27F46A53169BC07300255169 /* test_one_track.gpx */; };
 		27F46A62169BC8A500255169 /* test_invalid_gpx.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 27F46A61169BC8A500255169 /* test_invalid_gpx.gpx */; };
 		7D11DEF120104A489DE37F11 /* libPods-TrailsKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C374D34094493DA171442C /* libPods-TrailsKit.a */; };
@@ -96,7 +96,7 @@
 		27F46A4A169B8E0300255169 /* TKGPXPolylineMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGPXPolylineMapper.h; sourceTree = "<group>"; };
 		27F46A4B169B8E0300255169 /* TKGPXPolylineMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGPXPolylineMapper.m; sourceTree = "<group>"; };
 		27F46A4D169B8E4C00255169 /* TrailsKitGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailsKitGeometry.h; sourceTree = "<group>"; };
-		27F46A4F169B90AD00255169 /* TKGPXPolylineParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGPXPolylineParserSpec.m; sourceTree = "<group>"; };
+		27F46A4F169B90AD00255169 /* TKGPXParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGPXParserSpec.m; sourceTree = "<group>"; };
 		27F46A53169BC07300255169 /* test_one_track.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test_one_track.gpx; sourceTree = "<group>"; };
 		27F46A61169BC8A500255169 /* test_invalid_gpx.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test_invalid_gpx.gpx; sourceTree = "<group>"; };
 		A3AC9CBB05F9448CA82BB67D /* Pods-TrailsKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailsKit.xcconfig"; path = "Pods/Pods-TrailsKit.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -272,7 +272,7 @@
 			children = (
 				27F46A61169BC8A500255169 /* test_invalid_gpx.gpx */,
 				27F46A53169BC07300255169 /* test_one_track.gpx */,
-				27F46A4F169B90AD00255169 /* TKGPXPolylineParserSpec.m */,
+				27F46A4F169B90AD00255169 /* TKGPXParserSpec.m */,
 			);
 			path = GPX;
 			sourceTree = "<group>";
@@ -426,7 +426,7 @@
 			files = (
 				27F46A39169B439100255169 /* NSArrayMapKitGeometrySpec.m in Sources */,
 				27F46A3A169B439100255169 /* TKMapKitGeometrySpec.m in Sources */,
-				27F46A50169B90AD00255169 /* TKGPXPolylineParserSpec.m in Sources */,
+				27F46A50169B90AD00255169 /* TKGPXParserSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

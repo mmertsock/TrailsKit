@@ -13,9 +13,9 @@
 
 #define loadData(fileName) [NSData dataWithContentsOfURL:[[NSBundle bundleForClass:[self class]] URLForResource:fileName withExtension:@"gpx"]];
 
-SPEC_BEGIN(TKGPXPolylineParserSpec)
+SPEC_BEGIN(TKGPXParserSpec)
 
-describe(@"TKGPXPolylineParser", ^{
+describe(@"TKGPXParser", ^{
 
     __block TKGPXParser* SUT;
     __block TKGPXPolylineMapper* mapper;
