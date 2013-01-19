@@ -22,6 +22,7 @@
 		2736C0A416AAEC4800431070 /* TKGPXParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2736C0A116AAEC4800431070 /* TKGPXParserSpec.m */; };
 		2736C0AB16AAEC8D00431070 /* TKGPXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2736C0A816AAEC8D00431070 /* TKGPXParser.m */; };
 		2736C0AC16AAEC8D00431070 /* TKGPXPolylineMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2736C0AA16AAEC8D00431070 /* TKGPXPolylineMapper.m */; };
+		2736C0AE16AAED2400431070 /* TKGPXPolylineMapperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2736C0AD16AAED2400431070 /* TKGPXPolylineMapperSpec.m */; };
 		277ED490169DE50C005022E5 /* TKStyledPolylineViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 277ED48F169DE50C005022E5 /* TKStyledPolylineViewFactory.m */; };
 		27F46A30169B433C00255169 /* NSArray+MapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */; };
 		27F46A31169B433C00255169 /* TKMapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A2B169B433C00255169 /* TKMapKitGeometry.m */; };
@@ -84,6 +85,7 @@
 		2736C0A816AAEC8D00431070 /* TKGPXParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGPXParser.m; sourceTree = "<group>"; };
 		2736C0A916AAEC8D00431070 /* TKGPXPolylineMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKGPXPolylineMapper.h; sourceTree = "<group>"; };
 		2736C0AA16AAEC8D00431070 /* TKGPXPolylineMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGPXPolylineMapper.m; sourceTree = "<group>"; };
+		2736C0AD16AAED2400431070 /* TKGPXPolylineMapperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGPXPolylineMapperSpec.m; sourceTree = "<group>"; };
 		277ED48E169DE50C005022E5 /* TKStyledPolylineViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStyledPolylineViewFactory.h; sourceTree = "<group>"; };
 		277ED48F169DE50C005022E5 /* TKStyledPolylineViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStyledPolylineViewFactory.m; sourceTree = "<group>"; };
 		27F46A28169B433C00255169 /* NSArray+MapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MapKitGeometry.h"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				2736C09F16AAEC4800431070 /* test_invalid_gpx.gpx */,
 				2736C0A016AAEC4800431070 /* test_one_track.gpx */,
 				2736C0A116AAEC4800431070 /* TKGPXParserSpec.m */,
+				2736C0AD16AAED2400431070 /* TKGPXPolylineMapperSpec.m */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				27F46A39169B439100255169 /* NSArrayMapKitGeometrySpec.m in Sources */,
 				27F46A3A169B439100255169 /* TKMapKitGeometrySpec.m in Sources */,
 				2736C0A416AAEC4800431070 /* TKGPXParserSpec.m in Sources */,
+				2736C0AE16AAED2400431070 /* TKGPXPolylineMapperSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
