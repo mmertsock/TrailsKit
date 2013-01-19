@@ -10,8 +10,8 @@
 #define TrailsKit_TrailsKit_h
 
 #import "TrailsKitGeometry.h"
-#import "TKGPXPolylineMapper.h"
-#import "TrailsKitUI.h"
+#import "TrailsKitParsers.h"
 #import "TrailsKitTypes.h"
+#import "TrailsKitUI.h"
 
 #endif
