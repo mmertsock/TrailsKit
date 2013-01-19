@@ -1,20 +1,27 @@
 //
 //  TKGPXPolylineParser.m
-//  GPXTest
+//  TrailsKit
 //
 //  Created by Mike Mertsock on 1/6/13.
 //  Copyright (c) 2013 Esker Apps. All rights reserved.
 //
 
-#import "TKGPXPolylineParser.h"
-#import "TKShapeStyle.h"
+#import "TKGPXPolylineMapper.h"
 #import "TKStyledPolyline.h"
-#import <GPXParser/GPXParser.h>
 #import <NSArray+Functional/NSArray+Functional.h>
+#import <GPXParser/GPXParser.h>
 
-@implementation TKGPXPolylineParser
+@implementation TKGPXPolylineMapper
 
-- (NSArray*)overlaysFromGPX:(GPX*)gpx
+- (id)initWithStyle:(TKShapeStyle*)aStyle
+{
+    if (self = [super init]) {
+        _shapeStyle = aStyle;
+    }
+    return self;
+}
+
+- (NSArray *)mapOverlaysFromGPX:(GPX *)gpx
 {
     NSArray* polylines = [gpx.tracks mapUsingBlock:^(Track* track) {
         TKStyledPolyline* polyline = [[TKStyledPolyline alloc]
@@ -23,16 +30,6 @@
         return polyline;
     }];
     return polylines;
-}
-
-- (void)parseData:(NSData*)gpxData
-       completion:(TKOverlayCompletionHandler)completionHandler
-{
-    __weak __typeof(&*self)weakSelf = self;
-    [GPXParser parse:gpxData completion:^(BOOL success, GPX *gpx) {
-        NSArray* polylines = success ? [weakSelf overlaysFromGPX:gpx] : nil;
-        completionHandler(polylines != nil, polylines);
-    }];
 }
 
 @end

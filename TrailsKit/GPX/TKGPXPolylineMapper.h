@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "TrailsKitTypes.h"
+#import "TKGPXOverlayMapper.h"
 
 @class TKShapeStyle;
 
-@interface TKGPXPolylineParser : NSObject
+@interface TKGPXPolylineMapper : NSObject <TKGPXOverlayMapper>
 
-@property (nonatomic) TKShapeStyle* shapeStyle;
+@property (nonatomic, readonly) TKShapeStyle* shapeStyle;
 
-- (void)parseData:(NSData*)gpxData
-       completion:(TKOverlayCompletionHandler)completionHandler;
+- (id)initWithStyle:(TKShapeStyle*)aStyle;
 
 @end

@@ -8,9 +8,8 @@
 
 #import <Kiwi/Kiwi.h>
 #import <MapKit/MapKit.h>
-#import "TKGPXPolylineParser.h"
-#import "TKStyledPolyline.h"
-#import "TKShapeStyle.h"
+#import "TrailsKitParsers.h"
+#import "TrailsKitGeometry.h"
 
 #define loadData(fileName) [NSData dataWithContentsOfURL:[[NSBundle bundleForClass:[self class]] URLForResource:fileName withExtension:@"gpx"]];
 
@@ -18,12 +17,13 @@ SPEC_BEGIN(TKGPXPolylineParserSpec)
 
 describe(@"TKGPXPolylineParser", ^{
 
-    __block TKGPXPolylineParser* SUT;
+    __block TKGPXParser* SUT;
+    __block TKGPXPolylineMapper* mapper;
     __block NSData* dataToParse;
     
     beforeEach(^{
-        SUT = [TKGPXPolylineParser new];
-        SUT.shapeStyle = [TKShapeStyle new];
+        mapper = [[TKGPXPolylineMapper alloc] initWithStyle:[TKShapeStyle new]];
+        SUT = [[TKGPXParser alloc] initWithMapper:mapper];
     });
     
 	context(@"when parsing a valid GPX file with one track and one segment", ^{
@@ -47,7 +47,7 @@ describe(@"TKGPXPolylineParser", ^{
         });
         it(@"should set the style for the parsed polyline", ^{
             [[expectFutureValue(gotPolylines[0]) shouldEventually] beKindOfClass:[TKStyledPolyline class]];
-            [[expectFutureValue([gotPolylines[0] shapeStyle]) shouldEventually] beIdenticalTo:SUT.shapeStyle];
+            [[expectFutureValue([gotPolylines[0] shapeStyle]) shouldEventually] beIdenticalTo:mapper.shapeStyle];
         });
     });
     
