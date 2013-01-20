@@ -15,5 +15,6 @@
 
 @property (nonatomic) UIColor* strokeColor;
 @property (nonatomic) CGFloat lineWidth;
+@property (nonatomic) UIColor* fillColor;
 
 @end

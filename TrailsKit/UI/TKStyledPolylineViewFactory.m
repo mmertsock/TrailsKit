@@ -35,6 +35,7 @@
      forPathView:(MKOverlayPathView *)view
 {
     view.strokeColor = shapeStyle.strokeColor;
+    view.fillColor = shapeStyle.fillColor;
     view.lineWidth = shapeStyle.lineWidth;
     view.lineJoin = kCGLineJoinRound;
     view.lineCap = kCGLineCapRound;
