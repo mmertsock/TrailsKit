@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'TrailsKit'
-  s.version = '0.0.1'
+  s.version = '0.1.0'
   s.summary = 'Tools for representing and displaying geographical data for parks and trails.'
   s.homepage = 'https://github.com/mmertsock/TrailsKit'
   s.author = 'MM'
