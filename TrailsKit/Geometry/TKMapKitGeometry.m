@@ -23,11 +23,13 @@ MKCoordinateRegion MKCoordinateRegionFromCoordinates(NSArray* coordinates)
         NE.longitude = MAX(NE.longitude, coord.longitude);
     }
     
+    return MKCoordinateRegionFromCorners(SW, NE);
+}
+
+MKCoordinateRegion MKCoordinateRegionFromCorners(CLLocationCoordinate2D SW, CLLocationCoordinate2D NE)
+{
     CLLocationCoordinate2D centerCoord = CLLocationCoordinate2DMake(0.5 * (SW.latitude + NE.latitude), 0.5 * (SW.longitude + NE.longitude));
     MKCoordinateSpan span = MKCoordinateSpanMake(NE.latitude - SW.latitude, NE.longitude - SW.longitude);
-    
-    //CLLocationCoordinate2D centerCoord = CLLocationCoordinate2DMake(43.126045, -77.648621);
-    //MKCoordinateSpan span = MKCoordinateSpanMake(0.40433, 0.52117);
     MKCoordinateRegion region = MKCoordinateRegionMake(centerCoord, span);
     return region;
 }

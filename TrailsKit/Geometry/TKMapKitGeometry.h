@@ -16,6 +16,8 @@
  */
 MKCoordinateRegion MKCoordinateRegionFromCoordinates(NSArray* coordinates);
 
+MKCoordinateRegion MKCoordinateRegionFromCorners(CLLocationCoordinate2D SW, CLLocationCoordinate2D NE);
+
 BOOL MKCoordinateRegionIsZero(MKCoordinateRegion region);
 
 NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region);
