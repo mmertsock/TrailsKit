@@ -13,6 +13,8 @@
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString* title;
+@property (nonatomic, copy) NSString* subtitle;
+@property (nonatomic) id data;
 
 + (instancetype)pinAnnotationWithLatitude:(CLLocationDegrees)lat longitude:(CLLocationDegrees)lon title:(NSString*)aTitle;
 + (instancetype)pinAnnotationWithCoordinate:(CLLocationCoordinate2D)coords title:(NSString*)aTitle;
