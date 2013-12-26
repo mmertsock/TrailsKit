@@ -28,7 +28,7 @@
 		2736C0B516AAFE4500431070 /* TKStyledPolygonAreaSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2736C0B416AAFE4500431070 /* TKStyledPolygonAreaSpec.m */; };
 		2740C2AC16B5D95800E521CF /* TKPinAnnotationViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740C2AB16B5D95800E521CF /* TKPinAnnotationViewFactory.m */; };
 		2740C2AF16B5DA3900E521CF /* TKPinAnnotationViewFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740C2AE16B5DA3900E521CF /* TKPinAnnotationViewFactorySpec.m */; };
-		277ED490169DE50C005022E5 /* TKStyledPolylineViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 277ED48F169DE50C005022E5 /* TKStyledPolylineViewFactory.m */; };
+		277ED490169DE50C005022E5 /* TKStyledPolylineRendererFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 277ED48F169DE50C005022E5 /* TKStyledPolylineRendererFactory.m */; };
 		27F46A30169B433C00255169 /* NSArray+MapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */; };
 		27F46A31169B433C00255169 /* TKMapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A2B169B433C00255169 /* TKMapKitGeometry.m */; };
 		27F46A32169B433C00255169 /* TKPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A2D169B433C00255169 /* TKPinAnnotation.m */; };
@@ -98,8 +98,8 @@
 		2740C2AA16B5D95800E521CF /* TKPinAnnotationViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPinAnnotationViewFactory.h; sourceTree = "<group>"; };
 		2740C2AB16B5D95800E521CF /* TKPinAnnotationViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPinAnnotationViewFactory.m; sourceTree = "<group>"; };
 		2740C2AE16B5DA3900E521CF /* TKPinAnnotationViewFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPinAnnotationViewFactorySpec.m; sourceTree = "<group>"; };
-		277ED48E169DE50C005022E5 /* TKStyledPolylineViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStyledPolylineViewFactory.h; sourceTree = "<group>"; };
-		277ED48F169DE50C005022E5 /* TKStyledPolylineViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStyledPolylineViewFactory.m; sourceTree = "<group>"; };
+		277ED48E169DE50C005022E5 /* TKStyledPolylineRendererFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStyledPolylineRendererFactory.h; sourceTree = "<group>"; };
+		277ED48F169DE50C005022E5 /* TKStyledPolylineRendererFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStyledPolylineRendererFactory.m; sourceTree = "<group>"; };
 		27F46A28169B433C00255169 /* NSArray+MapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MapKitGeometry.h"; sourceTree = "<group>"; };
 		27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MapKitGeometry.m"; sourceTree = "<group>"; };
 		27F46A2A169B433C00255169 /* TKMapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMapKitGeometry.h; sourceTree = "<group>"; };
@@ -228,8 +228,8 @@
 		2713CA8D169381EB00BB236F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				277ED48E169DE50C005022E5 /* TKStyledPolylineViewFactory.h */,
-				277ED48F169DE50C005022E5 /* TKStyledPolylineViewFactory.m */,
+				277ED48E169DE50C005022E5 /* TKStyledPolylineRendererFactory.h */,
+				277ED48F169DE50C005022E5 /* TKStyledPolylineRendererFactory.m */,
 				2740C2AA16B5D95800E521CF /* TKPinAnnotationViewFactory.h */,
 				2740C2AB16B5D95800E521CF /* TKPinAnnotationViewFactory.m */,
 			);
@@ -435,7 +435,7 @@
 				27F46A32169B433C00255169 /* TKPinAnnotation.m in Sources */,
 				27F46A40169B8BC100255169 /* TKShapeStyle.m in Sources */,
 				27F46A41169B8BC100255169 /* TKStyledPolyline.m in Sources */,
-				277ED490169DE50C005022E5 /* TKStyledPolylineViewFactory.m in Sources */,
+				277ED490169DE50C005022E5 /* TKStyledPolylineRendererFactory.m in Sources */,
 				2736C08F16AA571D00431070 /* TKStyledPolygonArea.m in Sources */,
 				2736C0AB16AAEC8D00431070 /* TKGPXParser.m in Sources */,
 				2736C0AC16AAEC8D00431070 /* TKGPXPolylineMapper.m in Sources */,
@@ -502,7 +502,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -523,7 +523,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
