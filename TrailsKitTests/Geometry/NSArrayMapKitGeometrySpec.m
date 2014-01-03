@@ -1,6 +1,6 @@
 #import <Kiwi/Kiwi.h>
 #import "NSArray+MapKitGeometry.h"
-#import "TKPinAnnotation.h"
+#import "TrailsKitGeometry.h"
 #import "TKKiwiExtensions.h"
 
 SPEC_BEGIN(NSArrayMapKitGeometrySpec)
@@ -16,9 +16,9 @@ describe(@"NSArrayMapKitGeometry", ^{
         });
         context(@"when mapping many annotations", ^{
             beforeEach(^{ input = @[
-                [TKPinAnnotation pinAnnotationWithLatitude:0 longitude:1 title:@"a"],
-                [TKPinAnnotation pinAnnotationWithLatitude:2 longitude:0 title:@"b"],
-                [TKPinAnnotation pinAnnotationWithLatitude:0 longitude:3 title:@"c"]
+                [[TKPointAnnotation alloc] initWithLatitude:0 longitude:1 title:@"a"],
+                [[TKPointAnnotation alloc] initWithLatitude:2 longitude:0 title:@"b"],
+                [[TKPointAnnotation alloc] initWithLatitude:0 longitude:3 title:@"c"]
                 ];
                 result = [input coordinatesOfAnnotations];
             });

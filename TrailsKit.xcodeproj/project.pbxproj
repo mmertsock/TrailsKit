@@ -26,6 +26,7 @@
 		2736C0B116AAF64100431070 /* TKGPXPolygonMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2736C0B016AAF64100431070 /* TKGPXPolygonMapper.m */; };
 		2736C0B316AAF6DF00431070 /* TKGPXPolygonMapperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2736C0B216AAF6DF00431070 /* TKGPXPolygonMapperSpec.m */; };
 		2736C0B516AAFE4500431070 /* TKStyledPolygonAreaSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2736C0B416AAFE4500431070 /* TKStyledPolygonAreaSpec.m */; };
+		273E1EF818765ACB00B79846 /* TKPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E1EF718765ACB00B79846 /* TKPointAnnotation.m */; };
 		2740C2AC16B5D95800E521CF /* TKPinAnnotationViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740C2AB16B5D95800E521CF /* TKPinAnnotationViewFactory.m */; };
 		2740C2AF16B5DA3900E521CF /* TKPinAnnotationViewFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740C2AE16B5DA3900E521CF /* TKPinAnnotationViewFactorySpec.m */; };
 		277ED490169DE50C005022E5 /* TKStyledPolylineRendererFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 277ED48F169DE50C005022E5 /* TKStyledPolylineRendererFactory.m */; };
@@ -95,6 +96,8 @@
 		2736C0B016AAF64100431070 /* TKGPXPolygonMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGPXPolygonMapper.m; sourceTree = "<group>"; };
 		2736C0B216AAF6DF00431070 /* TKGPXPolygonMapperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKGPXPolygonMapperSpec.m; sourceTree = "<group>"; };
 		2736C0B416AAFE4500431070 /* TKStyledPolygonAreaSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStyledPolygonAreaSpec.m; sourceTree = "<group>"; };
+		273E1EF618765ACB00B79846 /* TKPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPointAnnotation.h; sourceTree = "<group>"; };
+		273E1EF718765ACB00B79846 /* TKPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPointAnnotation.m; sourceTree = "<group>"; };
 		2740C2AA16B5D95800E521CF /* TKPinAnnotationViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPinAnnotationViewFactory.h; sourceTree = "<group>"; };
 		2740C2AB16B5D95800E521CF /* TKPinAnnotationViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPinAnnotationViewFactory.m; sourceTree = "<group>"; };
 		2740C2AE16B5DA3900E521CF /* TKPinAnnotationViewFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPinAnnotationViewFactorySpec.m; sourceTree = "<group>"; };
@@ -279,6 +282,8 @@
 				27F46A2B169B433C00255169 /* TKMapKitGeometry.m */,
 				27F46A2C169B433C00255169 /* TKPinAnnotation.h */,
 				27F46A2D169B433C00255169 /* TKPinAnnotation.m */,
+				273E1EF618765ACB00B79846 /* TKPointAnnotation.h */,
+				273E1EF718765ACB00B79846 /* TKPointAnnotation.m */,
 				27F46A3C169B8BC100255169 /* TKShapeStyle.h */,
 				27F46A3D169B8BC100255169 /* TKShapeStyle.m */,
 				2736C08D16AA571D00431070 /* TKStyledPolygonArea.h */,
@@ -440,6 +445,7 @@
 				2736C0AB16AAEC8D00431070 /* TKGPXParser.m in Sources */,
 				2736C0AC16AAEC8D00431070 /* TKGPXPolylineMapper.m in Sources */,
 				2736C0B116AAF64100431070 /* TKGPXPolygonMapper.m in Sources */,
+				273E1EF818765ACB00B79846 /* TKPointAnnotation.m in Sources */,
 				2740C2AC16B5D95800E521CF /* TKPinAnnotationViewFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

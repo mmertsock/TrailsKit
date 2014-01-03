@@ -12,6 +12,7 @@
 #import "NSArray+MapKitGeometry.h"
 #import "TKMapKitGeometry.h"
 #import "TKPinAnnotation.h"
+#import "TKPointAnnotation.h"
 #import "TKShapeStyle.h"
 #import "TKStyledPolygonArea.h"
 #import "TKStyledPolyline.h"
