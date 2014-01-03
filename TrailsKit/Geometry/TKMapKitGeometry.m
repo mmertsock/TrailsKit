@@ -50,3 +50,12 @@ NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region)
             region.span.latitudeDelta,
             region.span.longitudeDelta];
 }
+
+@implementation NSNumber (TKMapKitGeometry)
+
+- (CLLocationDegrees)tk_degreesValue
+{
+    return [self doubleValue];
+}
+
+@end

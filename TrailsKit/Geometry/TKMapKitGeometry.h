@@ -21,3 +21,7 @@ MKCoordinateRegion MKCoordinateRegionFromCorners(CLLocationCoordinate2D SW, CLLo
 BOOL MKCoordinateRegionIsZero(MKCoordinateRegion region);
 
 NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region);
+
+@interface NSNumber (TKMapKitGeometry)
+- (CLLocationDegrees)tk_degreesValue;
+@end
