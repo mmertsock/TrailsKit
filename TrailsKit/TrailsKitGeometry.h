@@ -10,6 +10,7 @@
 #define TrailsKit_TrailsKitGeometry_h
 
 #import "NSArray+MapKitGeometry.h"
+#import "TKMapImage.h"
 #import "TKMapKitGeometry.h"
 #import "TKPointAnnotation.h"
 #import "TKShapeStyle.h"

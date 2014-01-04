@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27107CC0187847DC00651E10 /* TKMapImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 27107CBF187847DB00651E10 /* TKMapImage.m */; };
+		27107CC2187848D800651E10 /* TKMapImageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 27107CC1187848D800651E10 /* TKMapImageSpec.m */; };
+		27107CC41878492F00651E10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27107CC31878492F00651E10 /* CoreGraphics.framework */; };
 		2713CA55169360C900BB236F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA54169360C900BB236F /* Foundation.framework */; };
 		2713CA5A169360C900BB236F /* TrailsKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2713CA59169360C900BB236F /* TrailsKit.h */; };
 		2713CA64169360C900BB236F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA63169360C900BB236F /* SenTestingKit.framework */; };
@@ -65,6 +68,10 @@
 
 /* Begin PBXFileReference section */
 		1C51F82EAE2E45CF8F89B6F7 /* Pods-TrailsKitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailsKitTests.xcconfig"; path = "Pods/Pods-TrailsKitTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		27107CBE187847DB00651E10 /* TKMapImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMapImage.h; sourceTree = "<group>"; };
+		27107CBF187847DB00651E10 /* TKMapImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapImage.m; sourceTree = "<group>"; };
+		27107CC1187848D800651E10 /* TKMapImageSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapImageSpec.m; sourceTree = "<group>"; };
+		27107CC31878492F00651E10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2713CA51169360C900BB236F /* libTrailsKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTrailsKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2713CA54169360C900BB236F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2713CA58169360C900BB236F /* TrailsKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrailsKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -132,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27107CC41878492F00651E10 /* CoreGraphics.framework in Frameworks */,
 				2713CA9E1693845000BB236F /* MapKit.framework in Frameworks */,
 				2713CA9C1693844900BB236F /* CoreLocation.framework in Frameworks */,
 				2713CA64169360C900BB236F /* SenTestingKit.framework in Frameworks */,
@@ -169,6 +177,7 @@
 		2713CA53169360C900BB236F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27107CC31878492F00651E10 /* CoreGraphics.framework */,
 				2713CA9D1693845000BB236F /* MapKit.framework */,
 				2713CA9B1693844900BB236F /* CoreLocation.framework */,
 				2713CA54169360C900BB236F /* Foundation.framework */,
@@ -275,6 +284,8 @@
 			children = (
 				27F46A28169B433C00255169 /* NSArray+MapKitGeometry.h */,
 				27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */,
+				27107CBE187847DB00651E10 /* TKMapImage.h */,
+				27107CBF187847DB00651E10 /* TKMapImage.m */,
 				27F46A2A169B433C00255169 /* TKMapKitGeometry.h */,
 				27F46A2B169B433C00255169 /* TKMapKitGeometry.m */,
 				273E1EF618765ACB00B79846 /* TKPointAnnotation.h */,
@@ -295,6 +306,7 @@
 				27F46A36169B439100255169 /* NSArrayMapKitGeometrySpec.m */,
 				27F46A37169B439100255169 /* TKMapKitGeometrySpec.m */,
 				2736C0B416AAFE4500431070 /* TKStyledPolygonAreaSpec.m */,
+				27107CC1187848D800651E10 /* TKMapImageSpec.m */,
 			);
 			path = Geometry;
 			sourceTree = "<group>";
@@ -433,6 +445,7 @@
 				27F46A30169B433C00255169 /* NSArray+MapKitGeometry.m in Sources */,
 				27F46A31169B433C00255169 /* TKMapKitGeometry.m in Sources */,
 				27F46A40169B8BC100255169 /* TKShapeStyle.m in Sources */,
+				27107CC0187847DC00651E10 /* TKMapImage.m in Sources */,
 				27F46A41169B8BC100255169 /* TKStyledPolyline.m in Sources */,
 				277ED490169DE50C005022E5 /* TKStyledPolylineRendererFactory.m in Sources */,
 				2736C08F16AA571D00431070 /* TKStyledPolygonArea.m in Sources */,
@@ -454,6 +467,7 @@
 				2736C0AE16AAED2400431070 /* TKGPXPolylineMapperSpec.m in Sources */,
 				2736C0B316AAF6DF00431070 /* TKGPXPolygonMapperSpec.m in Sources */,
 				2736C0B516AAFE4500431070 /* TKStyledPolygonAreaSpec.m in Sources */,
+				27107CC2187848D800651E10 /* TKMapImageSpec.m in Sources */,
 				2740C2AF16B5DA3900E521CF /* TKAnnotationViewFactorySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +519,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -525,6 +540,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
