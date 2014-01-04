@@ -1,5 +1,5 @@
 //
-//  TKPinAnnotationViewFactorySpec.m
+//  TKAnnotationViewFactorySpec.m
 //  TrailsKit
 //
 //  Created by Mike Mertsock on 1/27/13.
@@ -11,23 +11,23 @@
 #import "TrailsKitUI.h"
 #import <MapKit/MapKit.h>
 
-SPEC_BEGIN(TKPinAnnotationViewFactorySpec)
+SPEC_BEGIN(TKAnnotationViewFactorySpec)
 
-describe(@"TKPinAnnotationViewFactory", ^{
+describe(@"TKAnnotationViewFactory", ^{
     
-	__block TKPinAnnotationViewFactory* SUT;
+	__block TKAnnotationViewFactory* SUT;
     __block MKMapView* mapView;
     __block MKAnnotationView* result;
-    __block TKPinAnnotation* pinAnnotation;
+    __block TKPointAnnotation* annotation;
     __block BOOL newViewBlockCalled;
     
     beforeEach(^{
         newViewBlockCalled = NO;
-        SUT = [TKPinAnnotationViewFactory new];
+        SUT = [TKAnnotationViewFactory new];
         mapView = [MKMapView mock];
-        pinAnnotation = [TKPinAnnotation pinAnnotationWithLatitude:42
-                                                         longitude:-77
-                                                             title:@"test-title"];
+        annotation = [[TKPointAnnotation alloc] initWithLatitude:42
+                                                       longitude:-77
+                                                           title:@"test-title"];
     });
     
 	context(@"when asking for a view for a pin annotation", ^{
@@ -37,7 +37,7 @@ describe(@"TKPinAnnotationViewFactory", ^{
                 existingView = [[MKAnnotationView alloc] initWithAnnotation:nil
                                                             reuseIdentifier:@"testid"];
                 [mapView stub:@selector(dequeueReusableAnnotationViewWithIdentifier:) andReturn:existingView];
-                result = [SUT reusableViewForAnnotation:pinAnnotation
+                result = [SUT reusableViewForAnnotation:annotation
                                          withIdentifier:@"testid"
                                              forMapView:mapView
                                            newViewBlock:^(MKAnnotationView* view) {
@@ -48,7 +48,7 @@ describe(@"TKPinAnnotationViewFactory", ^{
                 [[result should] beIdenticalTo:existingView];
             });
             it(@"should update the annotation in the view", ^{
-                [[(id)result.annotation should] beIdenticalTo:pinAnnotation];
+                [[(id)result.annotation should] beIdenticalTo:annotation];
             });
             it(@"should not invoke the block for configuring new views", ^{
                 [[theValue(newViewBlockCalled) should] beFalse];
@@ -58,7 +58,7 @@ describe(@"TKPinAnnotationViewFactory", ^{
         context(@"when the map view does not have a view available to dequeue", ^{
             beforeEach(^{
                 [mapView stub:@selector(dequeueReusableAnnotationViewWithIdentifier:) andReturn:nil];
-                result = [SUT reusableViewForAnnotation:pinAnnotation
+                result = [SUT reusableViewForAnnotation:annotation
                                          withIdentifier:@"testid"
                                              forMapView:mapView
                                            newViewBlock:^(MKAnnotationView* view) {
@@ -70,7 +70,7 @@ describe(@"TKPinAnnotationViewFactory", ^{
                 [[result.reuseIdentifier should] equal:@"testid"];
             });
             it(@"should set the annotation in the view", ^{
-                [[(id)result.annotation should] beIdenticalTo:pinAnnotation];
+                [[(id)result.annotation should] beIdenticalTo:annotation];
             });
             it(@"should invoke the block for configuring new views", ^{
                 [[theValue(newViewBlockCalled) should] beTrue];

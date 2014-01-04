@@ -1,5 +1,5 @@
 //
-//  TKPinAnnotationViewFactory.h
+//  TKAnnotationViewFactory.h
 //  TrailsKit
 //
 //  Created by Mike Mertsock on 1/27/13.
@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class TKPinAnnotation, MKAnnotationView, MKMapView;
+@class TKPointAnnotation, MKAnnotationView, MKMapView;
 
-@interface TKPinAnnotationViewFactory : NSObject
+@interface TKAnnotationViewFactory : NSObject
 
-- (MKAnnotationView*)reusableViewForAnnotation:(TKPinAnnotation*)annotation
+- (MKAnnotationView*)reusableViewForAnnotation:(TKPointAnnotation*)annotation
                                 withIdentifier:(NSString*)reuseIdentifier
                                     forMapView:(MKMapView*)mapView
                                   newViewBlock:(void (^)(MKAnnotationView*))newViewBlock;

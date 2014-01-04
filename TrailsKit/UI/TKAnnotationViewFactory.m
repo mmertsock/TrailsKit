@@ -1,18 +1,18 @@
 //
-//  TKPinAnnotationViewFactory.m
+//  TKAnnotationViewFactory.m
 //  TrailsKit
 //
 //  Created by Mike Mertsock on 1/27/13.
 //  Copyright (c) 2013 Esker Apps. All rights reserved.
 //
 
-#import "TKPinAnnotationViewFactory.h"
+#import "TKAnnotationViewFactory.h"
 #import "TrailsKitGeometry.h"
 #import <MapKit/MapKit.h>
 
-@implementation TKPinAnnotationViewFactory
+@implementation TKAnnotationViewFactory
 
-- (MKAnnotationView*)reusableViewForAnnotation:(TKPinAnnotation*)annotation
+- (MKAnnotationView*)reusableViewForAnnotation:(TKPointAnnotation*)annotation
                                 withIdentifier:(NSString*)reuseIdentifier
                                     forMapView:(MKMapView*)mapView
                                   newViewBlock:(void (^)(MKAnnotationView*))newViewBlock

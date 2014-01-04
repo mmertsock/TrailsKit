@@ -10,6 +10,6 @@
 #define TrailsKit_TrailsKitUI_h
 
 #import "TKStyledPolylineRendererFactory.h"
-#import "TKPinAnnotationViewFactory.h"
+#import "TKAnnotationViewFactory.h"
 
 #endif
