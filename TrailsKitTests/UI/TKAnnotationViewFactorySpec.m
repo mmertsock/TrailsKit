@@ -30,7 +30,70 @@ describe(@"TKAnnotationViewFactory", ^{
                                                            title:@"test-title"];
     });
     
-	context(@"when asking for a view for a pin annotation", ^{
+    context(@"with no builder for the given reuse identifier", ^{
+        it(@"should return no view", ^{
+            MKAnnotationView* existingView = [[MKAnnotationView alloc] initWithAnnotation:nil
+                                                                          reuseIdentifier:@"testid"];
+            [mapView stub:@selector(dequeueReusableAnnotationViewWithIdentifier:) andReturn:existingView];
+            result = [SUT mapView:mapView
+                viewForAnnotation:annotation
+                  reuseIdentifier:@"testid"];
+            [result shouldBeNil];
+        });
+    });
+    
+    context(@"with a builder for the given reuse identifier", ^{
+        __block MKAnnotationView* existingView;
+        __block id <TKAnnotationViewBuilder> viewBuilder;
+        beforeEach(^{
+            viewBuilder = [KWMock nullMockForProtocol:@protocol(TKAnnotationViewBuilder)];
+            [SUT setViewBuilder:viewBuilder forReuseIdentifier:@"testid"];
+        });
+        context(@"when the map view has an annotation available to reuse", ^{
+            beforeEach(^{
+                existingView = [[MKAnnotationView alloc] initWithAnnotation:nil
+                                                            reuseIdentifier:@"testid"];
+                [[mapView stubAndReturn:existingView] dequeueReusableAnnotationViewWithIdentifier:@"testid"];
+            });
+            it(@"should not ask the builder for a new view", ^{
+                [[(id)viewBuilder shouldNot] receive:@selector(viewForAnnotation:reuseIdentifier:)];
+                [SUT mapView:mapView viewForAnnotation:annotation reuseIdentifier:@"testid"];
+            });
+            it(@"should ask the builder to configure the existing view", ^{
+                [[(id)viewBuilder should] receive:@selector(configureView:withAnnotation:)
+                                    withArguments:existingView, annotation];
+                [SUT mapView:mapView viewForAnnotation:annotation reuseIdentifier:@"testid"];
+            });
+            it(@"should return the exsiting view", ^{
+                result = [SUT mapView:mapView viewForAnnotation:annotation reuseIdentifier:@"testid"];
+                [[result should] beIdenticalTo:existingView];
+            });
+        });
+        
+        context(@"when the map does not have an annotation view available to reuse", ^{
+            beforeEach(^{
+                existingView = [[MKAnnotationView alloc] initWithAnnotation:nil
+                                                            reuseIdentifier:@"testid"];
+                [[mapView stubAndReturn:nil] dequeueReusableAnnotationViewWithIdentifier:@"testid"];
+                [(id)viewBuilder stub:@selector(viewForAnnotation:reuseIdentifier:) andReturn:existingView];
+            });
+            it(@"should ask the builder for a new view", ^{
+                [[(id)viewBuilder should] receive:@selector(viewForAnnotation:reuseIdentifier:)];
+                [SUT mapView:mapView viewForAnnotation:annotation reuseIdentifier:@"testid"];
+            });
+            it(@"should ask the builder to configure the existing view", ^{
+                [[(id)viewBuilder should] receive:@selector(configureView:withAnnotation:)
+                                    withArguments:existingView, annotation];
+                [SUT mapView:mapView viewForAnnotation:annotation reuseIdentifier:@"testid"];
+            });
+            it(@"should return the new view", ^{
+                result = [SUT mapView:mapView viewForAnnotation:annotation reuseIdentifier:@"testid"];
+                [[result should] beIdenticalTo:existingView];
+            });
+        });
+    });
+    
+	context(@"when asking for a view for a point annotation", ^{
         context(@"when the map view has an existing view available to dequeue", ^{
             __block MKAnnotationView* existingView;
             beforeEach(^{

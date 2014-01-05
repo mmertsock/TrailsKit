@@ -10,7 +10,21 @@
 
 @class TKPointAnnotation, MKAnnotationView, MKMapView;
 
+@protocol TKAnnotationViewBuilder <NSObject>
+- (MKAnnotationView *)viewForAnnotation:(TKPointAnnotation *)annotation
+                        reuseIdentifier:(NSString *)reuseIdentifier;
+- (void)configureView:(MKAnnotationView *)annotationView
+       withAnnotation:(TKPointAnnotation *)annotation;
+@end
+
 @interface TKAnnotationViewFactory : NSObject
+
+- (void)setViewBuilder:(id<TKAnnotationViewBuilder>)builder
+    forReuseIdentifier:(NSString *)reuseIdentifier;
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(TKPointAnnotation*)annotation
+              reuseIdentifier:(NSString *)reuseIdentifier;
 
 - (MKAnnotationView*)reusableViewForAnnotation:(TKPointAnnotation*)annotation
                                 withIdentifier:(NSString*)reuseIdentifier

@@ -10,7 +10,42 @@
 #import "TrailsKitGeometry.h"
 #import <MapKit/MapKit.h>
 
+@interface TKAnnotationViewFactory ()
+@property (nonatomic) NSMutableDictionary *viewBuilders;
+@end
+
 @implementation TKAnnotationViewFactory
+
+- (id)init
+{
+    if (self = [super init]) {
+        _viewBuilders = [NSMutableDictionary new];
+    }
+    return self;
+}
+
+- (void)setViewBuilder:(id<TKAnnotationViewBuilder>)builder
+    forReuseIdentifier:(NSString *)reuseIdentifier
+{
+    _viewBuilders[reuseIdentifier] = builder;
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(TKPointAnnotation *)annotation
+              reuseIdentifier:(NSString *)reuseIdentifier
+{
+    id <TKAnnotationViewBuilder> viewBuilder = self.viewBuilders[reuseIdentifier];
+    if (!viewBuilder) return nil;
+    
+    MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
+    if (!view) {
+        view = [viewBuilder viewForAnnotation:annotation reuseIdentifier:reuseIdentifier];
+    }
+    
+    [viewBuilder configureView:view withAnnotation:annotation];
+    
+    return view;
+}
 
 - (MKAnnotationView*)reusableViewForAnnotation:(TKPointAnnotation*)annotation
                                 withIdentifier:(NSString*)reuseIdentifier
