@@ -7,6 +7,7 @@
 //
 
 #import "TKMapImage.h"
+#import <UIKit/UIKit.h>
 
 @interface TKNamedMapImage : TKMapImage
 - (id)initWithImageName:(NSString *)imageName
@@ -52,6 +53,17 @@
         _imageName = [imageName copy];
     }
     return self;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<TKNamedMapImage: %@, (%f, %f)>",
+            self.imageName, self.centerOffset.x, self.centerOffset.y];
+}
+
+- (UIImage *)image
+{
+    return [UIImage imageNamed:self.imageName];
 }
 
 @end
