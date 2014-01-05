@@ -7,14 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MapKit/MapKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 @class UIColor;
 
 @interface TKShapeStyle : NSObject
 
-@property (nonatomic) UIColor* strokeColor;
-@property (nonatomic) CGFloat lineWidth;
-@property (nonatomic) UIColor* fillColor;
+@property (readonly, nonatomic) UIColor* strokeColor;
+@property (readonly, nonatomic) CGFloat lineWidth;
+@property (readonly, nonatomic) UIColor* fillColor;
+
+- (id)initWithStrokeColor:(UIColor *)strokeColor
+                lineWidth:(CGFloat)lineWidth
+                fillColor:(UIColor *)fillColor;
 
 @end
