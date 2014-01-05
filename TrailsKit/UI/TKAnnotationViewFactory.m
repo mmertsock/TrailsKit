@@ -34,6 +34,7 @@
             viewForAnnotation:(TKPointAnnotation *)annotation
               reuseIdentifier:(NSString *)reuseIdentifier
 {
+    if (!reuseIdentifier) return nil;
     id <TKAnnotationViewBuilder> viewBuilder = self.viewBuilders[reuseIdentifier];
     if (!viewBuilder) return nil;
     

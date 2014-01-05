@@ -13,7 +13,7 @@
 @protocol TKAnnotationViewBuilder <NSObject>
 - (MKAnnotationView *)viewForAnnotation:(TKPointAnnotation *)annotation
                         reuseIdentifier:(NSString *)reuseIdentifier;
-- (void)configureView:(MKAnnotationView *)annotationView
+- (void)configureView:(MKAnnotationView *)view
        withAnnotation:(TKPointAnnotation *)annotation;
 @end
 
