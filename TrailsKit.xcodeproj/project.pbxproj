@@ -19,6 +19,8 @@
 		2713CA70169360C900BB236F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2713CA6E169360C900BB236F /* InfoPlist.strings */; };
 		2713CA9C1693844900BB236F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA9B1693844900BB236F /* CoreLocation.framework */; };
 		2713CA9E1693845000BB236F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2713CA9D1693845000BB236F /* MapKit.framework */; };
+		27148A49187C3357006452D2 /* TKMapObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27148A48187C3357006452D2 /* TKMapObjectManager.m */; };
+		27148A4B187C3433006452D2 /* TKMapObjectManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 27148A4A187C3433006452D2 /* TKMapObjectManagerSpec.m */; };
 		2736C08F16AA571D00431070 /* TKStyledPolygonArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 2736C08E16AA571D00431070 /* TKStyledPolygonArea.m */; };
 		2736C0A216AAEC4800431070 /* test_invalid_gpx.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 2736C09F16AAEC4800431070 /* test_invalid_gpx.gpx */; };
 		2736C0A316AAEC4800431070 /* test_one_track.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 2736C0A016AAEC4800431070 /* test_one_track.gpx */; };
@@ -85,6 +87,9 @@
 		2713CA9B1693844900BB236F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2713CA9D1693845000BB236F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2713CB7B1697F48300BB236F /* TKKiwiExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKKiwiExtensions.h; sourceTree = "<group>"; };
+		27148A47187C3357006452D2 /* TKMapObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMapObjectManager.h; sourceTree = "<group>"; };
+		27148A48187C3357006452D2 /* TKMapObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapObjectManager.m; sourceTree = "<group>"; };
+		27148A4A187C3433006452D2 /* TKMapObjectManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMapObjectManagerSpec.m; sourceTree = "<group>"; };
 		2736C07016A9899700431070 /* TrailsKitTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailsKitTypes.h; sourceTree = "<group>"; };
 		2736C08D16AA571D00431070 /* TKStyledPolygonArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStyledPolygonArea.h; sourceTree = "<group>"; };
 		2736C08E16AA571D00431070 /* TKStyledPolygonArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStyledPolygonArea.m; sourceTree = "<group>"; };
@@ -216,11 +221,11 @@
 		2713CA6B169360C900BB236F /* TrailsKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				2736C09D16AAEBF800431070 /* Parsers */,
 				27F46A35169B439100255169 /* Geometry */,
-				2713CA98169383F100BB236F /* UI */,
+				2736C09D16AAEBF800431070 /* Parsers */,
 				2713CA6C169360C900BB236F /* Supporting Files */,
 				2713CB7B1697F48300BB236F /* TKKiwiExtensions.h */,
+				2713CA98169383F100BB236F /* UI */,
 			);
 			path = TrailsKitTests;
 			sourceTree = "<group>";
@@ -237,10 +242,12 @@
 		2713CA8D169381EB00BB236F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				277ED48E169DE50C005022E5 /* TKStyledPolylineRendererFactory.h */,
-				277ED48F169DE50C005022E5 /* TKStyledPolylineRendererFactory.m */,
 				2740C2AA16B5D95800E521CF /* TKAnnotationViewFactory.h */,
 				2740C2AB16B5D95800E521CF /* TKAnnotationViewFactory.m */,
+				27148A47187C3357006452D2 /* TKMapObjectManager.h */,
+				27148A48187C3357006452D2 /* TKMapObjectManager.m */,
+				277ED48E169DE50C005022E5 /* TKStyledPolylineRendererFactory.h */,
+				277ED48F169DE50C005022E5 /* TKStyledPolylineRendererFactory.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -249,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				2740C2AE16B5DA3900E521CF /* TKAnnotationViewFactorySpec.m */,
+				27148A4A187C3433006452D2 /* TKMapObjectManagerSpec.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -448,6 +456,7 @@
 				27107CC0187847DC00651E10 /* TKMapImage.m in Sources */,
 				27F46A41169B8BC100255169 /* TKStyledPolyline.m in Sources */,
 				277ED490169DE50C005022E5 /* TKStyledPolylineRendererFactory.m in Sources */,
+				27148A49187C3357006452D2 /* TKMapObjectManager.m in Sources */,
 				2736C08F16AA571D00431070 /* TKStyledPolygonArea.m in Sources */,
 				2736C0AB16AAEC8D00431070 /* TKGPXParser.m in Sources */,
 				2736C0AC16AAEC8D00431070 /* TKGPXPolylineMapper.m in Sources */,
@@ -467,6 +476,7 @@
 				2736C0AE16AAED2400431070 /* TKGPXPolylineMapperSpec.m in Sources */,
 				2736C0B316AAF6DF00431070 /* TKGPXPolygonMapperSpec.m in Sources */,
 				2736C0B516AAFE4500431070 /* TKStyledPolygonAreaSpec.m in Sources */,
+				27148A4B187C3433006452D2 /* TKMapObjectManagerSpec.m in Sources */,
 				27107CC2187848D800651E10 /* TKMapImageSpec.m in Sources */,
 				2740C2AF16B5DA3900E521CF /* TKAnnotationViewFactorySpec.m in Sources */,
 			);
@@ -498,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -527,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
