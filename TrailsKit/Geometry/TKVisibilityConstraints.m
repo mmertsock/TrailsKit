@@ -21,9 +21,9 @@
     return [[TKAltitudeVisibilityConstraints alloc] initWithMaxAltitude:maxAltitude];
 }
 
-- (BOOL)shouldShowInMapView:(MKMapView *)mapView
+- (BOOL)shouldHideInMapView:(MKMapView *)mapView
 {
-    return YES;
+    return NO;
 }
 
 @end
@@ -38,9 +38,9 @@
     return self;
 }
 
-- (BOOL)shouldShowInMapView:(MKMapView *)mapView
+- (BOOL)shouldHideInMapView:(MKMapView *)mapView
 {
-    return mapView.camera.altitude <= self.maxAltitude;
+    return mapView.camera.altitude > self.maxAltitude;
 }
 
 @end

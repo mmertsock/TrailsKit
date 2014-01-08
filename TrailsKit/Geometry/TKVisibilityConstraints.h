@@ -15,6 +15,9 @@
 
 + (TKVisibilityConstraints *)constraintsWithMaxAltitude:(CLLocationDistance)maxAltitude;
 
-- (BOOL)shouldShowInMapView:(MKMapView *)mapView;
+// shouldHide instead of shouldShow so that sending
+// this message to a nil constraints object returns
+// a sensible value for most situations.
+- (BOOL)shouldHideInMapView:(MKMapView *)mapView;
 
 @end
