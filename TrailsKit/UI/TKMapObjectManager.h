@@ -7,13 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class MKMapView;
 
 @interface TKMapObjectManager : NSObject
 
+@property (nonatomic) CLLocationDistance maxAltitudeForAnnotations;
+
 - (id)initWithMapView:(MKMapView *)mapView;
 
 - (void)addAnnotations:(NSArray *)annotations;
+
+- (void)mapViewRegionDidChange;
 
 @end

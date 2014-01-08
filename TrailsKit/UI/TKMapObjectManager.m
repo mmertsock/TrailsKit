@@ -13,6 +13,8 @@
     __weak MKMapView *_mapView;
 }
 @property (nonatomic, readonly) MKMapView *mapView;
+@property (nonatomic) NSMutableArray *hiddenAnnotations;
+- (BOOL)shouldShowAnnotations;
 @end
 
 @implementation TKMapObjectManager
@@ -22,6 +24,7 @@
     NSParameterAssert(mapView != nil);
     if (self = [super init]) {
         _mapView = mapView;
+        _hiddenAnnotations = [NSMutableArray new];
     }
     return self;
 }
@@ -33,7 +36,37 @@
 
 - (void)addAnnotations:(NSArray *)annotations
 {
-    [self.mapView addAnnotations:annotations];
+    if ([self shouldShowAnnotations])
+        [self.mapView addAnnotations:annotations];
+    else
+        [self.hiddenAnnotations addObjectsFromArray:annotations];
+}
+
+- (void)mapViewRegionDidChange
+{
+    NSMutableArray *annotationsToHide = [NSMutableArray new];
+    NSMutableArray *annotationsToShow = [NSMutableArray new];
+    
+    if ([self shouldShowAnnotations]) {
+        [annotationsToShow addObjectsFromArray:self.hiddenAnnotations];
+    } else {
+        [annotationsToHide addObjectsFromArray:self.mapView.annotations];
+    }
+    
+    if (annotationsToHide.count) {
+        [self.mapView removeAnnotations:annotationsToHide];
+        [self.hiddenAnnotations addObjectsFromArray:annotationsToHide];
+    }
+    
+    if (annotationsToShow.count) {
+        [self.mapView addAnnotations:annotationsToShow];
+        [self.hiddenAnnotations removeObjectsInArray:annotationsToShow];
+    }
+}
+
+- (BOOL)shouldShowAnnotations
+{
+    return self.mapView.camera.altitude < self.maxAltitudeForAnnotations;
 }
 
 @end
