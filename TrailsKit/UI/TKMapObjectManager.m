@@ -7,14 +7,16 @@
 //
 
 #import "TKMapObjectManager.h"
+#import "TrailsKitGeometry.h"
 #import <MapKit/MapKit.h>
+#import <NSArray+Functional.h>
 
 @interface TKMapObjectManager () {
     __weak MKMapView *_mapView;
 }
 @property (nonatomic, readonly) MKMapView *mapView;
 @property (nonatomic) NSMutableArray *hiddenAnnotations;
-- (BOOL)shouldShowAnnotations;
+- (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation;
 @end
 
 @implementation TKMapObjectManager
@@ -36,22 +38,25 @@
 
 - (void)addAnnotations:(NSArray *)annotations
 {
-    if ([self shouldShowAnnotations])
-        [self.mapView addAnnotations:annotations];
-    else
-        [self.hiddenAnnotations addObjectsFromArray:annotations];
+    NSArray *toShow = [annotations filterUsingBlock:^BOOL(id obj) {
+        if ([self shouldShowAnnotation:obj])
+            return YES;
+        [self.hiddenAnnotations addObject:obj];
+        return NO;
+    }];
+ 
+    [self.mapView addAnnotations:toShow];
 }
 
 - (void)mapViewRegionDidChange
 {
-    NSMutableArray *annotationsToHide = [NSMutableArray new];
-    NSMutableArray *annotationsToShow = [NSMutableArray new];
+    NSArray *annotationsToShow = [self.hiddenAnnotations filterUsingBlock:^BOOL(id obj) {
+        return [self shouldShowAnnotation:obj];
+    }];
     
-    if ([self shouldShowAnnotations]) {
-        [annotationsToShow addObjectsFromArray:self.hiddenAnnotations];
-    } else {
-        [annotationsToHide addObjectsFromArray:self.mapView.annotations];
-    }
+    NSArray *annotationsToHide = [self.mapView.annotations filterUsingBlock:^BOOL(id obj) {
+        return ![self shouldShowAnnotation:obj];
+    }];
     
     if (annotationsToHide.count) {
         [self.mapView removeAnnotations:annotationsToHide];
@@ -64,9 +69,17 @@
     }
 }
 
-- (BOOL)shouldShowAnnotations
+- (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation
 {
-    return self.mapView.camera.altitude < self.maxAltitudeForAnnotations;
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return YES;
+    
+    if ([annotation isKindOfClass:[TKPointAnnotation class]]) {
+        TKPointAnnotation *pointAnnotation = annotation;
+        return ![pointAnnotation.visibilityConstraints shouldHideInMapView:self.mapView];
+    }
+    
+    return YES;
 }
 
 @end

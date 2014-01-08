@@ -10,15 +10,16 @@
 #import <CoreLocation/CoreLocation.h>
 
 @class MKMapView;
+@protocol MKAnnotation;
 
 @interface TKMapObjectManager : NSObject
-
-@property (nonatomic) CLLocationDistance maxAltitudeForAnnotations;
 
 - (id)initWithMapView:(MKMapView *)mapView;
 
 - (void)addAnnotations:(NSArray *)annotations;
 
 - (void)mapViewRegionDidChange;
+
+- (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation;
 
 @end

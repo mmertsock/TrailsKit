@@ -17,13 +17,15 @@
     return [self initWithCoordinate:CLLocationCoordinate2DMake(lat, lon)
                               title:aTitle
                                data:nil
-                              style:nil];
+                              style:nil
+                        constraints:nil];
 }
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coords
                    title:(NSString *)aTitle
                     data:(id)data
                    style:(TKShapeStyle *)style
+             constraints:(TKVisibilityConstraints *)visibilityConstraints
 {
     if (self = [super init]) {
         self.coordinate = coords;
@@ -31,6 +33,7 @@
         self.subtitle = nil;
         _data = data;
         _style = style;
+        _visibilityConstraints = visibilityConstraints;
     }
     return self;
 }
