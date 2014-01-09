@@ -14,9 +14,11 @@
 @implementation TKGPXPolygonMapper
 
 - (id)initWithStyle:(TKShapeStyle *)aStyle
+defaultVisibilityConstraints:(TKVisibilityConstraints *)constraints
 {
     if (self = [super init]) {
         _shapeStyle = aStyle;
+        _defaultVisibilityConstraints = constraints;
     }
     return self;
 }
@@ -26,7 +28,8 @@
     NSArray* polygons = [gpx.tracks mapUsingBlock:^(Track* track) {
         id polygon = [TKStyledPolygonArea
                       polygonWithPointsFromPolyline:track.path
-                      style:self.shapeStyle];
+                      style:self.shapeStyle
+                      constraints:self.defaultVisibilityConstraints];
         return polygon;
     }];
     return polygons;

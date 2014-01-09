@@ -12,11 +12,13 @@
 
 - (id)initWithPolyline:(id<MKOverlay>)polyline
                  style:(TKShapeStyle*)aStyle
+           constraints:(TKVisibilityConstraints *)visibilityConstraints
 {
     if (self = [super init])
     {
         _overlay = polyline;
         _shapeStyle = aStyle;
+        _visibilityConstraints = visibilityConstraints;
     }
     return self;
 }

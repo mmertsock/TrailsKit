@@ -9,17 +9,20 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@class TKShapeStyle;
+@class TKShapeStyle, TKVisibilityConstraints;
 
 @interface TKStyledPolygonArea : NSObject <MKOverlay>
 
 @property (nonatomic, readonly) MKPolygon* overlay;
 @property (nonatomic) TKShapeStyle* shapeStyle;
+@property (nonatomic) TKVisibilityConstraints *visibilityConstraints;
 
 + (instancetype)polygonWithPointsFromPolyline:(MKPolyline*)polyline
-                                        style:(TKShapeStyle*)aStyle;
+                                        style:(TKShapeStyle*)aStyle
+                                  constraints:(TKVisibilityConstraints *)visibilityConstraints;
 
 - (id)initWithOverlay:(MKPolygon*)anOverlay
-                style:(TKShapeStyle*)aStyle;
+                style:(TKShapeStyle*)aStyle
+          constraints:(TKVisibilityConstraints *)visibilityConstraints;
 
 @end

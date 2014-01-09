@@ -14,9 +14,11 @@
 @implementation TKGPXPolylineMapper
 
 - (id)initWithStyle:(TKShapeStyle*)aStyle
+defaultVisibilityConstraints:(TKVisibilityConstraints *)constraints
 {
     if (self = [super init]) {
         _shapeStyle = aStyle;
+        _defaultVisibilityConstraints = constraints;
     }
     return self;
 }
@@ -26,7 +28,8 @@
     NSArray* polylines = [gpx.tracks mapUsingBlock:^(Track* track) {
         id polyline = [[TKStyledPolyline alloc]
                        initWithPolyline:track.path
-                       style:self.shapeStyle];
+                       style:self.shapeStyle
+                       constraints:self.defaultVisibilityConstraints];
         return polyline;
     }];
     return polylines;

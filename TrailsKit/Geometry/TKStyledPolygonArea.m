@@ -12,18 +12,21 @@
 
 + (instancetype)polygonWithPointsFromPolyline:(MKPolyline *)polyline
                                         style:(TKShapeStyle *)aStyle
+                                  constraints:(TKVisibilityConstraints *)visibilityConstraints
 {
     MKPolygon* overlay = [MKPolygon polygonWithPoints:polyline.points
                                                 count:polyline.pointCount];
-    return [[self alloc] initWithOverlay:overlay style:aStyle];
+    return [[self alloc] initWithOverlay:overlay style:aStyle constraints:visibilityConstraints];
 }
 
 - (id)initWithOverlay:(MKPolygon *)anOverlay
                 style:(TKShapeStyle *)aStyle
+          constraints:(TKVisibilityConstraints *)visibilityConstraints
 {
     if (self = [super init]) {
         _overlay = anOverlay;
         _shapeStyle = aStyle;
+        _visibilityConstraints = visibilityConstraints;
     }
     return self;
 }

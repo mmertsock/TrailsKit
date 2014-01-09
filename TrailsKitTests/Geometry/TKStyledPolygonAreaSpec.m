@@ -29,7 +29,8 @@ describe(@"TKStyledPolygonArea", ^{
             polyline = [MKPolyline polylineWithCoordinates:coords count:5];
             shapeStyle = [TKShapeStyle new];
             SUT = [TKStyledPolygonArea polygonWithPointsFromPolyline:polyline
-                                                               style:shapeStyle];
+                                                               style:shapeStyle
+                                                         constraints:nil];
         });
         specify(^{ [[SUT.shapeStyle should] beIdenticalTo:shapeStyle]; });
         it(@"should construct a polygon overlay with the correct points", ^{
