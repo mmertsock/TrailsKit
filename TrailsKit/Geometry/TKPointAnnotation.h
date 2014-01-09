@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "TKMapKitGeometry.h"
 
 @class TKShapeStyle, TKVisibilityConstraints;
 
-@interface TKPointAnnotation : MKPointAnnotation
+@interface TKPointAnnotation : MKPointAnnotation <TKHasVisibilityConstraints>
 
 @property (strong, nonatomic) id data;
 @property (strong, nonatomic) TKShapeStyle *style;

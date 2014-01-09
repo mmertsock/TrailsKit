@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import <MapKit/MapKit.h>
 
 @class UIColor;
 
@@ -16,9 +17,11 @@
 @property (readonly, nonatomic) UIColor* strokeColor;
 @property (readonly, nonatomic) CGFloat lineWidth;
 @property (readonly, nonatomic) UIColor* fillColor;
+@property (readonly, nonatomic) MKOverlayLevel overlayLevel;
 
 - (id)initWithStrokeColor:(UIColor *)strokeColor
                 lineWidth:(CGFloat)lineWidth
-                fillColor:(UIColor *)fillColor;
+                fillColor:(UIColor *)fillColor
+             overlayLevel:(MKOverlayLevel)overlayLevel;
 
 @end

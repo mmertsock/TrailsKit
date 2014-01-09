@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 @class MKMapView;
-@protocol MKAnnotation;
+@protocol MKAnnotation, MKOverlay;
 
 @interface TKMapObjectManager : NSObject
 
@@ -18,8 +18,11 @@
 
 - (void)addAnnotations:(NSArray *)annotations;
 
+- (void)addOverlays:(NSArray *)overlays;
+
 - (void)mapViewRegionDidChange;
 
 - (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation;
+- (BOOL)shouldShowOverlay:(id<MKOverlay>)overlay;
 
 @end
