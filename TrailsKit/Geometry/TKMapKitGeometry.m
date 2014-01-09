@@ -58,4 +58,9 @@ NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region)
     return [self doubleValue];
 }
 
+- (CLLocationDistance)tk_distanceValue
+{
+    return [self doubleValue];
+}
+
 @end

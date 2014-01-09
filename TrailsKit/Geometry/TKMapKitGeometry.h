@@ -24,4 +24,5 @@ NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region);
 
 @interface NSNumber (TKMapKitGeometry)
 - (CLLocationDegrees)tk_degreesValue;
+- (CLLocationDistance)tk_distanceValue;
 @end
