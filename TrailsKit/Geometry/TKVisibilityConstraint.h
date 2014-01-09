@@ -1,5 +1,5 @@
 //
-//  TKVisibilityConstraints.h
+//  TKVisibilityConstraint.h
 //  TrailsKit
 //
 //  Created by Mike Mertsock on 1/8/14.
@@ -11,12 +11,12 @@
 
 @class MKMapView;
 
-@interface TKVisibilityConstraints : NSObject
+@interface TKVisibilityConstraint : NSObject
 
-+ (TKVisibilityConstraints *)constraintsWithMaxAltitude:(CLLocationDistance)maxAltitude;
++ (TKVisibilityConstraint *)constraintWithMaxAltitude:(CLLocationDistance)maxAltitude;
 
 // shouldHide instead of shouldShow so that sending
-// this message to a nil constraints object returns
+// this message to a nil constraint object returns
 // a sensible value for most situations.
 - (BOOL)shouldHideInMapView:(MKMapView *)mapView;
 

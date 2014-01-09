@@ -10,13 +10,13 @@
 #import <MapKit/MapKit.h>
 #import "TKMapKitGeometry.h"
 
-@class TKShapeStyle, TKVisibilityConstraints;
+@class TKShapeStyle, TKVisibilityConstraint;
 
-@interface TKPointAnnotation : MKPointAnnotation <TKHasVisibilityConstraints>
+@interface TKPointAnnotation : MKPointAnnotation <TKHasVisibilityConstraint>
 
 @property (strong, nonatomic) id data;
 @property (strong, nonatomic) TKShapeStyle *style;
-@property (strong, nonatomic) TKVisibilityConstraints *visibilityConstraints;
+@property (strong, nonatomic) TKVisibilityConstraint *visibilityConstraint;
 
 - (id)initWithLatitude:(CLLocationDegrees)lat
              longitude:(CLLocationDegrees)lon
@@ -26,6 +26,6 @@
                    title:(NSString*)aTitle
                     data:(id)data
                    style:(TKShapeStyle *)style
-             constraints:(TKVisibilityConstraints *)visibilityConstraints;
+              constraint:(TKVisibilityConstraint *)visibilityConstraint;
 
 @end

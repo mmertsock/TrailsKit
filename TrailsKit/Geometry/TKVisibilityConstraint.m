@@ -1,24 +1,24 @@
 //
-//  TKVisibilityConstraints.m
+//  TKVisibilityConstraint.m
 //  TrailsKit
 //
 //  Created by Mike Mertsock on 1/8/14.
 //  Copyright (c) 2014 Esker Apps. All rights reserved.
 //
 
-#import "TKVisibilityConstraints.h"
+#import "TKVisibilityConstraint.h"
 #import <MapKit/MapKit.h>
 
-@interface TKAltitudeVisibilityConstraints : TKVisibilityConstraints
+@interface TKAltitudeVisibilityConstraint : TKVisibilityConstraint
 - (id)initWithMaxAltitude:(CLLocationDistance)maxAltitude;
 @property (readonly, nonatomic) CLLocationDistance maxAltitude;
 @end
 
-@implementation TKVisibilityConstraints
+@implementation TKVisibilityConstraint
 
-+ (TKVisibilityConstraints *)constraintsWithMaxAltitude:(CLLocationDistance)maxAltitude
++ (TKVisibilityConstraint *)constraintWithMaxAltitude:(CLLocationDistance)maxAltitude
 {
-    return [[TKAltitudeVisibilityConstraints alloc] initWithMaxAltitude:maxAltitude];
+    return [[TKAltitudeVisibilityConstraint alloc] initWithMaxAltitude:maxAltitude];
 }
 
 - (BOOL)shouldHideInMapView:(MKMapView *)mapView
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation TKAltitudeVisibilityConstraints
+@implementation TKAltitudeVisibilityConstraint
 
 - (id)initWithMaxAltitude:(CLLocationDistance)maxAltitude
 {

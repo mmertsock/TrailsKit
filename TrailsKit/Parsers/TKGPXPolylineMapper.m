@@ -14,11 +14,11 @@
 @implementation TKGPXPolylineMapper
 
 - (id)initWithStyle:(TKShapeStyle*)aStyle
-defaultVisibilityConstraints:(TKVisibilityConstraints *)constraints
+defaultVisibilityConstraint:(TKVisibilityConstraint *)constraint
 {
     if (self = [super init]) {
         _shapeStyle = aStyle;
-        _defaultVisibilityConstraints = constraints;
+        _defaultVisibilityConstraint = constraint;
     }
     return self;
 }
@@ -29,7 +29,7 @@ defaultVisibilityConstraints:(TKVisibilityConstraints *)constraints
         id polyline = [[TKStyledPolyline alloc]
                        initWithPolyline:track.path
                        style:self.shapeStyle
-                       constraints:self.defaultVisibilityConstraints];
+                       constraint:self.defaultVisibilityConstraint];
         return polyline;
     }];
     return polylines;

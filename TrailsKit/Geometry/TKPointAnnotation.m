@@ -18,14 +18,14 @@
                               title:aTitle
                                data:nil
                               style:nil
-                        constraints:nil];
+                         constraint:nil];
 }
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coords
                    title:(NSString *)aTitle
                     data:(id)data
                    style:(TKShapeStyle *)style
-             constraints:(TKVisibilityConstraints *)visibilityConstraints
+              constraint:(TKVisibilityConstraint *)visibilityConstraint
 {
     if (self = [super init]) {
         self.coordinate = coords;
@@ -33,7 +33,7 @@
         self.subtitle = nil;
         _data = data;
         _style = style;
-        _visibilityConstraints = visibilityConstraints;
+        _visibilityConstraint = visibilityConstraint;
     }
     return self;
 }

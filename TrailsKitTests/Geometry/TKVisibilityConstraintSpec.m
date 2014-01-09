@@ -1,5 +1,5 @@
 //
-//  TKVisibilityConstraintsSpec.m
+//  TKVisibilityConstraintSpec.m
 //  TrailsKit
 //
 //  Created by Mike Mertsock on 1/8/14.
@@ -10,15 +10,15 @@
 #import "TrailsKitGeometry.h"
 #import <MapKit/MapKit.h>
 
-SPEC_BEGIN(TKVisibilityConstraintsSpec)
+SPEC_BEGIN(TKVisibilityConstraintSpec)
 
-describe(@"TKVisibilityConstraints", ^{
-	__block TKVisibilityConstraints *SUT;
+describe(@"TKVisibilityConstraint", ^{
+	__block TKVisibilityConstraint *SUT;
     __block MKMapView *mapView;
     __block MKMapCamera *mapCamera;
 	context(@"given a max-altitude constraint", ^{
         beforeEach(^{
-            SUT = [TKVisibilityConstraints constraintsWithMaxAltitude:500];
+            SUT = [TKVisibilityConstraint constraintWithMaxAltitude:500];
             mapView = [MKMapView nullMock];
             mapCamera = [MKMapCamera camera];
             [mapView stub:@selector(camera) andReturn:mapCamera];

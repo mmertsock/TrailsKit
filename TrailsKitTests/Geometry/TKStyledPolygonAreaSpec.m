@@ -30,7 +30,7 @@ describe(@"TKStyledPolygonArea", ^{
             shapeStyle = [TKShapeStyle new];
             SUT = [TKStyledPolygonArea polygonWithPointsFromPolyline:polyline
                                                                style:shapeStyle
-                                                         constraints:nil];
+                                                         constraint:nil];
         });
         specify(^{ [[SUT.shapeStyle should] beIdenticalTo:shapeStyle]; });
         it(@"should construct a polygon overlay with the correct points", ^{

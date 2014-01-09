@@ -11,7 +11,7 @@
 
 #define MKCoordinateRegionZero MKCoordinateRegionMake(CLLocationCoordinate2DMake(0, 0), MKCoordinateSpanMake(0, 0))
 
-@class TKVisibilityConstraints;
+@class TKVisibilityConstraint;
 
 /**
  * Construct a region enclosing an array of CLLocationCoordinate2D values.
@@ -24,8 +24,8 @@ BOOL MKCoordinateRegionIsZero(MKCoordinateRegion region);
 
 NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region);
 
-@protocol TKHasVisibilityConstraints <NSObject>
--(TKVisibilityConstraints *)visibilityConstraints;
+@protocol TKHasVisibilityConstraint <NSObject>
+-(TKVisibilityConstraint *)visibilityConstraint;
 @end
 
 @interface NSNumber (TKMapKitGeometry)

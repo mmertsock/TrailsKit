@@ -10,16 +10,16 @@
 #import <MapKit/MapKit.h>
 #import "TKMapKitGeometry.h"
 
-@class TKShapeStyle, TKVisibilityConstraints;
+@class TKShapeStyle, TKVisibilityConstraint;
 
-@interface TKStyledPolyline : NSObject <MKOverlay, TKHasVisibilityConstraints>
+@interface TKStyledPolyline : NSObject <MKOverlay, TKHasVisibilityConstraint>
 
 @property (nonatomic, readonly) id<MKOverlay> overlay;
 @property (nonatomic) TKShapeStyle* shapeStyle;
-@property (nonatomic) TKVisibilityConstraints *visibilityConstraints;
+@property (nonatomic) TKVisibilityConstraint *visibilityConstraint;
 
 - (id)initWithPolyline:(id<MKOverlay>)polyline
                  style:(TKShapeStyle*)aStyle
-           constraints:(TKVisibilityConstraints *)visibilityConstraints;
+            constraint:(TKVisibilityConstraint *)visibilityConstraint;
 
 @end

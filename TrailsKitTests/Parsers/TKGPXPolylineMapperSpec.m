@@ -22,8 +22,8 @@ describe(@"TKGPXPolylineMapper", ^{
     
     beforeEach(^{
         shapeStyle = [TKShapeStyle new];
-        id constraints = [TKVisibilityConstraints constraintsWithMaxAltitude:1000];
-        SUT = [[TKGPXPolylineMapper alloc] initWithStyle:shapeStyle defaultVisibilityConstraints:constraints];
+        id constraint = [TKVisibilityConstraint constraintWithMaxAltitude:1000];
+        SUT = [[TKGPXPolylineMapper alloc] initWithStyle:shapeStyle defaultVisibilityConstraint:constraint];
         gpx = [GPX new];
     });
     
@@ -46,7 +46,7 @@ describe(@"TKGPXPolylineMapper", ^{
             [[result[0] should] beKindOfClass:[TKStyledPolyline class]];
             TKStyledPolyline* polyline = result[0];
             [[polyline.shapeStyle should] beIdenticalTo:shapeStyle];
-            [[polyline.visibilityConstraints should] beIdenticalTo:SUT.defaultVisibilityConstraints];
+            [[polyline.visibilityConstraint should] beIdenticalTo:SUT.defaultVisibilityConstraint];
             [[(id)polyline.overlay should] beIdenticalTo:[gpx.tracks[0] path]];
         });
     });

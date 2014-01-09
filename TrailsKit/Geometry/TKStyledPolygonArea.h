@@ -10,20 +10,20 @@
 #import <MapKit/MapKit.h>
 #import "TKMapKitGeometry.h"
 
-@class TKShapeStyle, TKVisibilityConstraints;
+@class TKShapeStyle, TKVisibilityConstraint;
 
-@interface TKStyledPolygonArea : NSObject <MKOverlay, TKHasVisibilityConstraints>
+@interface TKStyledPolygonArea : NSObject <MKOverlay, TKHasVisibilityConstraint>
 
 @property (nonatomic, readonly) MKPolygon* overlay;
 @property (nonatomic) TKShapeStyle* shapeStyle;
-@property (nonatomic) TKVisibilityConstraints *visibilityConstraints;
+@property (nonatomic) TKVisibilityConstraint *visibilityConstraint;
 
 + (instancetype)polygonWithPointsFromPolyline:(MKPolyline*)polyline
                                         style:(TKShapeStyle*)aStyle
-                                  constraints:(TKVisibilityConstraints *)visibilityConstraints;
+                                   constraint:(TKVisibilityConstraint *)visibilityConstraint;
 
 - (id)initWithOverlay:(MKPolygon*)anOverlay
                 style:(TKShapeStyle*)aStyle
-          constraints:(TKVisibilityConstraints *)visibilityConstraints;
+           constraint:(TKVisibilityConstraint *)visibilityConstraint;
 
 @end

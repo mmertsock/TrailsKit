@@ -37,8 +37,8 @@ describe(@"TKGPXPolygonMapper", ^{
     
     beforeEach(^{
         shapeStyle = [TKShapeStyle new];
-        id constraints = [TKVisibilityConstraints constraintsWithMaxAltitude:1000];
-        SUT = [[TKGPXPolygonMapper alloc] initWithStyle:shapeStyle defaultVisibilityConstraints:constraints];
+        id constraint = [TKVisibilityConstraint constraintWithMaxAltitude:1000];
+        SUT = [[TKGPXPolygonMapper alloc] initWithStyle:shapeStyle defaultVisibilityConstraint:constraint];
         gpx = [GPX new];
     });
     
@@ -62,7 +62,7 @@ describe(@"TKGPXPolygonMapper", ^{
         specify(^{ [polygonResult shouldNotBeNil]; });
         it(@"should return a correctly configured Polygon overlay", ^{
             [[polygonResult.shapeStyle should] beIdenticalTo:shapeStyle];
-            [[polygonResult.visibilityConstraints should] beIdenticalTo:SUT.defaultVisibilityConstraints];
+            [[polygonResult.visibilityConstraint should] beIdenticalTo:SUT.defaultVisibilityConstraint];
         });
         it(@"should return a polygon with the right points", ^{
             [[(id)polygonResult.overlay should] beKindOfClass:[MKPolygon class]];

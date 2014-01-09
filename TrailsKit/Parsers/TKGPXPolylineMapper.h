@@ -10,14 +10,14 @@
 #import "TrailsKitTypes.h"
 #import "TKGPXOverlayMapper.h"
 
-@class TKShapeStyle, TKVisibilityConstraints;
+@class TKShapeStyle, TKVisibilityConstraint;
 
 @interface TKGPXPolylineMapper : NSObject <TKGPXOverlayMapper>
 
 @property (nonatomic, readonly) TKShapeStyle* shapeStyle;
-@property (nonatomic, readonly) TKVisibilityConstraints *defaultVisibilityConstraints;
+@property (nonatomic, readonly) TKVisibilityConstraint *defaultVisibilityConstraint;
 
 - (id)initWithStyle:(TKShapeStyle*)aStyle
-defaultVisibilityConstraints:(TKVisibilityConstraints *)constraints;;
+defaultVisibilityConstraint:(TKVisibilityConstraint *)constraint;
 
 @end

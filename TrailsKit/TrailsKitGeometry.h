@@ -16,6 +16,6 @@
 #import "TKShapeStyle.h"
 #import "TKStyledPolygonArea.h"
 #import "TKStyledPolyline.h"
-#import "TKVisibilityConstraints.h"
+#import "TKVisibilityConstraint.h"
 
 #endif
