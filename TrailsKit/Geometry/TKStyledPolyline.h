@@ -17,9 +17,11 @@
 @property (nonatomic, readonly) id<MKOverlay> overlay;
 @property (nonatomic) TKShapeStyle* shapeStyle;
 @property (nonatomic) TKVisibilityConstraint *visibilityConstraint;
+@property (strong, nonatomic) id data;
 
 - (id)initWithPolyline:(id<MKOverlay>)polyline
                  style:(TKShapeStyle*)aStyle
-            constraint:(TKVisibilityConstraint *)visibilityConstraint;
+            constraint:(TKVisibilityConstraint *)visibilityConstraint
+                  data:(id)data;
 
 @end

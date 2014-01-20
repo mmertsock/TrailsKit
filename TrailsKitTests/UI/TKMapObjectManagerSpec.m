@@ -45,9 +45,9 @@ describe(@"TKMapObjectManager", ^{
         zoomedOutPoint = [TKPointAnnotation pointWithLatitude:20 longitude:30 title:@"zoomout" maxAltitude:TKMOMS_ZOOMED_OUT + 1];
         pointsToAdd = @[zoomedInPoint, zoomedOutPoint];
         // nil style == default MKOverlayLevel = Above Roads
-        zoomedInOverlay = [[TKStyledPolyline alloc] initWithPolyline:nil style:nil constraint:[TKVisibilityConstraint constraintWithMaxAltitude:TKMOMS_ZOOMED_IN + 1]];
+        zoomedInOverlay = [[TKStyledPolyline alloc] initWithPolyline:nil style:nil constraint:[TKVisibilityConstraint constraintWithMaxAltitude:TKMOMS_ZOOMED_IN + 1] data:nil];
         // level == above labels.
-        zoomedOutOverlay = [[TKStyledPolyline alloc] initWithPolyline:nil style:[[TKShapeStyle alloc] initWithStrokeColor:nil lineWidth:0 fillColor:nil overlayLevel:MKOverlayLevelAboveLabels] constraint:[TKVisibilityConstraint constraintWithMaxAltitude:TKMOMS_ZOOMED_OUT + 1]];
+        zoomedOutOverlay = [[TKStyledPolyline alloc] initWithPolyline:nil style:[[TKShapeStyle alloc] initWithStrokeColor:nil lineWidth:0 fillColor:nil overlayLevel:MKOverlayLevelAboveLabels] constraint:[TKVisibilityConstraint constraintWithMaxAltitude:TKMOMS_ZOOMED_OUT + 1] data:nil];
         overlaysToAdd = @[zoomedInOverlay, zoomedOutOverlay];
     });
     beforeEach(^{

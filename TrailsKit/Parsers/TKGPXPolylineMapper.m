@@ -29,7 +29,8 @@ defaultVisibilityConstraint:(TKVisibilityConstraint *)constraint
         id polyline = [[TKStyledPolyline alloc]
                        initWithPolyline:track.path
                        style:self.shapeStyle
-                       constraint:self.defaultVisibilityConstraint];
+                       constraint:self.defaultVisibilityConstraint
+                       data:nil];
         return polyline;
     }];
     return polylines;
