@@ -18,10 +18,14 @@
 @property (readonly, nonatomic) CGFloat lineWidth;
 @property (readonly, nonatomic) UIColor* fillColor;
 @property (readonly, nonatomic) MKOverlayLevel overlayLevel;
+@property (copy, nonatomic) NSArray *lineDashPattern;
+@property (nonatomic) CGFloat lineDashPhase;
 
 - (id)initWithStrokeColor:(UIColor *)strokeColor
                 lineWidth:(CGFloat)lineWidth
                 fillColor:(UIColor *)fillColor
-             overlayLevel:(MKOverlayLevel)overlayLevel;
+             overlayLevel:(MKOverlayLevel)overlayLevel
+          lineDashPattern:(NSArray *)lineDashPattern
+            lineDashPhase:(CGFloat)lineDashPhase;
 
 @end

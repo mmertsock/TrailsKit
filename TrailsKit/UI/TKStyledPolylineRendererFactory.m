@@ -37,8 +37,10 @@
     renderer.strokeColor = shapeStyle.strokeColor;
     renderer.fillColor = shapeStyle.fillColor;
     renderer.lineWidth = shapeStyle.lineWidth;
-    renderer.lineJoin = kCGLineJoinRound;
-    renderer.lineCap = kCGLineCapRound;
+    renderer.lineJoin = (shapeStyle.lineDashPattern.count > 0) ? kCGLineJoinMiter : kCGLineJoinRound;
+    renderer.lineCap = (shapeStyle.lineDashPattern.count > 0) ? kCGLineCapButt : kCGLineCapRound;
+    renderer.lineDashPattern = shapeStyle.lineDashPattern;
+    renderer.lineDashPhase = shapeStyle.lineDashPhase;
 }
 
 @end

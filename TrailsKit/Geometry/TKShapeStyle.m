@@ -14,20 +14,24 @@
                 lineWidth:(CGFloat)lineWidth
                 fillColor:(UIColor *)fillColor
              overlayLevel:(MKOverlayLevel)overlayLevel
+          lineDashPattern:(NSArray *)lineDashPattern
+            lineDashPhase:(CGFloat)lineDashPhase
 {
     if (self = [super init]) {
         _strokeColor = strokeColor;
         _lineWidth = lineWidth;
         _fillColor = fillColor;
         _overlayLevel = overlayLevel;
+        _lineDashPattern = lineDashPattern;
+        _lineDashPhase = lineDashPhase;
     }
     return self;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<TKShapeStyle stroke:%@ fill:%@ lineWidth:%f level:%d>",
-            self.strokeColor, self.fillColor, self.lineWidth, self.overlayLevel];
+    return [NSString stringWithFormat:@"<TKShapeStyle stroke:%@ fill:%@ lineWidth:%f level:%d dash:%@/%f>",
+            self.strokeColor, self.fillColor, self.lineWidth, self.overlayLevel, self.lineDashPattern, self.lineDashPhase];
 }
 
 @end
