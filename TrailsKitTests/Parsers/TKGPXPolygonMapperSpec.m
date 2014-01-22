@@ -25,6 +25,16 @@
     };
     return [MKPolyline polylineWithCoordinates:coords count:3];
 }
++ (MKPolyline*)interiorPolylineForTesting
+{
+    CLLocationCoordinate2D coords[4] = {
+        CLLocationCoordinate2DMake(42.25, -76.25),
+        CLLocationCoordinate2DMake(42.50, -76.15),
+        CLLocationCoordinate2DMake(42.75, -76.25),
+        CLLocationCoordinate2DMake(42.25, -76.75)
+    };
+    return [MKPolyline polylineWithCoordinates:coords count:4];
+}
 @end
 
 SPEC_BEGIN(TKGPXPolygonMapperSpec)
@@ -76,11 +86,33 @@ describe(@"TKGPXPolygonMapper", ^{
             track.path = [MKPolyline polylineForTesting];
             [gpx.tracks addObject:track];
             track = [Track new];
-            track.path = [MKPolyline polylineForTesting];
+            track.path = [MKPolyline interiorPolylineForTesting];
             [gpx.tracks addObject:track];
-            result = [SUT mapOverlaysFromGPX:gpx];
         });
-        specify(^{ [[result should] haveCountOf:2]; });
+        context(@"when interior polygons are disabled", ^{
+            beforeEach(^{
+                SUT.treatMultipleTracksInFileAsInteriorPolygons = NO;
+                result = [SUT mapOverlaysFromGPX:gpx];
+            });
+            specify(^{ [[result should] haveCountOf:2]; });
+        });
+        context(@"when interior polygons are enabled", ^{
+            beforeEach(^{
+                SUT.treatMultipleTracksInFileAsInteriorPolygons = YES;
+                result = [SUT mapOverlaysFromGPX:gpx];
+            });
+            it(@"should map a single top-level polygon", ^{
+                [[result should] haveCountOf:1];
+                TKStyledPolygonArea *topLevel = result.firstObject;
+                [[theValue(topLevel.overlay.pointCount) should] equal:theValue(3)];
+            });
+            it(@"should have a single interior polygon", ^{
+                MKPolygon *topPoly = (id) [result.firstObject overlay];
+                [[topPoly.interiorPolygons should] haveCountOf:1];
+                MKPolygon *interior = topPoly.interiorPolygons.firstObject;
+                [[theValue(interior.pointCount) should] equal:theValue(4)];
+            });
+        });
     });
     
     context(@"when mapping GPX with no tracks", ^{

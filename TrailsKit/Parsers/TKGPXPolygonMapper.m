@@ -10,6 +10,7 @@
 #import "TKStyledPolygonArea.h"
 #import <NSArray+Functional/NSArray+Functional.h>
 #import <GPXParser/GPXParser.h>
+#import <MapKit/MapKit.h>
 
 @implementation TKGPXPolygonMapper
 
@@ -25,14 +26,29 @@ defaultVisibilityConstraint:(TKVisibilityConstraint *)constraint
 
 - (NSArray *)mapOverlaysFromGPX:(GPX *)gpx
 {
-    NSArray* polygons = [gpx.tracks mapUsingBlock:^(Track* track) {
-        id polygon = [TKStyledPolygonArea
-                      polygonWithPointsFromPolyline:track.path
+    NSArray *polygons = [gpx.tracks mapUsingBlock:^id(Track *track) {
+        return [MKPolygon polygonWithPoints:track.path.points
+                                      count:track.path.pointCount];
+    }];
+    
+    if (self.treatMultipleTracksInFileAsInteriorPolygons
+        && polygons.count > 1) {
+        MKPolygon *topLevel = polygons.firstObject;
+        id interiorPolygons = [polygons subarrayWithRange:NSMakeRange(1, polygons.count - 1)];
+        topLevel = [MKPolygon polygonWithPoints:topLevel.points
+                                          count:topLevel.pointCount
+                               interiorPolygons:interiorPolygons];
+        polygons = @[topLevel];
+    }
+    
+    NSArray* tkPolygons = [polygons mapUsingBlock:^(MKPolygon *poly) {
+        id polygon = [[TKStyledPolygonArea alloc]
+                      initWithOverlay:poly
                       style:self.shapeStyle
                       constraint:self.defaultVisibilityConstraint];
         return polygon;
     }];
-    return polygons;
+    return tkPolygons;
 }
 
 @end

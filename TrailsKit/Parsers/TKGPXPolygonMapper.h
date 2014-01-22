@@ -16,6 +16,7 @@
 
 @property (nonatomic, readonly) TKShapeStyle* shapeStyle;
 @property (nonatomic, readonly) TKVisibilityConstraint *defaultVisibilityConstraint;
+@property (nonatomic) BOOL treatMultipleTracksInFileAsInteriorPolygons;
 
 - (id)initWithStyle:(TKShapeStyle*)aStyle
 defaultVisibilityConstraint:(TKVisibilityConstraint *)constraint;
