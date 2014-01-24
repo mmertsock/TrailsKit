@@ -15,7 +15,7 @@
  * Given an array of id<MKAnnotation>, returns an array of NSValues
  * representing CLLocationCoordinate2Ds.
  */
-- (NSArray*)coordinatesOfAnnotations;
+- (NSArray*)tk_coordinatesOfAnnotations;
 
 /**
  * Given an array of CLLocations, returns a C array representation
@@ -23,6 +23,6 @@
  * empty/nil. Otherwise returns a malloc'ed C array that must be free'd
  * after use.
  */
-- (CLLocationCoordinate2D*)cArrayOfLocationCoordinates;
+- (CLLocationCoordinate2D*)tk_CArrayOfLocationCoordinates;
 
 @end

@@ -12,14 +12,14 @@
 
 @implementation NSArray (MapKitGeometry)
 
-- (NSArray *)coordinatesOfAnnotations
+- (NSArray *)tk_coordinatesOfAnnotations
 {
     return [self mapUsingBlock:^(id<MKAnnotation> annotation){
         return [NSValue valueWithMKCoordinate:annotation.coordinate];
     }];
 }
 
-- (CLLocationCoordinate2D*)cArrayOfLocationCoordinates
+- (CLLocationCoordinate2D*)tk_CArrayOfLocationCoordinates
 {
     if (self.count == 0) return NULL;
     CLLocationCoordinate2D* clcoords = (CLLocationCoordinate2D*)

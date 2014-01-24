@@ -11,7 +11,7 @@ describe(@"NSArrayMapKitGeometry", ^{
     context(@"when getting coordinates of annotations", ^{
         __block NSArray* result;
         context(@"when annotations are empty", ^{
-            beforeEach(^{ result = [@[] coordinatesOfAnnotations]; });
+            beforeEach(^{ result = [@[] tk_coordinatesOfAnnotations]; });
             it(@"should return an empty array", ^{ [[result should] beEmpty]; });
         });
         context(@"when mapping many annotations", ^{
@@ -20,7 +20,7 @@ describe(@"NSArrayMapKitGeometry", ^{
                 [[TKPointAnnotation alloc] initWithLatitude:2 longitude:0 title:@"b"],
                 [[TKPointAnnotation alloc] initWithLatitude:0 longitude:3 title:@"c"]
                 ];
-                result = [input coordinatesOfAnnotations];
+                result = [input tk_coordinatesOfAnnotations];
             });
             it(@"should return a single coordinate", ^{
                 [[result should] haveCountOf:3];
@@ -38,7 +38,7 @@ describe(@"NSArrayMapKitGeometry", ^{
         context(@"when the input array is empty", ^{
             beforeEach(^{ input = @[]; });
             it(@"should return NULL", ^{
-                CLLocationCoordinate2D* result = [input cArrayOfLocationCoordinates];
+                CLLocationCoordinate2D* result = [input tk_CArrayOfLocationCoordinates];
                 [[theValue(result == NULL) should] beTrue];
                 if (result) free(result);
                 /*
@@ -59,7 +59,7 @@ describe(@"NSArrayMapKitGeometry", ^{
                 ];
             });
             it(@"should return a C array with each coordinate", ^{
-                CLLocationCoordinate2D* result = [input cArrayOfLocationCoordinates];
+                CLLocationCoordinate2D* result = [input tk_CArrayOfLocationCoordinates];
                 [[theValue(result == NULL) should] beFalse];
                 if (result)
                 {
