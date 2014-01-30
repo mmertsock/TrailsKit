@@ -9,9 +9,9 @@
 #ifndef TrailsKit_TrailsKit_h
 #define TrailsKit_TrailsKit_h
 
+#import "TrailsKitTypes.h"
 #import "TrailsKitGeometry.h"
 #import "TrailsKitParsers.h"
-#import "TrailsKitTypes.h"
 #import "TrailsKitUI.h"
 
 #endif
