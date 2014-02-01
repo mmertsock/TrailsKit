@@ -8,6 +8,13 @@
 
 #import "TKMapKitGeometry.h"
 
+NSString *NSStringFromCLLocationCoordinate2D(CLLocationCoordinate2D coordinate)
+{
+    if (!CLLocationCoordinate2DIsValid(coordinate))
+        return @"(invalid)";
+    return [NSString stringWithFormat:@"(%f, %f)", coordinate.latitude, coordinate.longitude];
+}
+
 MKCoordinateRegion MKCoordinateRegionFromCoordinates(NSArray* coordinates)
 {
     if (!coordinates.count) return MKCoordinateRegionZero;

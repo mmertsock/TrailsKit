@@ -13,6 +13,8 @@
 
 @class TKVisibilityConstraint;
 
+NSString *NSStringFromCLLocationCoordinate2D(CLLocationCoordinate2D coordinate);
+
 /**
  * Construct a region enclosing an array of CLLocationCoordinate2D values.
  */
