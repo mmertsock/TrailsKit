@@ -40,6 +40,7 @@
 
 - (void)addAnnotations:(NSArray *)annotations
 {
+    NSAssert([NSThread isMainThread], @"TKMapObjectManager addAnnotations: must run in main thread");
     NSArray *toShow = [annotations filterUsingBlock:^BOOL(id obj) {
         if ([self shouldShowAnnotation:obj])
             return YES;
@@ -52,6 +53,7 @@
 
 - (void)addOverlays:(NSArray *)overlays
 {
+    NSAssert([NSThread isMainThread], @"TKMapObjectManager addOverlays: must run in main thread");
     NSArray *toShow = [overlays filterUsingBlock:^BOOL(id obj) {
         if ([self shouldShowOverlay:obj])
             return YES;
@@ -64,6 +66,7 @@
 
 - (void)clearAllObjects
 {
+    NSAssert([NSThread isMainThread], @"TKMapObjectManager clearAllObjects must run in main thread");
     [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView removeOverlays:self.mapView.overlays];
     [self.hiddenAnnotations removeAllObjects];
