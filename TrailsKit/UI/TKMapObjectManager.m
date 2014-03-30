@@ -62,6 +62,14 @@
     [self addOverlaysToMapView:toShow];
 }
 
+- (void)clearAllObjects
+{
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView removeOverlays:self.mapView.overlays];
+    [self.hiddenAnnotations removeAllObjects];
+    [self.hiddenOverlays removeAllObjects];
+}
+
 - (void)mapViewRegionDidChange
 {
     NSArray *annotationsToShow = [self.hiddenAnnotations filterUsingBlock:^BOOL(id obj) {

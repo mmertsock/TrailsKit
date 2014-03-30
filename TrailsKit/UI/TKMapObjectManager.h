@@ -20,6 +20,8 @@
 
 - (void)addOverlays:(NSArray *)overlays;
 
+- (void)clearAllObjects;
+
 - (void)mapViewRegionDidChange;
 
 - (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation;
