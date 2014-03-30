@@ -30,7 +30,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<TKShapeStyle stroke:%@ fill:%@ lineWidth:%f level:%d dash:%@/%f>",
+    return [NSString stringWithFormat:@"<TKShapeStyle stroke:%@ fill:%@ lineWidth:%f level:%ld dash:%@/%f>",
             self.strokeColor, self.fillColor, self.lineWidth, self.overlayLevel, self.lineDashPattern, self.lineDashPhase];
 }
 
