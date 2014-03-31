@@ -68,6 +68,25 @@ describe(@"TKGPXPolylineMapper", ^{
         beforeEach(^{ result = [SUT mapOverlaysFromGPX:gpx]; });
         specify(^{ [[result should] beEmpty]; });
     });
+    
+    context(@"when mapping GPX with one route", ^{
+        beforeEach(^{
+            Track* route = [Track new];
+            route.path = [KWMock mockForProtocol:@protocol(MKOverlay)];
+            [gpx.routes addObject:route];
+            result = [SUT mapOverlaysFromGPX:gpx];
+        });
+        specify(^{ [[theValue(result.count) should] equal:theValue(1)]; });
+//        specify(^{ [[result should] haveCountOf:1]; });
+        it(@"should return a correct Polyline overlay in the array", ^{
+            if (result.count < 1) return;
+            [[result[0] should] beKindOfClass:[TKStyledPolyline class]];
+            TKStyledPolyline* polyline = result[0];
+            [[polyline.shapeStyle should] beIdenticalTo:shapeStyle];
+            [[polyline.visibilityConstraint should] beIdenticalTo:SUT.defaultVisibilityConstraint];
+            [[(id)polyline.overlay should] beIdenticalTo:[gpx.routes[0] path]];
+        });
+    });
 });
 
 SPEC_END

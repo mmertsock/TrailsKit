@@ -8,6 +8,7 @@
 
 #import "TKGPXPolylineMapper.h"
 #import "TKStyledPolyline.h"
+#import "GPX+TrailsKit.h"
 #import <NSArray+Functional/NSArray+Functional.h>
 #import <GPXParser/GPXParser.h>
 
@@ -25,7 +26,7 @@ defaultVisibilityConstraint:(TKVisibilityConstraint *)constraint
 
 - (NSArray *)mapOverlaysFromGPX:(GPX *)gpx
 {
-    NSArray* polylines = [gpx.tracks mapUsingBlock:^(Track* track) {
+    NSArray* polylines = [gpx.allTracks mapUsingBlock:^(Track* track) {
         id polyline = [[TKStyledPolyline alloc]
                        initWithPolyline:track.path
                        style:self.shapeStyle

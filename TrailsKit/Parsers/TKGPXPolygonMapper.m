@@ -8,6 +8,7 @@
 
 #import "TKGPXPolygonMapper.h"
 #import "TKStyledPolygonArea.h"
+#import "GPX+TrailsKit.h"
 #import <NSArray+Functional/NSArray+Functional.h>
 #import <GPXParser/GPXParser.h>
 #import <MapKit/MapKit.h>
@@ -26,7 +27,7 @@ defaultVisibilityConstraint:(TKVisibilityConstraint *)constraint
 
 - (NSArray *)mapOverlaysFromGPX:(GPX *)gpx
 {
-    NSArray *polygons = [gpx.tracks mapUsingBlock:^id(Track *track) {
+    NSArray *polygons = [gpx.allTracks mapUsingBlock:^id(Track *track) {
         return [MKPolygon polygonWithPoints:track.path.points
                                       count:track.path.pointCount];
     }];

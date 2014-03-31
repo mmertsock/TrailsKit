@@ -119,6 +119,28 @@ describe(@"TKGPXPolygonMapper", ^{
         beforeEach(^{ result = [SUT mapOverlaysFromGPX:gpx]; });
         specify(^{ [[result should] beEmpty]; });
     });
+    
+    context(@"when mapping GPX with one route", ^{
+        __block TKStyledPolygonArea* polygonResult;
+        beforeEach(^{
+            Track* route = [Track new];
+            route.path = [MKPolyline polylineForTesting];
+            [gpx.routes addObject:route];
+            result = [SUT mapOverlaysFromGPX:gpx];
+            if (result.count && [result[0] isKindOfClass:[TKStyledPolygonArea class]])
+                polygonResult = result[0];
+        });
+        specify(^{ [[theValue(result.count) should] equal:theValue(1)]; });
+        specify(^{ [polygonResult shouldNotBeNil]; });
+        it(@"should return a correctly configured Polygon overlay", ^{
+            [[polygonResult.shapeStyle should] beIdenticalTo:shapeStyle];
+            [[polygonResult.visibilityConstraint should] beIdenticalTo:SUT.defaultVisibilityConstraint];
+        });
+        it(@"should return a polygon with the right points", ^{
+            [[(id)polygonResult.overlay should] beKindOfClass:[MKPolygon class]];
+            [[theValue(polygonResult.overlay.pointCount) should] equal:theValue(3)];
+        });
+    });
 
 });
 
