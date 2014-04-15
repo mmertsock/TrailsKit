@@ -6,5 +6,5 @@ target :TrailsKit, :exclusive => true do
 end
 
 target :TrailsKitTests, :exclusive => true do
-    pod 'Kiwi'
+    pod 'Kiwi/XCTest'
 end

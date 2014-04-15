@@ -53,7 +53,9 @@ describe(@"TKAnnotationViewFactory", ^{
             beforeEach(^{
                 existingView = [[MKAnnotationView alloc] initWithAnnotation:nil
                                                             reuseIdentifier:@"testid"];
-                [[mapView stubAndReturn:existingView] dequeueReusableAnnotationViewWithIdentifier:@"testid"];
+                [mapView stub:@selector(dequeueReusableAnnotationViewWithIdentifier:)
+                    andReturn:existingView
+                withArguments:@"testid"];
             });
             it(@"should not ask the builder for a new view", ^{
                 [[(id)viewBuilder shouldNot] receive:@selector(viewForAnnotation:reuseIdentifier:)];
@@ -74,7 +76,9 @@ describe(@"TKAnnotationViewFactory", ^{
             beforeEach(^{
                 existingView = [[MKAnnotationView alloc] initWithAnnotation:nil
                                                             reuseIdentifier:@"testid"];
-                [[mapView stubAndReturn:nil] dequeueReusableAnnotationViewWithIdentifier:@"testid"];
+                [mapView stub:@selector(dequeueReusableAnnotationViewWithIdentifier:)
+                    andReturn:nil
+                withArguments:@"testid"];
                 [(id)viewBuilder stub:@selector(viewForAnnotation:reuseIdentifier:) andReturn:existingView];
             });
             it(@"should ask the builder for a new view", ^{
