@@ -1,8 +1,8 @@
 platform :ios, '7.0'
 
 target :TrailsKit, :exclusive => true do
-    pod 'NSArray+Functional'
-    pod 'GPXParser'
+    pod 'NSArray+Functional', :inhibit_warnings => true
+    pod 'GPXParser', :inhibit_warnings => true
 end
 
 target :TrailsKitTests, :exclusive => true do

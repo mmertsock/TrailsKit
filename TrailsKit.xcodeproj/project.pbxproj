@@ -120,6 +120,7 @@
 		2740C2AE16B5DA3900E521CF /* TKAnnotationViewFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAnnotationViewFactorySpec.m; sourceTree = "<group>"; };
 		277ED48E169DE50C005022E5 /* TKStyledPolylineRendererFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStyledPolylineRendererFactory.h; sourceTree = "<group>"; };
 		277ED48F169DE50C005022E5 /* TKStyledPolylineRendererFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStyledPolylineRendererFactory.m; sourceTree = "<group>"; };
+		27844C9F18FD5A4400D59163 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		27BF90D818EA1CB10091745F /* GPX+TrailsKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GPX+TrailsKit.h"; sourceTree = "<group>"; };
 		27BF90D918EA1CB10091745F /* GPX+TrailsKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GPX+TrailsKit.m"; sourceTree = "<group>"; };
 		27F46A28169B433C00255169 /* NSArray+MapKitGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MapKitGeometry.h"; sourceTree = "<group>"; };
@@ -169,12 +170,13 @@
 		2713CA46169360C900BB236F = {
 			isa = PBXGroup;
 			children = (
+				2713CA53169360C900BB236F /* Frameworks */,
+				A3AC9CBB05F9448CA82BB67D /* Pods-TrailsKit.xcconfig */,
+				1C51F82EAE2E45CF8F89B6F7 /* Pods-TrailsKitTests.xcconfig */,
+				2713CA52169360C900BB236F /* Products */,
+				27844C9F18FD5A4400D59163 /* Shared.xcconfig */,
 				2713CA56169360C900BB236F /* TrailsKit */,
 				2713CA6B169360C900BB236F /* TrailsKitTests */,
-				2713CA53169360C900BB236F /* Frameworks */,
-				2713CA52169360C900BB236F /* Products */,
-				1C51F82EAE2E45CF8F89B6F7 /* Pods-TrailsKitTests.xcconfig */,
-				A3AC9CBB05F9448CA82BB67D /* Pods-TrailsKit.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -522,6 +524,7 @@
 /* Begin XCBuildConfiguration section */
 		2713CA74169360C900BB236F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27844C9F18FD5A4400D59163 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -551,6 +554,7 @@
 		};
 		2713CA75169360C900BB236F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27844C9F18FD5A4400D59163 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
