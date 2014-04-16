@@ -47,7 +47,7 @@ describe(@"TKGPXPolylineMapper", ^{
             TKStyledPolyline* polyline = result[0];
             [[polyline.shapeStyle should] beIdenticalTo:shapeStyle];
             [[polyline.visibilityConstraint should] beIdenticalTo:SUT.defaultVisibilityConstraint];
-            [[(id)polyline.overlay should] beIdenticalTo:[gpx.tracks[0] path]];
+            [[(id)polyline.overlay should] beIdenticalTo:(id) [gpx.tracks[0] path]];
         });
     });
     
@@ -84,7 +84,7 @@ describe(@"TKGPXPolylineMapper", ^{
             TKStyledPolyline* polyline = result[0];
             [[polyline.shapeStyle should] beIdenticalTo:shapeStyle];
             [[polyline.visibilityConstraint should] beIdenticalTo:SUT.defaultVisibilityConstraint];
-            [[(id)polyline.overlay should] beIdenticalTo:[gpx.routes[0] path]];
+            [[(id)polyline.overlay should] beIdenticalTo:(id) [gpx.routes[0] path]];
         });
     });
 });
