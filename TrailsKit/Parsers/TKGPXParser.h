@@ -17,6 +17,7 @@
 
 - (id)initWithMapper:(id<TKGPXOverlayMapper>)aMapper;
 
+// Callback invoked on the main thread
 - (void)parseData:(NSData*)gpxData
        completion:(TKOverlayCompletionHandler)completionHandler;
 
