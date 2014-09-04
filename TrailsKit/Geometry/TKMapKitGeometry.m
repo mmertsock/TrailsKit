@@ -49,6 +49,14 @@ BOOL MKCoordinateRegionIsZero(MKCoordinateRegion region)
         && region.span.longitudeDelta == 0;
 }
 
+MKMapRect TKMKMapRectFromCoordinateRegion(MKCoordinateRegion region)
+{
+    // MKMapPoint origin is at NW corner
+    MKMapPoint NW = MKMapPointForCoordinate(CLLocationCoordinate2DMake(region.center.latitude + 0.5 * region.span.latitudeDelta, region.center.longitude - 0.5 * region.span.longitudeDelta));
+    MKMapPoint SE = MKMapPointForCoordinate(CLLocationCoordinate2DMake(region.center.latitude - 0.5 * region.span.latitudeDelta, region.center.longitude + 0.5 * region.span.longitudeDelta));
+    return MKMapRectMake(NW.x, NW.y, SE.x - NW.x, SE.y - NW.y);
+}
+
 NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region)
 {
     return [NSString stringWithFormat:@"<region (%2.5f,%2.5f), (%2.5fx%2.5f)>",

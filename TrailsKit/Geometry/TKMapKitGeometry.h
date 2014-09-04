@@ -25,6 +25,8 @@ MKCoordinateRegion MKCoordinateRegionFromCorners(CLLocationCoordinate2D SW, CLLo
 
 BOOL MKCoordinateRegionIsZero(MKCoordinateRegion region);
 
+MKMapRect TKMKMapRectFromCoordinateRegion(MKCoordinateRegion region);
+
 NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region);
 
 @protocol TKHasVisibilityConstraint <NSObject>

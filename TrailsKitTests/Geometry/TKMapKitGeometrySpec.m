@@ -5,7 +5,7 @@
 SPEC_BEGIN(TKMapKitGeometrySpec)
 
 describe(@"TKMapKitGeometry", ^{
-    context(@"when construction a region from coordinates", ^{
+    context(@"when constructing a region from coordinates", ^{
         it(@"should return a 'zero' region for an empty array", ^{
             MKCoordinateRegion region = MKCoordinateRegionFromCoordinates(@[]);
             [[theValue(MKCoordinateRegionIsZero(region)) should] beTrue];
@@ -28,6 +28,21 @@ describe(@"TKMapKitGeometry", ^{
             TKExpectLatitudeLongitude(region.center, 10, 19.5);
             [[@(region.span.latitudeDelta) should] equal:40 withDelta:0.01];
             [[@(region.span.longitudeDelta) should] equal:51 withDelta:0.01];
+        });
+    });
+    context(@"when constructing a map rect from a region", ^{
+        it(@"should be equivalent to the original region", ^{
+            MKCoordinateRegion r1 = (MKCoordinateRegion) {
+                .center = CLLocationCoordinate2DMake(42, -77),
+                .span = MKCoordinateSpanMake(0.025, 1)
+            };
+            MKMapRect rect = TKMKMapRectFromCoordinateRegion(r1);
+            [[theValue(MKMapRectIsNull(rect)) should] beFalse];
+            
+            MKCoordinateRegion r2 = MKCoordinateRegionForMapRect(rect);
+            TKExpectCoordinate(r2.center, r1.center);
+            [[@(r2.span.latitudeDelta) should] equal:r1.span.latitudeDelta withDelta:0.001];
+            [[@(r2.span.longitudeDelta) should] equal:r1.span.longitudeDelta withDelta:0.001];
         });
     });
 });
