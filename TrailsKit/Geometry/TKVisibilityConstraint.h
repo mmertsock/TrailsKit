@@ -23,11 +23,8 @@ typedef struct {
 
 + (TKVisibilityConstraint *)constraintWithMinScale:(TKMapScale)minMetersPerDevicePoint;
 
-// shouldHide instead of shouldShow so that sending
-// this message to a nil constraint object returns
-// a sensible value for most situations.
-- (BOOL)shouldHideInMapView:(MKMapView *)mapView;
+- (BOOL)shouldShowInMapView:(MKMapView *)mapView;
 
-- (BOOL)shouldHideInContext:(TKVisibilityContext)context;
+- (BOOL)shouldShowInContext:(TKVisibilityContext)context;
 
 @end

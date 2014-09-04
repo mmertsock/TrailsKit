@@ -8,8 +8,8 @@
 
 #import <Kiwi/Kiwi.h>
 #import <MapKit/MapKit.h>
-#import "TKMapObjectManager.h"
 #import "TrailsKitGeometry.h"
+#import "TrailsKitUI.h"
 
 static const CLLocationDistance TKMOMS_ZOOMED_OUT = 200000;
 static const CLLocationDistance TKMOMS_ZOOMED_IN = 1000;
@@ -34,13 +34,13 @@ describe(@"TKMapObjectManager", ^{
     __block MKMapView *mapView;
     __block NSArray *pointsToAdd;
     __block NSArray *overlaysToAdd;
-    __block MKMapCamera *mapCamera;
+    __block TKVisibilityContext vizContext;
     __block TKPointAnnotation *zoomedInPoint;
     __block TKPointAnnotation *zoomedOutPoint;
     __block TKStyledPolyline *zoomedInOverlay;
     __block TKStyledPolyline *zoomedOutOverlay;
     beforeAll(^{
-        mapCamera = [MKMapCamera cameraLookingAtCenterCoordinate:CLLocationCoordinate2DMake(0, 0) fromEyeCoordinate:CLLocationCoordinate2DMake(0, 0) eyeAltitude:150000];
+        vizContext = (TKVisibilityContext) { .altitude = 150000, .scale = 0 };
         zoomedInPoint = [TKPointAnnotation pointWithLatitude:10 longitude:20 title:@"zoomin" maxAltitude:TKMOMS_ZOOMED_IN + 1];
         zoomedOutPoint = [TKPointAnnotation pointWithLatitude:20 longitude:30 title:@"zoomout" maxAltitude:TKMOMS_ZOOMED_OUT + 1];
         pointsToAdd = @[zoomedInPoint, zoomedOutPoint];
@@ -52,12 +52,15 @@ describe(@"TKMapObjectManager", ^{
     });
     beforeEach(^{
         mapView = [MKMapView nullMock];
-        [mapView stub:@selector(camera) andReturn:mapCamera];
+        [mapView stub:@selector(tk_visibilityContext) withBlock:^id(NSArray *params) {
+            return theValue(vizContext);
+        }];
+//        [mapView stub:@selector(tk_visibilityContext) andReturn:theValue(vizContext)];
         SUT = [[TKMapObjectManager alloc] initWithMapView:mapView];
     });
     context(@"when initially zoomed out", ^{
         beforeEach(^{
-            mapCamera.altitude = TKMOMS_ZOOMED_OUT;
+            vizContext.altitude = TKMOMS_ZOOMED_OUT;
         });
         
         it(@"should only add the annotation allowing zoomed out display to the map view", ^{
@@ -97,7 +100,7 @@ describe(@"TKMapObjectManager", ^{
             beforeEach(^{
                 [SUT addAnnotations:pointsToAdd];
                 [SUT addOverlays:overlaysToAdd];
-                mapCamera.altitude = TKMOMS_ZOOMED_IN;
+                vizContext.altitude = TKMOMS_ZOOMED_IN;
             });
             it(@"should show the hidden annotations", ^{
                 KWCaptureSpy *spy = [(id)mapView captureArgument:@selector(addAnnotations:) atIndex:0];
@@ -115,7 +118,7 @@ describe(@"TKMapObjectManager", ^{
     
 	context(@"when initially zoomed in", ^{
         beforeEach(^{
-            mapCamera.altitude = TKMOMS_ZOOMED_IN;
+            vizContext.altitude = TKMOMS_ZOOMED_IN;
         });
         
         it(@"should immediately add all the annotations to the map view", ^{
@@ -147,7 +150,7 @@ describe(@"TKMapObjectManager", ^{
                 [SUT addOverlays:overlaysToAdd];
                 [mapView stub:@selector(annotations) andReturn:pointsToAdd];
                 [mapView stub:@selector(overlays) andReturn:overlaysToAdd];
-                mapCamera.altitude = TKMOMS_ZOOMED_OUT;
+                vizContext.altitude = TKMOMS_ZOOMED_OUT;
             });
             it(@"should remove the annotations from the map that require zooming in", ^{
                 KWCaptureSpy *spy = [(id)mapView captureArgument:@selector(removeAnnotations:) atIndex:0];

@@ -32,14 +32,14 @@
     return nil;
 }
 
-- (BOOL)shouldHideInMapView:(MKMapView *)mapView
+- (BOOL)shouldShowInMapView:(MKMapView *)mapView
 {
-    return [self shouldHideInContext:mapView.tk_visibilityContext];
+    return [self shouldShowInContext:mapView.tk_visibilityContext];
 }
 
-- (BOOL)shouldHideInContext:(TKVisibilityContext)context
+- (BOOL)shouldShowInContext:(TKVisibilityContext)context
 {
-    return NO;
+    return YES;
 }
 
 @end
@@ -54,9 +54,9 @@
     return self;
 }
 
-- (BOOL)shouldHideInContext:(TKVisibilityContext)context
+- (BOOL)shouldShowInContext:(TKVisibilityContext)context
 {
-    return context.altitude > self.maxAltitude;
+    return context.altitude <= self.maxAltitude;
 }
 
 @end
@@ -71,9 +71,9 @@
     return self;
 }
 
-- (BOOL)shouldHideInContext:(TKVisibilityContext)context
+- (BOOL)shouldShowInContext:(TKVisibilityContext)context
 {
-    return context.scale < self.minMetersPerDevicePoint;
+    return context.scale >= self.minMetersPerDevicePoint;
 }
 
 @end

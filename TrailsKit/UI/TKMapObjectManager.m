@@ -129,8 +129,8 @@
         return YES;
     
     if ([annotation conformsToProtocol:@protocol(TKHasVisibilityConstraint)]) {
-        id <TKHasVisibilityConstraint> hasConstraint = (id<TKHasVisibilityConstraint>) annotation;
-        return ![[hasConstraint visibilityConstraint] shouldHideInMapView:self.mapView];
+        TKVisibilityConstraint *constraint = [(id<TKHasVisibilityConstraint>)annotation visibilityConstraint];
+        return !constraint || [constraint shouldShowInMapView:self.mapView];
     }
     
     return YES;
@@ -139,8 +139,8 @@
 - (BOOL)shouldShowOverlay:(id<MKOverlay>)overlay
 {
     if ([overlay conformsToProtocol:@protocol(TKHasVisibilityConstraint)]) {
-        id <TKHasVisibilityConstraint> hasConstraint = (id<TKHasVisibilityConstraint>) overlay;
-        return ![[hasConstraint visibilityConstraint] shouldHideInMapView:self.mapView];
+        TKVisibilityConstraint *constraint = [(id<TKHasVisibilityConstraint>)overlay visibilityConstraint];
+        return !constraint || [constraint shouldShowInMapView:self.mapView];
     }
     
     return YES;

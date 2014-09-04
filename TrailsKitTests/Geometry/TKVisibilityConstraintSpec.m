@@ -23,11 +23,11 @@ describe(@"TKVisibilityConstraint", ^{
         specify(^{ [SUT shouldNotBeNil]; });
         it(@"should reject showing in sufficiently zoomed-out maps", ^{
             ctx.altitude = 501;
-            [[theValue([SUT shouldHideInContext:ctx]) should] beTrue];
+            [[theValue([SUT shouldShowInContext:ctx]) should] beFalse];
         });
         it(@"should accept showing in sufficiently zoomed-in maps", ^{
             ctx.altitude = 499;
-            [[theValue([SUT shouldHideInContext:ctx]) should] beFalse];
+            [[theValue([SUT shouldShowInContext:ctx]) should] beTrue];
         });
     });
 });
