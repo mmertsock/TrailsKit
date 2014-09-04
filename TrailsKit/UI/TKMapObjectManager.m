@@ -19,6 +19,8 @@
 @property (nonatomic) NSMutableArray *hiddenAnnotations;
 @property (nonatomic) NSMutableArray *hiddenOverlays;
 - (void)addOverlaysToMapView:(NSArray *)overlays;
+- (void)prepareForVisibilityContext:(TKVisibilityContext)newContext
+                           hideOnly:(BOOL)hideOnly;
 - (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation
                    inContext:(TKVisibilityContext)context;
 - (BOOL)shouldShowOverlay:(id<MKOverlay>)overlay
@@ -83,8 +85,18 @@
 - (void)mapViewRegionDidChange
 {
     TKVisibilityContext context = self.mapView.tk_visibilityContext;
-    
-    NSArray *annotationsToShow = [self.hiddenAnnotations filterUsingBlock:^BOOL(id obj) {
+    [self prepareForVisibilityContext:context hideOnly:NO];
+}
+
+- (void)willZoomMapToVisibility:(TKVisibilityContext)newContext
+{
+    [self prepareForVisibilityContext:newContext hideOnly:YES];
+}
+
+- (void)prepareForVisibilityContext:(TKVisibilityContext)context
+                           hideOnly:(BOOL)hideOnly
+{
+    NSArray *annotationsToShow = hideOnly ? @[] : [self.hiddenAnnotations filterUsingBlock:^BOOL(id obj) {
         return [self shouldShowAnnotation:obj inContext:context];
     }];
     
@@ -102,7 +114,7 @@
         [self.hiddenAnnotations removeObjectsInArray:annotationsToShow];
     }
     
-    NSArray *overlaysToShow = [self.hiddenOverlays filterUsingBlock:^BOOL(id obj) {
+    NSArray *overlaysToShow = hideOnly ? @[] : [self.hiddenOverlays filterUsingBlock:^BOOL(id obj) {
         return [self shouldShowOverlay:obj inContext:context];
     }];
     

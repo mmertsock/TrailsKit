@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "TrailsKitGeometry.h"
 
 @class MKMapView;
 @protocol MKAnnotation, MKOverlay;
@@ -23,6 +24,7 @@
 - (void)clearAllObjects;
 
 - (void)mapViewRegionDidChange;
+- (void)willZoomMapToVisibility:(TKVisibilityContext)newContext;
 
 - (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation;
 - (BOOL)shouldShowOverlay:(id<MKOverlay>)overlay;
