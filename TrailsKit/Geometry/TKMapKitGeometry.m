@@ -70,4 +70,9 @@ NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region)
     return [self doubleValue];
 }
 
+- (TKMapScale)tk_mapScaleValue
+{
+    return [self doubleValue];
+}
+
 @end

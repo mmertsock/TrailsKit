@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "TrailsKitTypes.h"
 
 #define MKCoordinateRegionZero MKCoordinateRegionMake(CLLocationCoordinate2DMake(0, 0), MKCoordinateSpanMake(0, 0))
 
@@ -33,4 +34,5 @@ NSString* NSStringFromMKCoordinateRegion(MKCoordinateRegion region);
 @interface NSNumber (TKMapKitGeometry)
 - (CLLocationDegrees)tk_degreesValue;
 - (CLLocationDistance)tk_distanceValue;
+- (TKMapScale)tk_mapScaleValue;
 @end

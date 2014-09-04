@@ -16,8 +16,8 @@
 @end
 
 @interface TKScaleVisibilityConstraint : TKVisibilityConstraint
-- (instancetype)initWithMinScale:(TKMapScale)minMetersPerDevicePoint;
-@property (readonly, nonatomic) TKMapScale minMetersPerDevicePoint;
+- (instancetype)initWithMaxScale:(TKMapScale)maxMetersPerDevicePoint;
+@property (readonly, nonatomic) TKMapScale maxMetersPerDevicePoint;
 @end
 
 @implementation TKVisibilityConstraint
@@ -27,9 +27,9 @@
     return [[TKAltitudeVisibilityConstraint alloc] initWithMaxAltitude:maxAltitude];
 }
 
-+ (TKVisibilityConstraint *)constraintWithMinScale:(TKMapScale)minMetersPerDevicePoint
++ (TKVisibilityConstraint *)constraintWithMaxScale:(TKMapScale)maxMetersPerDevicePoint
 {
-    return nil;
+    return [[TKScaleVisibilityConstraint alloc] initWithMaxScale:maxMetersPerDevicePoint];
 }
 
 - (BOOL)shouldShowInMapView:(MKMapView *)mapView
@@ -63,17 +63,17 @@
 
 @implementation TKScaleVisibilityConstraint
 
-- (instancetype)initWithMinScale:(TKMapScale)minMetersPerDevicePoint
+- (instancetype)initWithMaxScale:(TKMapScale)maxMetersPerDevicePoint
 {
     if (self = [super init]) {
-        _minMetersPerDevicePoint = minMetersPerDevicePoint;
+        _maxMetersPerDevicePoint = maxMetersPerDevicePoint;
     }
     return self;
 }
 
 - (BOOL)shouldShowInContext:(TKVisibilityContext)context
 {
-    return context.scale >= self.minMetersPerDevicePoint;
+    return context.scale <= self.maxMetersPerDevicePoint;
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import "TrailsKitGeometry.h"
+#import "TrailsKitTypes.h"
 
 @class MKMapView;
 
@@ -21,7 +21,7 @@ typedef struct {
 
 + (TKVisibilityConstraint *)constraintWithMaxAltitude:(CLLocationDistance)maxAltitude;
 
-+ (TKVisibilityConstraint *)constraintWithMinScale:(TKMapScale)minMetersPerDevicePoint;
++ (TKVisibilityConstraint *)constraintWithMaxScale:(TKMapScale)maxMetersPerDevicePoint;
 
 - (BOOL)shouldShowInMapView:(MKMapView *)mapView;
 

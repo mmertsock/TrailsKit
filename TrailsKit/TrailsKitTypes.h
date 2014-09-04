@@ -9,6 +9,10 @@
 #ifndef TrailsKit_TrailsKitTypes_h
 #define TrailsKit_TrailsKitTypes_h
 
+#import <CoreLocation/CoreLocation.h>
+
+typedef CLLocationDistance TKMapScale;
+
 typedef void (^TKOverlayCompletionHandler)(BOOL success, NSArray* overlays);
 
 #endif
