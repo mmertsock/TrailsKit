@@ -8,10 +8,16 @@
 
 #import "TKVisibilityConstraint.h"
 #import <MapKit/MapKit.h>
+#import "MKMapView+TrailsKitZoom.h"
 
 @interface TKAltitudeVisibilityConstraint : TKVisibilityConstraint
 - (id)initWithMaxAltitude:(CLLocationDistance)maxAltitude;
 @property (readonly, nonatomic) CLLocationDistance maxAltitude;
+@end
+
+@interface TKScaleVisibilityConstraint : TKVisibilityConstraint
+- (instancetype)initWithMinScale:(TKMapScale)minMetersPerDevicePoint;
+@property (readonly, nonatomic) TKMapScale minMetersPerDevicePoint;
 @end
 
 @implementation TKVisibilityConstraint
@@ -19,6 +25,11 @@
 + (TKVisibilityConstraint *)constraintWithMaxAltitude:(CLLocationDistance)maxAltitude
 {
     return [[TKAltitudeVisibilityConstraint alloc] initWithMaxAltitude:maxAltitude];
+}
+
++ (TKVisibilityConstraint *)constraintWithMinScale:(TKMapScale)minMetersPerDevicePoint
+{
+    return nil;
 }
 
 - (BOOL)shouldHideInMapView:(MKMapView *)mapView
@@ -44,3 +55,21 @@
 }
 
 @end
+
+@implementation TKScaleVisibilityConstraint
+
+- (instancetype)initWithMinScale:(TKMapScale)minMetersPerDevicePoint
+{
+    if (self = [super init]) {
+        _minMetersPerDevicePoint = minMetersPerDevicePoint;
+    }
+    return self;
+}
+
+- (BOOL)shouldHideInMapView:(MKMapView *)mapView
+{
+    return mapView.tk_metersPerDevicePoint < self.minMetersPerDevicePoint;
+}
+
+@end
+

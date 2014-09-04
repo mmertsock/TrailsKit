@@ -9,6 +9,10 @@
 #ifndef TrailsKit_TrailsKitGeometry_h
 #define TrailsKit_TrailsKitGeometry_h
 
+#import <CoreLocation/CoreLocation.h>
+
+typedef CLLocationDistance TKMapScale;
+
 #import "NSArray+MapKitGeometry.h"
 #import "TKMapImage.h"
 #import "TKMapKitGeometry.h"

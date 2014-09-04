@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "TrailsKitGeometry.h"
 
 @class MKMapView;
 
 @interface TKVisibilityConstraint : NSObject
 
 + (TKVisibilityConstraint *)constraintWithMaxAltitude:(CLLocationDistance)maxAltitude;
+
++ (TKVisibilityConstraint *)constraintWithMinScale:(TKMapScale)minMetersPerDevicePoint;
 
 // shouldHide instead of shouldShow so that sending
 // this message to a nil constraint object returns
