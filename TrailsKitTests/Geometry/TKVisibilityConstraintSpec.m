@@ -14,23 +14,20 @@ SPEC_BEGIN(TKVisibilityConstraintSpec)
 
 describe(@"TKVisibilityConstraint", ^{
 	__block TKVisibilityConstraint *SUT;
-    __block MKMapView *mapView;
-    __block MKMapCamera *mapCamera;
+    __block TKVisibilityContext ctx;
 	context(@"given a max-altitude constraint", ^{
         beforeEach(^{
             SUT = [TKVisibilityConstraint constraintWithMaxAltitude:500];
-            mapView = [MKMapView nullMock];
-            mapCamera = [MKMapCamera camera];
-            [mapView stub:@selector(camera) andReturn:mapCamera];
+            ctx = (TKVisibilityContext) { .altitude = 0, .scale = 0 };
         });
         specify(^{ [SUT shouldNotBeNil]; });
         it(@"should reject showing in sufficiently zoomed-out maps", ^{
-            mapCamera.altitude = 501;
-            [[theValue([SUT shouldHideInMapView:mapView]) should] beTrue];
+            ctx.altitude = 501;
+            [[theValue([SUT shouldHideInContext:ctx]) should] beTrue];
         });
         it(@"should accept showing in sufficiently zoomed-in maps", ^{
-            mapCamera.altitude = 499;
-            [[theValue([SUT shouldHideInMapView:mapView]) should] beFalse];
+            ctx.altitude = 499;
+            [[theValue([SUT shouldHideInContext:ctx]) should] beFalse];
         });
     });
 });

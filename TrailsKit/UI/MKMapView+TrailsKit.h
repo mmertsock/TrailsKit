@@ -1,5 +1,5 @@
 //
-//  MKMapView+TrailsKitZoom.h
+//  MKMapView+TrailsKit.h
 //  TrailsKit
 //
 //  Created by Mike Mertsock on 9/3/14.
@@ -8,11 +8,14 @@
 
 #import <MapKit/MapKit.h>
 #import "TrailsKitGeometry.h"
+#import "TKVisibilityConstraint.h"
 
-@interface MKMapView (TrailsKitZoom)
+@interface MKMapView (TrailsKit)
 
 - (TKMapScale)tk_metersPerDevicePoint;
 
 - (TKMapScale)tk_metersPerDevicePointAtLatitude:(CLLocationDegrees)latitude;
+
+- (TKVisibilityContext)tk_visibilityContext;
 
 @end

@@ -9,7 +9,7 @@
 #ifndef TrailsKit_TrailsKitUI_h
 #define TrailsKit_TrailsKitUI_h
 
-#import "MKMapView+TrailsKitZoom.h"
+#import "MKMapView+TrailsKit.h"
 #import "TKAnnotationViewFactory.h"
 #import "TKMapObjectManager.h"
 #import "TKStyledPolylineRendererFactory.h"
