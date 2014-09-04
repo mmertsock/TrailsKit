@@ -14,8 +14,6 @@
 
 - (TKMapScale)tk_metersPerDevicePoint;
 
-- (TKMapScale)tk_metersPerDevicePointAtLatitude:(CLLocationDegrees)latitude;
-
 - (TKVisibilityContext)tk_visibilityContext;
 
 - (TKVisibilityContext)tk_visibilityContextForRegion:(MKCoordinateRegion)region;

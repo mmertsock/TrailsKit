@@ -12,14 +12,12 @@
 
 - (TKMapScale)tk_metersPerDevicePoint
 {
-    return [self tk_metersPerDevicePointAtLatitude:self.centerCoordinate.latitude];
+    return [self tk_metersPerDevicePointAtAltitude:self.camera.altitude];
 }
 
-- (TKMapScale)tk_metersPerDevicePointAtLatitude:(CLLocationDegrees)latitude
+- (TKMapScale)tk_metersPerDevicePointAtAltitude:(CLLocationDistance)altitude
 {
-    CLLocationDistance mapPointsPerScreenPoints = self.visibleMapRect.size.width / self.bounds.size.width;
-    CLLocationDistance metersPerMapPoint = MKMetersPerMapPointAtLatitude(latitude);
-    return mapPointsPerScreenPoints * metersPerMapPoint;
+    return altitude / self.bounds.size.height;
 }
 
 - (TKVisibilityContext)tk_visibilityContext
@@ -42,10 +40,7 @@
     const double radians15 = 0.261799387799149;
     TKVisibilityContext newContext = (TKVisibilityContext) { .altitude = 0, .scale = 0 };
     newContext.altitude = radiusMeters / tan(radians15);
-    
-    // S':A' :: S:A. Thus, S' = A' * S/A
-    TKVisibilityContext currentContext = self.tk_visibilityContext;
-    newContext.scale = newContext.altitude * currentContext.scale / currentContext.altitude;
+    newContext.scale = [self tk_metersPerDevicePointAtAltitude:newContext.altitude];
     return newContext;
 }
 
