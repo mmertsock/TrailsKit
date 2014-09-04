@@ -1,6 +1,6 @@
 //
 //  TKMapKitGeometry.h
-//  RocTrails
+//  TrailsKit
 //
 //  Created by Mike Mertsock on 12/30/12.
 //  Copyright (c) 2012 Esker Apps. All rights reserved.
