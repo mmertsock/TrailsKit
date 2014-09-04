@@ -8,6 +8,7 @@
 
 #import "TKMapObjectManager.h"
 #import "TrailsKitGeometry.h"
+#import "MKMapView+TrailsKit.h"
 #import <MapKit/MapKit.h>
 #import <NSArray+Functional.h>
 
@@ -18,6 +19,10 @@
 @property (nonatomic) NSMutableArray *hiddenAnnotations;
 @property (nonatomic) NSMutableArray *hiddenOverlays;
 - (void)addOverlaysToMapView:(NSArray *)overlays;
+- (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation
+                   inContext:(TKVisibilityContext)context;
+- (BOOL)shouldShowOverlay:(id<MKOverlay>)overlay
+                inContext:(TKVisibilityContext)context;
 @end
 
 @implementation TKMapObjectManager
@@ -41,8 +46,9 @@
 - (void)addAnnotations:(NSArray *)annotations
 {
     NSAssert([NSThread isMainThread], @"TKMapObjectManager addAnnotations: must run in main thread");
+    TKVisibilityContext context = self.mapView.tk_visibilityContext;
     NSArray *toShow = [annotations filterUsingBlock:^BOOL(id obj) {
-        if ([self shouldShowAnnotation:obj])
+        if ([self shouldShowAnnotation:obj inContext:context])
             return YES;
         [self.hiddenAnnotations addObject:obj];
         return NO;
@@ -54,8 +60,9 @@
 - (void)addOverlays:(NSArray *)overlays
 {
     NSAssert([NSThread isMainThread], @"TKMapObjectManager addOverlays: must run in main thread");
+    TKVisibilityContext context = self.mapView.tk_visibilityContext;
     NSArray *toShow = [overlays filterUsingBlock:^BOOL(id obj) {
-        if ([self shouldShowOverlay:obj])
+        if ([self shouldShowOverlay:obj inContext:context])
             return YES;
         [self.hiddenOverlays addObject:obj];
         return NO;
@@ -75,12 +82,14 @@
 
 - (void)mapViewRegionDidChange
 {
+    TKVisibilityContext context = self.mapView.tk_visibilityContext;
+    
     NSArray *annotationsToShow = [self.hiddenAnnotations filterUsingBlock:^BOOL(id obj) {
-        return [self shouldShowAnnotation:obj];
+        return [self shouldShowAnnotation:obj inContext:context];
     }];
     
     NSArray *annotationsToHide = [self.mapView.annotations filterUsingBlock:^BOOL(id obj) {
-        return ![self shouldShowAnnotation:obj];
+        return ![self shouldShowAnnotation:obj inContext:context];
     }];
     
     if (annotationsToHide.count) {
@@ -94,11 +103,11 @@
     }
     
     NSArray *overlaysToShow = [self.hiddenOverlays filterUsingBlock:^BOOL(id obj) {
-        return [self shouldShowOverlay:obj];
+        return [self shouldShowOverlay:obj inContext:context];
     }];
     
     NSArray *overlaysToHide = [self.mapView.overlays filterUsingBlock:^BOOL(id obj) {
-        return ![self shouldShowOverlay:obj];
+        return ![self shouldShowOverlay:obj inContext:context];
     }];
     
     if (overlaysToHide.count) {
@@ -125,12 +134,18 @@
 
 - (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation
 {
+    return [self shouldShowAnnotation:annotation
+                            inContext:self.mapView.tk_visibilityContext];
+}
+
+- (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation inContext:(TKVisibilityContext)context
+{
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return YES;
     
     if ([annotation conformsToProtocol:@protocol(TKHasVisibilityConstraint)]) {
         TKVisibilityConstraint *constraint = [(id<TKHasVisibilityConstraint>)annotation visibilityConstraint];
-        return !constraint || [constraint shouldShowInMapView:self.mapView];
+        return !constraint || [constraint shouldShowInContext:context];
     }
     
     return YES;
@@ -138,9 +153,16 @@
 
 - (BOOL)shouldShowOverlay:(id<MKOverlay>)overlay
 {
+    return [self shouldShowOverlay:overlay
+                         inContext:self.mapView.tk_visibilityContext];
+}
+
+- (BOOL)shouldShowOverlay:(id<MKOverlay>)overlay
+                inContext:(TKVisibilityContext)context
+{
     if ([overlay conformsToProtocol:@protocol(TKHasVisibilityConstraint)]) {
         TKVisibilityConstraint *constraint = [(id<TKHasVisibilityConstraint>)overlay visibilityConstraint];
-        return !constraint || [constraint shouldShowInMapView:self.mapView];
+        return !constraint || [constraint shouldShowInContext:context];
     }
     
     return YES;
