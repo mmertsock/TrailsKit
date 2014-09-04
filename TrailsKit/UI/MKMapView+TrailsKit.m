@@ -30,4 +30,23 @@
     };
 }
 
+- (TKVisibilityContext)tk_visibilityContextForRegion:(MKCoordinateRegion)region
+{
+    MKMapRect rect = [self mapRectThatFits:TKMKMapRectFromCoordinateRegion(region)];
+    CLLocationDistance metersPerMapPoint = MKMetersPerMapPointAtLatitude(region.center.latitude);
+    CLLocationDistance radiusMeters = 0.5 * metersPerMapPoint * rect.size.height;
+    
+    // MKMapCamera has an viewing angle of about 30°
+    // Given R = radius of region to view, in meters, the target altitude A is:
+    // tan 15° = R/A; A = R / tan 15°
+    const double radians15 = 0.261799387799149;
+    TKVisibilityContext newContext = (TKVisibilityContext) { .altitude = 0, .scale = 0 };
+    newContext.altitude = radiusMeters / tan(radians15);
+    
+    // S':A' :: S:A. Thus, S' = A' * S/A
+    TKVisibilityContext currentContext = self.tk_visibilityContext;
+    newContext.scale = newContext.altitude * currentContext.scale / currentContext.altitude;
+    return newContext;
+}
+
 @end

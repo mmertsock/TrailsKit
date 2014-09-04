@@ -18,4 +18,6 @@
 
 - (TKVisibilityContext)tk_visibilityContext;
 
+- (TKVisibilityContext)tk_visibilityContextForRegion:(MKCoordinateRegion)region;
+
 @end
