@@ -35,6 +35,7 @@
 		273E1EF818765ACB00B79846 /* TKPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E1EF718765ACB00B79846 /* TKPointAnnotation.m */; };
 		2740C2AC16B5D95800E521CF /* TKAnnotationViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740C2AB16B5D95800E521CF /* TKAnnotationViewFactory.m */; };
 		2740C2AF16B5DA3900E521CF /* TKAnnotationViewFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2740C2AE16B5DA3900E521CF /* TKAnnotationViewFactorySpec.m */; };
+		274E20E519CC75700011F0E7 /* CLLocationManager+TrailsKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 274E20E419CC75700011F0E7 /* CLLocationManager+TrailsKit.m */; };
 		277ED490169DE50C005022E5 /* TKStyledPolylineRendererFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 277ED48F169DE50C005022E5 /* TKStyledPolylineRendererFactory.m */; };
 		27BF90DA18EA1CB10091745F /* GPX+TrailsKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BF90D918EA1CB10091745F /* GPX+TrailsKit.m */; };
 		27F46A30169B433C00255169 /* NSArray+MapKitGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F46A29169B433C00255169 /* NSArray+MapKitGeometry.m */; };
@@ -117,6 +118,8 @@
 		2740C2AA16B5D95800E521CF /* TKAnnotationViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAnnotationViewFactory.h; sourceTree = "<group>"; };
 		2740C2AB16B5D95800E521CF /* TKAnnotationViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAnnotationViewFactory.m; sourceTree = "<group>"; };
 		2740C2AE16B5DA3900E521CF /* TKAnnotationViewFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAnnotationViewFactorySpec.m; sourceTree = "<group>"; };
+		274E20E319CC75700011F0E7 /* CLLocationManager+TrailsKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+TrailsKit.h"; sourceTree = "<group>"; };
+		274E20E419CC75700011F0E7 /* CLLocationManager+TrailsKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+TrailsKit.m"; sourceTree = "<group>"; };
 		277ED48E169DE50C005022E5 /* TKStyledPolylineRendererFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKStyledPolylineRendererFactory.h; sourceTree = "<group>"; };
 		277ED48F169DE50C005022E5 /* TKStyledPolylineRendererFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKStyledPolylineRendererFactory.m; sourceTree = "<group>"; };
 		27844C9F18FD5A4400D59163 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
@@ -202,6 +205,7 @@
 		2713CA56169360C900BB236F /* TrailsKit */ = {
 			isa = PBXGroup;
 			children = (
+				274E20E219CC75640011F0E7 /* Location */,
 				27F46A26169B428800255169 /* Geometry */,
 				2736C0A516AAEC8D00431070 /* Parsers */,
 				2713CA57169360C900BB236F /* Supporting Files */,
@@ -294,6 +298,15 @@
 				2736C0AA16AAEC8D00431070 /* TKGPXPolylineMapper.m */,
 			);
 			path = Parsers;
+			sourceTree = "<group>";
+		};
+		274E20E219CC75640011F0E7 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				274E20E319CC75700011F0E7 /* CLLocationManager+TrailsKit.h */,
+				274E20E419CC75700011F0E7 /* CLLocationManager+TrailsKit.m */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		27F46A26169B428800255169 /* Geometry */ = {
@@ -476,6 +489,7 @@
 				2736C0AC16AAEC8D00431070 /* TKGPXPolylineMapper.m in Sources */,
 				271709A419B8017900644309 /* MKMapView+TrailsKit.m in Sources */,
 				2736C0B116AAF64100431070 /* TKGPXPolygonMapper.m in Sources */,
+				274E20E519CC75700011F0E7 /* CLLocationManager+TrailsKit.m in Sources */,
 				273E1EF818765ACB00B79846 /* TKPointAnnotation.m in Sources */,
 				2740C2AC16B5D95800E521CF /* TKAnnotationViewFactory.m in Sources */,
 			);

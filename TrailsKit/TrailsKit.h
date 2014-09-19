@@ -14,4 +14,6 @@
 #import "TrailsKitParsers.h"
 #import "TrailsKitUI.h"
 
+#import "CLLocationManager+TrailsKit.h"
+
 #endif

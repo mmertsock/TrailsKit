@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = "TrailsKit"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.source       = { :git => "https://github.com/mmertsock/TrailsKit.git", :tag => "v#{s.version}" }
   s.summary      = "Tools for representing and displaying geographical data for parks and trails."
   s.homepage     = "https://github.com/mmertsock/TrailsKit"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = "mmertsock"
-  s.source_files = "TrailsKit/UI", "TrailsKit/*.h", "TrailsKit/Parsers", "TrailsKit/Geometry"
+  s.source_files = "TrailsKit/UI", "TrailsKit/*.h", "TrailsKit/Parsers", "TrailsKit/Geometry", "TrailsKit/Location"
   s.requires_arc = true
   
   s.ios.deployment_target = "7.0"
