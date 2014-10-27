@@ -14,10 +14,10 @@
 
 @interface TKShapeStyle : NSObject
 
-@property (readonly, nonatomic) UIColor* strokeColor;
-@property (readonly, nonatomic) CGFloat lineWidth;
-@property (readonly, nonatomic) UIColor* fillColor;
-@property (readonly, nonatomic) MKOverlayLevel overlayLevel;
+@property (copy, nonatomic) UIColor* strokeColor;
+@property (nonatomic) CGFloat lineWidth;
+@property (copy, nonatomic) UIColor* fillColor;
+@property (nonatomic) MKOverlayLevel overlayLevel;
 @property (copy, nonatomic) NSArray *lineDashPattern;
 @property (nonatomic) CGFloat lineDashPhase;
 
