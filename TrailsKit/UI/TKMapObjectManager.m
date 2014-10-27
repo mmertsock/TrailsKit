@@ -45,6 +45,18 @@
     return _mapView;
 }
 
+- (NSSet *)visibleAnnotations
+{
+    MKCoordinateRegion annotationRegion = [self.mapView convertRect:self.mapView.annotationVisibleRect toRegionFromView:self.mapView];
+    MKMapRect annotationRect = TKMKMapRectFromCoordinateRegion(annotationRegion);
+    return [self.mapView annotationsInMapRect:annotationRect];
+}
+
+- (NSArray *)visibleOverlays
+{
+    return self.mapView.overlays;
+}
+
 - (void)addAnnotations:(NSArray *)annotations
 {
     NSAssert([NSThread isMainThread], @"TKMapObjectManager addAnnotations: must run in main thread");
@@ -91,6 +103,20 @@
 - (void)willZoomMapToVisibility:(TKVisibilityContext)newContext
 {
     [self prepareForVisibilityContext:newContext hideOnly:YES];
+}
+
+- (void)reloadAnnotation:(id<MKAnnotation>)annotation
+{
+    [self.mapView removeAnnotation:annotation];
+    [self.mapView addAnnotation:annotation];
+}
+
+- (void)reloadOverlay:(id <MKOverlay>)overlay
+              atLevel:(MKOverlayLevel)level
+{
+    NSUInteger index = [[self.mapView overlaysInLevel:level] indexOfObject:overlay];
+    [self.mapView removeOverlay:overlay];
+    [self.mapView insertOverlay:overlay atIndex:index level:level];
 }
 
 - (void)prepareForVisibilityContext:(TKVisibilityContext)context
