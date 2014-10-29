@@ -19,15 +19,27 @@
 
 - (MKOverlayRenderer *)rendererForPolyline:(TKStyledPolyline *)polyline
 {
+    return [self rendererForPolyline:polyline shapeStyle:polyline.shapeStyle];
+}
+
+- (MKOverlayRenderer *)rendererForPolyline:(TKStyledPolyline *)polyline
+                                shapeStyle:(TKShapeStyle *)shapeStyle
+{
     MKPolylineRenderer* renderer = [[MKPolylineRenderer alloc] initWithPolyline:polyline.overlay];
-    [self setStyle:polyline.shapeStyle forPathRenderer:renderer];
+    [self setStyle:shapeStyle forPathRenderer:renderer];
     return renderer;
 }
 
 - (MKOverlayRenderer *)rendererForPolygon:(TKStyledPolygonArea *)polygon
 {
+    return [self rendererForPolygon:polygon shapeStyle:polygon.shapeStyle];
+}
+
+- (MKOverlayRenderer *)rendererForPolygon:(TKStyledPolygonArea *)polygon
+                               shapeStyle:(TKShapeStyle *)shapeStyle
+{
     MKPolygonRenderer* renderer = [[MKPolygonRenderer alloc] initWithPolygon:polygon.overlay];
-    [self setStyle:polygon.shapeStyle forPathRenderer:renderer];
+    [self setStyle:shapeStyle forPathRenderer:renderer];
     return renderer;
 }
 
