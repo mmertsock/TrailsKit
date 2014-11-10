@@ -10,8 +10,14 @@
 
 @interface CLLocationManager (TrailsKit)
 
-+ (BOOL)tk_isAuthorizedWhenInUse;
++ (BOOL)tk_authorizationRequestsEnabled;
++ (BOOL)tk_isOrCanBeAuthorizedWhenInUse;
+
+@property (readonly) BOOL tk_mustAskForAuthorization;
 
 @end
 
-BOOL TKIsAuthorizationStatusEnabledForInUse(CLAuthorizationStatus status);
+// iOS 8: app has already asked for authorization and user has granted it.
+// iOS 7: user has granted or will be asked on next usage of location services (authorization is asked automatically).
+// In both cases, returns NO if authorization is denied or restricted.
+BOOL TKAuthorizationStatusIsOrCanBeEnabledForInUse(CLAuthorizationStatus status);
