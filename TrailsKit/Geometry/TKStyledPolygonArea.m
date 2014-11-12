@@ -23,10 +23,16 @@
                 style:(TKShapeStyle *)aStyle
            constraint:(TKVisibilityConstraint *)visibilityConstraint
 {
+    return [self initWithOverlay:anOverlay style:aStyle constraint:visibilityConstraint data:nil];
+}
+
+- (id)initWithOverlay:(MKPolygon *)anOverlay style:(TKShapeStyle *)aStyle constraint:(TKVisibilityConstraint *)visibilityConstraint data:(id)data
+{
     if (self = [super init]) {
         _overlay = anOverlay;
         _shapeStyle = aStyle;
         _visibilityConstraint = visibilityConstraint;
+        _data = data;
     }
     return self;
 }

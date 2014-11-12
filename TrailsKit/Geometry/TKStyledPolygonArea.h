@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) MKPolygon* overlay;
 @property (nonatomic) TKShapeStyle* shapeStyle;
 @property (nonatomic) TKVisibilityConstraint *visibilityConstraint;
+@property (strong, nonatomic) id data;
 
 + (instancetype)polygonWithPointsFromPolyline:(MKPolyline*)polyline
                                         style:(TKShapeStyle*)aStyle
@@ -25,5 +26,10 @@
 - (id)initWithOverlay:(MKPolygon*)anOverlay
                 style:(TKShapeStyle*)aStyle
            constraint:(TKVisibilityConstraint *)visibilityConstraint;
+
+- (id)initWithOverlay:(MKPolygon*)anOverlay
+                style:(TKShapeStyle*)aStyle
+           constraint:(TKVisibilityConstraint *)visibilityConstraint
+                 data:(id)data;
 
 @end
