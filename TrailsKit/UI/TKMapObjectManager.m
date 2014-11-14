@@ -67,7 +67,7 @@
         [self.hiddenAnnotations addObject:obj];
         return NO;
     }];
- 
+    
     [self.mapView addAnnotations:toShow];
 }
 
@@ -183,7 +183,7 @@
     
     if ([annotation conformsToProtocol:@protocol(TKHasVisibilityConstraint)]) {
         TKVisibilityConstraint *constraint = [(id<TKHasVisibilityConstraint>)annotation visibilityConstraint];
-        return !constraint || [constraint shouldShowInContext:context];
+        return !constraint || [constraint shouldShowAnnotation:annotation inContext:context];
     }
     
     return YES;
@@ -200,7 +200,7 @@
 {
     if ([overlay conformsToProtocol:@protocol(TKHasVisibilityConstraint)]) {
         TKVisibilityConstraint *constraint = [(id<TKHasVisibilityConstraint>)overlay visibilityConstraint];
-        return !constraint || [constraint shouldShowInContext:context];
+        return !constraint || [constraint shouldShowOverlay:overlay inContext:context];
     }
     
     return YES;

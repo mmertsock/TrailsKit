@@ -11,6 +11,7 @@
 #import "TrailsKitTypes.h"
 
 @class MKMapView;
+@protocol MKAnnotation, MKOverlay;
 
 typedef struct {
     CLLocationDistance altitude;
@@ -23,8 +24,12 @@ typedef struct {
 
 + (TKVisibilityConstraint *)constraintWithMaxScale:(TKMapScale)maxMetersPerDevicePoint;
 
-- (BOOL)shouldShowInMapView:(MKMapView *)mapView;
-
 - (BOOL)shouldShowInContext:(TKVisibilityContext)context;
+
+- (BOOL)shouldShowAnnotation:(id <MKAnnotation>)annotation
+                   inContext:(TKVisibilityContext)context;
+
+- (BOOL)shouldShowOverlay:(id <MKOverlay>)overlay
+                inContext:(TKVisibilityContext)context;
 
 @end

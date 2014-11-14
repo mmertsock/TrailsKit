@@ -32,14 +32,19 @@
     return [[TKScaleVisibilityConstraint alloc] initWithMaxScale:maxMetersPerDevicePoint];
 }
 
-- (BOOL)shouldShowInMapView:(MKMapView *)mapView
-{
-    return [self shouldShowInContext:mapView.tk_visibilityContext];
-}
-
 - (BOOL)shouldShowInContext:(TKVisibilityContext)context
 {
     return YES;
+}
+
+- (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation inContext:(TKVisibilityContext)context
+{
+    return [self shouldShowInContext:context];
+}
+
+- (BOOL)shouldShowOverlay:(id <MKOverlay>)overlay inContext:(TKVisibilityContext)context
+{
+    return [self shouldShowInContext:context];
 }
 
 @end
@@ -77,4 +82,3 @@
 }
 
 @end
-
