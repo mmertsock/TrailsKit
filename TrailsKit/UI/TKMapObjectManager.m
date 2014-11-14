@@ -52,9 +52,14 @@
     return [self.mapView annotationsInMapRect:annotationRect];
 }
 
-- (NSArray *)visibleOverlays
+- (NSArray *)allAnnotations
 {
-    return self.mapView.overlays;
+    return [self.hiddenAnnotations arrayByAddingObjectsFromArray:[self visibleAnnotations].allObjects];
+}
+
+- (NSArray *)allOverlays
+{
+    return [self.hiddenOverlays arrayByAddingObjectsFromArray:self.mapView.overlays];
 }
 
 - (void)addAnnotations:(NSArray *)annotations
@@ -107,16 +112,38 @@
 
 - (void)reloadAnnotation:(id<MKAnnotation>)annotation
 {
+    if ([self.hiddenAnnotations containsObject:annotation]) {
+        if ([self shouldShowAnnotation:annotation]) {
+            [self.mapView addAnnotation:annotation];
+            [self.hiddenAnnotations removeObject:annotation];
+        }
+        return;
+    }
+    
+    // Even if it should remain visible, remove + add it to force a redraw
     [self.mapView removeAnnotation:annotation];
-    [self.mapView addAnnotation:annotation];
+    if ([self shouldShowAnnotation:annotation])
+        [self.mapView addAnnotation:annotation];
+    else
+        [self.hiddenAnnotations addObject:annotation];
 }
 
 - (void)reloadOverlay:(id <MKOverlay>)overlay
-              atLevel:(MKOverlayLevel)level
 {
-    NSUInteger index = [[self.mapView overlaysInLevel:level] indexOfObject:overlay];
+    if ([self.hiddenOverlays containsObject:overlay]) {
+        if ([self shouldShowOverlay:overlay]) {
+            [self addOverlaysToMapView:@[overlay]];
+            [self.hiddenOverlays removeObject:overlay];
+        }
+        return;
+    }
+    
+    // Even if it should remain visible, remove + add it to force a redraw
     [self.mapView removeOverlay:overlay];
-    [self.mapView insertOverlay:overlay atIndex:index level:level];
+    if ([self shouldShowOverlay:overlay])
+        [self addOverlaysToMapView:@[overlay]];
+    else
+        [self.hiddenOverlays addObject:overlay];
 }
 
 - (void)prepareForVisibilityContext:(TKVisibilityContext)context

@@ -17,9 +17,8 @@
 
 - (id)initWithMapView:(MKMapView *)mapView;
 
-@property (nonatomic, readonly) NSSet *visibleAnnotations;
-
-@property (nonatomic, readonly) NSArray *visibleOverlays;
+@property (nonatomic, readonly) NSArray *allAnnotations;
+@property (nonatomic, readonly) NSArray *allOverlays;
 
 - (void)addAnnotations:(NSArray *)annotations;
 
@@ -31,9 +30,7 @@
 - (void)willZoomMapToVisibility:(TKVisibilityContext)newContext;
 
 - (void)reloadAnnotation:(id <MKAnnotation>)annotation;
-
-- (void)reloadOverlay:(id <MKOverlay>)overlay
-              atLevel:(MKOverlayLevel)level;
+- (void)reloadOverlay:(id <MKOverlay>)overlay;
 
 - (BOOL)shouldShowAnnotation:(id<MKAnnotation>)annotation;
 - (BOOL)shouldShowOverlay:(id<MKOverlay>)overlay;
