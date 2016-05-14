@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Esker Apps. All rights reserved.
 //
 
-#import <GPXParser.h>
+#import <GPXParser/GPXParser.h>
 
 @interface GPX (TrailsKit)
 @property (nonatomic, readonly) NSArray *allTracks; // routes and tracks combined
