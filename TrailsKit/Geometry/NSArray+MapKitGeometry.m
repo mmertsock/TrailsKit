@@ -8,7 +8,7 @@
 
 #import "NSArray+MapKitGeometry.h"
 #import <MapKit/MapKit.h>
-#import <NSArray+Functional/NSArray+Functional.h>
+#import "NSArray+Functional.h"
 
 @implementation NSArray (MapKitGeometry)
 

@@ -10,7 +10,7 @@
 #import "TrailsKitGeometry.h"
 #import "MKMapView+TrailsKit.h"
 #import <MapKit/MapKit.h>
-#import <NSArray+Functional.h>
+#import "NSArray+Functional.h"
 
 @interface TKMapObjectManager () {
     __weak MKMapView *_mapView;

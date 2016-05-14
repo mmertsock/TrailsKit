@@ -9,7 +9,7 @@
 #import "TKGPXPolylineMapper.h"
 #import "TKStyledPolyline.h"
 #import "GPX+TrailsKit.h"
-#import <NSArray+Functional/NSArray+Functional.h>
+#import "NSArray+Functional.h"
 #import <GPXParser/GPXParser.h>
 
 @implementation TKGPXPolylineMapper
